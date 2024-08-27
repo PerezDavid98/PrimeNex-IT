@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeNex IT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="/Group 38.png" alt="Logo de PrimeNex IT">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Our Work</a></li>
+                <li><a href="#servicios">Services</a></li>
+                <li><a href="#quienes-somos">About Us</a></li>
+                <li><a href="#contacto">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio" class="contenedor">
+        <h1>PrimeNex IT</h1>
+        <p>
+            PrimeNex IT stands out by delivering cutting-edge technological solutions tailored 
+            to the modern market's most demanding needs. Our team of dedicated and skilled professionals
+            ensures every project is executed with precision, dedication, and an unwavering focus on excellence. 
+            We specialize in a broad range of technological services, from designing and developing 
+            embedded systems that combine hardware and software for efficient, customized solutions to 
+            creating intuitive and appealing user interfaces (UX/UI) that enhance user experience. 
+            In web development, both backend and frontend, we use the latest technologies and best 
+            practices to build robust, secure, and scalable platforms that adapt to your business's growth 
+            and changing demands. Additionally, we offer comprehensive support for database and CRM system 
+            maintenance, ensuring your technological infrastructure remains operational, efficient, and 
+            optimized at all times.
+        </p>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="/img/0851899d81f6e5b7dd5cc932ef4c394e.jpg" alt="Image 1">
+                <img src="/img/242be95c6bba8f5f58009453d8c59b86.jpg" alt="Image 2">
+                <img src="/img/253807-P4D5MB-313.jpg" alt="Image 3">
+                <img src="/img/7eeaf0cd370e1521eab16ac026956cee.jpg" alt="Image 4">
+                <img src="/img/ac7239fbcf54db280d02055983bf24a5.jpg" alt="Image 5">
+                <img src="/img/c00136e00bce6000af516b88dff8c2ba.jpg" alt="Image 6">
+                <img src="/img/collage-fondo-programacion.jpg" alt="Image 7">
+                <img src="/img/fc28c3e92bd82ca1e670921b3a6b7608.jpg" alt="Image 8">
+                <img src="/img/programming-background-collage.jpg" alt="Image 9">
+                <img src="image10.jpg" alt="Image 10">
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="contenedor" >
+        <section id="servicios" class="services-section" >
+            <h2>Our Services</h2>
+            <div class="service-buttons">
+                <button onclick="showService('soporte-ti')">IT Support</button>
+                <button onclick="showService('web')">Web</button>
+                <button onclick="showService('analisis-datos')">Data Analysis</button>
+                <button onclick="showService('sistemas-embebidos')">Embedded Systems</button>
+            </div>
+        
+            <div id="soporte-ti" class="service-container">
+                <div class="service-column">
+                    <h3>Digital Transformation</h3>
+                    <p>Implementation of advanced technological solutions that enable companies to modernize their processes, improve operational efficiency, and adapt to the demands of the digital market.</p>
+                </div>
+                <div class="service-column">
+                    <h3>CRM and ERP Management with AI and Chatbots</h3>
+                    <p>Comprehensive management of CRM and ERP systems, optimizing their performance and functionality through the integration of artificial intelligence and chatbots, enhancing customer interaction and process automation.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Database Management (Redesign and Migration)</h3>
+                    <p>Specialized services in database redesign and migration, ensuring that the company's critical data is managed securely and efficiently, with an optimized structure for fast and reliable access.</p>
+                </div>
+            </div>
+        
+            <div id="web" class="service-container" style="display: none;">
+                <div class="service-column">
+                    <h3>Website Development (Back-end, Front-end)</h3>
+                    <p>Development of robust and scalable websites, both frontend and backend, using the latest technologies to ensure optimal performance and an excellent user experience.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Database Creation</h3>
+                    <p>Creation of efficient and secure databases, designed to handle large volumes of information and ensure data integrity and availability.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Servers (Hosting)</h3>
+                    <p>High availability hosting services, with specialized technical support to ensure your website is always online and running smoothly.</p>
+                </div>
+            </div>
+        
+            <div id="analisis-datos" class="service-container" style="display: none;">
+                <div class="service-column">
+                    <h3>Data Mining</h3>
+                    <p>Application of advanced data mining techniques to discover hidden patterns and trends, providing valuable insights for decision-making.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Dashboard Creation</h3>
+                    <p>Design and development of interactive dashboards that allow you to visualize key data clearly and concisely, facilitating the monitoring and analysis of performance indicators.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Business Intelligence</h3>
+                    <p>Business Intelligence solutions that transform data into actionable information, helping companies make informed and strategic decisions.</p>
+                </div>
+            </div>
+        
+            <div id="sistemas-embebidos" class="service-container" style="display: none;">
+                <div class="service-column">
+                    <h3>Outsourcing</h3>
+                    <p>Outsourcing services in embedded systems, allowing companies to externalize the development and maintenance of their critical systems, ensuring quality and efficiency at every stage of the process.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Hardware Design and Development</h3>
+                    <li>PCB Design: Custom PCB creation for embedded systems.</li>
+                    <li>Hardware Prototyping: Building and testing hardware prototypes to validate designs before mass production.</li>
+                    <li>Component Selection and Integration: Assistance in the selection and integration of microcontrollers, sensors, actuators, and other electronic components.</li>
+                </div>
+                <div class="service-column">
+                    <h3>Embedded Systems Optimization</h3>
+                    <li>Performance Optimization: Enhancing system performance to operate at maximum efficiency.</li>
+                    <li>Energy Consumption Reduction: Implementing strategies to minimize energy consumption in embedded systems.</li>
+                    <li>Cost Reduction: Analysis and optimization to reduce manufacturing and operating costs.</li>
+                </div>
+            </div>
+        </section>
+    </section>
+    
+    
+    <section id="quienes-somos" class="contenedor">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="mission-vision">
+                <h3>Mission</h3>
+                <p>At PrimeNex IT, we empower businesses with advanced technological solutions focused on digital transformation. We provide IT support, covering software, hardware, embedded systems, and database and ERP management. We are committed to being a reliable partner that helps overcome technological challenges and maintain competitiveness.</p>
+                <h3>Vision</h3>
+                <p>To be the leading strategic partner in technology and support IT, driving digital transformation. We aspire to lead innovation and set new standards of quality and service, helping our clients reach their full potential in a digital world.</p>
+            </div>
+            <div class="objectives">
+                <h3>Objectives</h3>
+                <ul>
+                    <li><strong>Lead Digital Transformation:</strong> Become the primary strategic partner for our clients in their digital transformation processes, providing innovative and customized solutions that optimize their operations.</li>
+                    <li><strong>Excellence in Development and Support:</strong> Maintain an exceptional standard of quality in all our software development, embedded systems, UX/UI, and database and CRM support projects, ensuring total customer satisfaction.</li>
+                    <li><strong>Continuous Innovation:</strong> Establish a continuous process of innovation in our technological solutions, ensuring that our services and products remain at the forefront of the market.</li>
+                    <li><strong>Market Expansion:</strong> Expand our presence in key markets by offering differentiated and competitive technological services, reaching new clients and industry sectors.</li>
+                    <li><strong>Sustainability and Social Responsibility:</strong> Implement sustainable and socially responsible business practices, contributing to the development of the community and the well-being of the environment where we operate.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contenedor">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="footer-contact">
+                    <p><strong>Thank you for reaching out!</strong></p>
+                    <p>We appreciate your message and will be in touch with you shortly.</p>
+                </div>
+                
+            </div>
+            <form action="#" method="post">
+                <label for="nombre">Name*</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Your name">
+                
+                <label for="correo">Email*</label>
+                <input type="email" id="correo" name="correo" required placeholder="Your email">
+                
+                <label for="organizacion">Organization*</label>
+                <input type="text" id="organizacion" name="organizacion" required placeholder="Your organization">
+                
+                <label for="puesto">Job Title*</label>
+                <input type="text" id="puesto" name="puesto" required placeholder="Your job title">
+                
+                <label for="pais">Country*</label>
+                <select id="pais" name="pais" required>
+                    <option value="" disabled selected>Select your country</option>
+                    <!-- Agrega más opciones de países aquí -->
+                </select>
+                
+                <label for="descripcion">Brief Description*</label>
+                <textarea id="descripcion" name="descripcion" required placeholder="Brief description of your project"></textarea>
+                
+                
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/Group 38.png" alt="Logo de PrimeNex IT">
+            </div>
+            <div class="footer-info">
+                <p>CARTAGO, COSTA RICA</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>CONTACT US</strong></p>
+                <p>+(506) 6469-5005</p>
+                <p><a href="mailto:contacto@primenexit.com">contacto@primenexit.com</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/primenex-it" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 PrimeNex IT. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showService(serviceId) {
+            var containers = document.querySelectorAll('.service-container');
+            containers.forEach(function(container) {
+                container.style.display = 'none';
+            });
+            document.getElementById(serviceId).style.display = 'flex';
+        }
+    </script>
+        <script>
+            // Array con todos los países del mundo
+            const countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", 
+                            "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", 
+                            "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", 
+                            "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", 
+                            "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
+                            "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+                            "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
+                            "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", 
+                            "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", 
+                            "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", 
+                            "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", 
+                            "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", 
+                            "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", 
+                            "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", 
+                            "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", 
+                            "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", 
+                            "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", 
+                            "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", 
+                            "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", 
+                            "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", 
+                            "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", 
+                            "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", 
+                            "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", 
+                            "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", 
+                            "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", 
+                            "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", 
+                            "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", 
+                            "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", 
+                            "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+    
+            // Seleccionar el elemento <select> para los países
+            const select = document.getElementById('pais');
+    
+            // Agregar los países al select
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                select.appendChild(option);
+            });
+        </script>
+</body>
+</html>
