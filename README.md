@@ -37,6 +37,7 @@ components/
 lib/
   content.ts            every string and list on the site
   schema.ts             structured data graph
+brand/                  logo source files
 legacy/                 the previous static site, kept for reference
 ```
 
@@ -92,12 +93,15 @@ authority and competition. What is here removes the technical obstacles.
 
 ## Assets
 
-The old `img/` folder is **not used**. It contained watermarked Freepik
-clip-art and low-resolution stock images with no evidence of licensing, which
-should not go on a company site. Real photography — the team, the office, the
-hardware you have built — can drop into the capabilities section.
+The design is typographic and uses no photography. The former `img/` directory
+was removed: it held watermarked Freepik clip-art and low-resolution stock with
+no evidence of licensing, which does not belong on a company site. It remains in
+git history at commit `6374664` if any of it is ever needed.
 
-The supplied logo (`public/logo.png`) is drawn light-on-dark, so on this white
-ground only the hexagon is used, windowed out of the PNG by
-`components/ui/wordmark.tsx`, with the wordmark typeset live. A vector or
-dark-ink version of the logo would let it be used as supplied.
+Real photography — the team, the office, hardware you have built — drops into
+the capabilities section when it exists.
+
+The logo is drawn light-on-dark (`brand/`), so on this white ground only the
+hexagon is used, windowed out of the PNG by `components/ui/wordmark.tsx`, with
+the wordmark typeset live. A vector or dark-ink version would let the logo be
+used as supplied.
