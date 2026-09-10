@@ -9,8 +9,8 @@ export const site = {
   url: "https://www.primenexit.net",
   tagline: "Technology partner for digital transformation",
   location: "Cartago, Costa Rica",
-  phone: "+(506) 6469-5005",
-  phoneHref: "+50664695005",
+  phone: "+506 6485-7076",
+  phoneHref: "+50664857076",
   email: "contacto@primenexit.com",
   linkedin: "https://www.linkedin.com/company/primenex-it",
   instagram: "https://www.instagram.com",
@@ -26,7 +26,7 @@ export const site = {
  * sending, so keep it short and let them say the real thing.
  */
 export const whatsapp = {
-  number: "50664695005",
+  number: "50664857076",
   label: "WhatsApp",
   aria: "Chat with us on WhatsApp",
   prefill: "Hello PrimeNex IT, I would like to talk about a project.",
