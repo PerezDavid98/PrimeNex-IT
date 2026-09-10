@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+/* ============================================================
+   PrimeNex IT — Swiss editorial system.
+
+   Rules of the house:
+   · white ground, black ink, steel for support, cyan only as a
+     hairline or a small flat fill;
+   · no gradients, no glows, no blurs, no drop shadows, no radii;
+   · the 12-column grid and the hairline are the only decoration;
+   · the hexagon from the logo is the single non-rectangular shape,
+     and it is used sparingly.
+   ============================================================ */
+
+@theme {
+  --color-paper: #ffffff;
+  --color-wash: #f4f6f7;
+  --color-wash-deep: #eceff1;
+  --color-ink: #0b0b0c;
+  --color-ink-soft: #3f454c;
+  --color-ink-mid: #5f6b76;
+  /* decorative only — 2.9:1 on white, never use for text */
+  --color-steel: #8d99a4;
+  --color-rule: #e0e4e7;
+  --color-cyan: #00a8cc;
+  --color-cyan-deep: #007e99;
+
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --shell: 90rem;
+  --column-gap: clamp(1rem, 2.2vw, 2.25rem);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan-deep);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--column-gap);
+}
+
+/* Hairlines. The rule is the design. */
+.rule-t { border-top: 1px solid var(--color-rule); }
+.rule-b { border-bottom: 1px solid var(--color-rule); }
+.rule-l { border-left: 1px solid var(--color-rule); }
+.rule-ink-t { border-top: 1px solid var(--color-ink); }
+
+/* Column rules, drawn only on wide screens where the grid reads. */
+.column-rules {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .column-rules {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--column-gap);
+  }
+  .column-rules span {
+    border-left: 1px solid var(--color-rule);
+    opacity: 0.55;
+  }
+}
+
+/* ============================================================
+   TYPE
+   ============================================================ */
+
+.t-display {
+  font-size: clamp(2.75rem, 7.6vw, 7.75rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.t-h2 {
+  font-size: clamp(1.95rem, 4.3vw, 3.85rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.t-h3 {
+  font-size: clamp(1.1875rem, 1.9vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.t-h4 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.t-lede {
+  font-size: clamp(1.0625rem, 1.4vw, 1.375rem);
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+.t-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-mid);
+}
+
+.t-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  /* ink-mid, not steel: these indices are content, and steel fails AA on white */
+  color: var(--color-ink-mid);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   CONTROLS — flat blocks and underlined text, nothing else.
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.0625rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid var(--color-ink);
+  transition: background 0.35s var(--ease-editorial), color 0.35s var(--ease-editorial),
+    border-color 0.35s var(--ease-editorial);
+}
+
+.btn svg { transition: transform 0.35s var(--ease-editorial); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn-solid {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-solid:hover {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+  color: var(--color-ink);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Text link with an underline that draws from the left. */
+.link {
+  position: relative;
+  display: inline-block;
+  color: var(--color-ink);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15em;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-editorial);
+}
+
+.link:hover::after { transform: scaleX(1); }
+
+.link-static {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-rule);
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+
+.link-static:hover {
+  color: var(--color-cyan-deep);
+  text-decoration-color: currentColor;
+}
+
+/* ============================================================
+   THE HEXAGON — flat, small, and rationed.
+   ============================================================ */
+
+.hex {
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+}
+
+/* ============================================================
+   FORM — hairline underlines, labels above, no boxes.
+   ============================================================ */
+
+.field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.75rem 0;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-ink);
+  transition: border-color 0.3s ease;
+}
+
+.field::placeholder { color: var(--color-ink-mid); }
+.field:hover { border-color: var(--color-steel); }
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-ink);
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 0 0 var(--color-ink);
+}
+
+.field-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' fill='none' stroke='%230b0b0c' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  padding-right: 1.75rem;
+}
+
+/* ============================================================
+   MOTION — a rule that draws, type that settles. Nothing floats.
+   ============================================================ */
+
+/* Panel swap: replayed by remounting on a changed React key. */
+@keyframes panel-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.panel-enter {
+  animation: panel-enter 0.4s var(--ease-editorial) both;
+}
+
+/* Disclosure. 0fr -> 1fr animates where supported and snaps where it is not. */
+.disclosure {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease-editorial);
+}
+
+.disclosure[data-open="true"] { grid-template-rows: 1fr; }
+.disclosure > * { overflow: hidden; }
+
+/* Mobile drawer */
+.drawer {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.3s var(--ease-editorial), transform 0.3s var(--ease-editorial),
+    visibility 0.3s;
+}
+
+.drawer[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.rule-draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s var(--ease-editorial);
+}
+
+.rule-draw.in { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .rule-draw { transform: scaleX(1); }
+  .panel-enter { animation: none; }
+}
+
+/* Custom scrollbar */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-wash); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-steel);
+    border: 3px solid var(--color-wash);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-ink); }
+}
