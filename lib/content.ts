@@ -17,6 +17,25 @@ export const site = {
   facebook: "https://www.facebook.com",
 } as const;
 
+/**
+ * Click-to-chat. No API, no Meta account, no per-message cost: wa.me opens the
+ * visitor's own WhatsApp with the conversation already addressed to us.
+ *
+ * `number` must be digits only, country code first, no plus sign or spaces.
+ * `prefill` is what the visitor sees typed in the box — they can edit it before
+ * sending, so keep it short and let them say the real thing.
+ */
+export const whatsapp = {
+  number: "50664695005",
+  label: "WhatsApp",
+  aria: "Chat with us on WhatsApp",
+  prefill: "Hello PrimeNex IT, I would like to talk about a project.",
+} as const;
+
+export const whatsappHref = `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(
+  whatsapp.prefill,
+)}`;
+
 export const nav = [
   { label: "Services", href: "#services" },
   { label: "Capabilities", href: "#capabilities" },

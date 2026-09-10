@@ -261,6 +261,61 @@ body {
 }
 
 /* ============================================================
+   CHANNEL DOCK — the one place foreign brand colours are allowed
+   in, because recognition is the entire point of these two. Flat
+   fills, square, flush to the corner: no bubble, no radius, no
+   shadow.
+   ============================================================ */
+
+.channel-dock {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #ffffff;
+  transition: filter 0.3s var(--ease-editorial);
+}
+
+.channel[data-channel="linkedin"] { background: #0a66c2; }
+.channel[data-channel="whatsapp"] { background: #25d366; }
+.channel:hover { filter: brightness(0.9); }
+
+.channel__icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+}
+
+.channel__label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.45s var(--ease-editorial),
+    padding-left 0.45s var(--ease-editorial);
+}
+
+.channel:hover .channel__label,
+.channel:focus-visible .channel__label {
+  max-width: 8rem;
+  padding-left: 1.25rem;
+}
+
+/* ============================================================
    FORM — hairline underlines, labels above, no boxes.
    ============================================================ */
 

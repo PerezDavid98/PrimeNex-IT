@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { countries, site } from "@/lib/content";
+import { countries, site, whatsapp, whatsappHref } from "@/lib/content";
 import { SectionHeading } from "./ui/section-heading";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -56,6 +56,7 @@ export function Contact() {
           {/* details */}
           <dl className="col-span-12 lg:col-span-3">
             {[
+              { label: whatsapp.label, value: site.phone, href: whatsappHref },
               { label: "Email", value: site.email, href: `mailto:${site.email}` },
               { label: "Phone", value: site.phone, href: `tel:${site.phoneHref}` },
               { label: "Office", value: site.location },

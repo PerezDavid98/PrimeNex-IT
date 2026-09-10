@@ -1,7 +1,8 @@
-import { nav, services, site } from "@/lib/content";
+import { nav, services, site, whatsapp, whatsappHref } from "@/lib/content";
 import { Wordmark } from "./ui/wordmark";
 
 const social = [
+  { label: whatsapp.label, href: whatsappHref },
   { label: "LinkedIn", href: site.linkedin },
   { label: "Instagram", href: site.instagram },
   { label: "Facebook", href: site.facebook },

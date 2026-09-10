@@ -6,6 +6,7 @@ import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ChannelDock } from "@/components/ui/channels";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Contact />
       </main>
       <SiteFooter />
+      <ChannelDock />
     </>
   );
 }
