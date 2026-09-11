@@ -89,26 +89,8 @@ export function Hero({
           </Reveal>
         </div>
 
-        {/* ---------- the four practices, as a row ---------- */}
-        <nav aria-label={a11y.practiceAreas} className="mt-12 md:mt-16">
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {practiceIndex.map((label, i) => (
-              <Reveal as="li" key={label} delay={0.05 * i} y={10} className="group">
-                <a href="#services" className="card card-hover flex h-full flex-col py-6">
-                  <span className="t-mono">0{i + 1}</span>
-                  <span className="t-h4 mt-3 text-balance">{label}</span>
-                  <span
-                    aria-hidden
-                    className="mt-5 block h-0.5 w-8 bg-azure transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:w-14"
-                  />
-                </a>
-              </Reveal>
-            ))}
-          </ul>
-        </nav>
-
         {/* ---------- the facts ---------- */}
-        <dl className="grid12 mt-14 gap-y-8 border-t border-rule pt-7 md:mt-20">
+        <dl className="grid12 mt-14 gap-y-8 border-t border-rule pt-7 md:mt-16">
           {facts.map((fact) => (
             <div key={fact.label} className="col-span-6 lg:col-span-3">
               <dt className="t-mono">{fact.label}</dt>

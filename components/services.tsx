@@ -1,127 +1,60 @@
-"use client";
-
-import { useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { SectionHeading } from "./ui/section-heading";
+import { Reveal } from "./ui/reveal";
 
-export function Services({
-  services,
-  a11y,
-}: {
-  services: Dictionary["services"];
-  a11y: Dictionary["a11y"];
-}) {
-  const [index, setIndex] = useState(0);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const active = services.groups[index];
-  const count = services.groups.length;
-
-  /**
-   * A tablist that only responds to clicks is broken for keyboard users: ARIA
-   * expects arrow keys to move between tabs and Tab to leave the set. Roving
-   * tabindex keeps the whole group as one stop.
-   */
-  function onKeyDown(event: React.KeyboardEvent, from: number) {
-    const moves: Record<string, number> = {
-      ArrowRight: from + 1,
-      ArrowDown: from + 1,
-      ArrowLeft: from - 1,
-      ArrowUp: from - 1,
-      Home: 0,
-      End: count - 1,
-    };
-    const next = moves[event.key];
-    if (next === undefined) return;
-
-    event.preventDefault();
-    const target = (next + count) % count;
-    setIndex(target);
-    tabRefs.current[target]?.focus();
-  }
-
+/**
+ * All four practices, laid out in full.
+ *
+ * They used to sit behind a tab strip, which hid three quarters of the page's
+ * substance behind a click and gave the client a row of controls to dislike.
+ * Showing everything is denser, it is what the enterprise sites in the
+ * reference set do, and it drops the component's client JavaScript entirely —
+ * no state, no tablist, no keyboard model to get right.
+ */
+export function Services({ services }: { services: Dictionary["services"] }) {
   return (
-    <section id="services" className="scroll-mt-20 py-20 md:py-32">
+    <section id="services" className="scroll-mt-20 py-16 md:py-24">
       <div className="shell">
         <SectionHeading index="01" label={services.label} title={services.title}>
           {services.lede}
         </SectionHeading>
 
-        <div className="grid12 mt-14 md:mt-20">
-          <div
-            role="tablist"
-            aria-label={a11y.serviceAreas}
-            aria-orientation="vertical"
-            className="col-span-12 lg:col-span-3"
-          >
-            {services.groups.map((group, i) => {
-              const selected = i === index;
-              return (
-                <button
-                  key={group.tab}
-                  ref={(node) => {
-                    tabRefs.current[i] = node;
-                  }}
-                  type="button"
-                  role="tab"
-                  id={`tab-${i}`}
-                  aria-selected={selected}
-                  aria-controls={`panel-${i}`}
-                  tabIndex={selected ? 0 : -1}
-                  onClick={() => setIndex(i)}
-                  onKeyDown={(event) => onKeyDown(event, i)}
-                  data-selected={selected}
-                  className={`row row-mark group flex min-h-11 w-full items-baseline gap-3 border-t py-4 text-left transition-colors last:border-b ${
-                    selected ? "border-ink" : "border-rule"
-                  }`}
-                >
-                  <span className={`t-num ${selected ? "text-ink" : ""}`}>
-                    0{i + 1}
-                  </span>
-                  <span
-                    className={`t-h4 flex-1 transition-colors ${
-                      selected ? "text-ink" : "text-ink-mid group-hover:text-ink"
-                    }`}
-                  >
-                    {group.tab}
-                  </span>
-                  {/* Shape, not just colour: the arrow only appears on the
-                      selected row, so selection never rests on hue alone. */}
-                  <span aria-hidden className={`t-num ${selected ? "" : "opacity-0"}`}>
-                    →
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        <div className="mt-12 space-y-4 md:mt-16">
+          {services.groups.map((group, gi) => (
+            <Reveal key={group.tab} delay={0.04 * gi} y={14}>
+              <article className="card grid12 gap-y-8">
+                {/* ---- what it is ---- */}
+                <header className="col-span-12 lg:col-span-4">
+                  <div className="flex items-baseline gap-3">
+                    <span className="t-mono text-azure">0{gi + 1}</span>
+                    <h3 className="t-h3">{group.tab}</h3>
+                  </div>
+                  <p className="mt-5 text-[1.0625rem] leading-snug font-semibold tracking-[-0.015em] text-ink">
+                    {group.headline}
+                  </p>
+                  <p className="t-body mt-4">{group.blurb}</p>
+                </header>
 
-          {/* No entrance animation on switch — see the note in globals.css.
-              A user changing tabs wants the content, not a performance. */}
-          <div
-            role="tabpanel"
-            id={`panel-${index}`}
-            aria-labelledby={`tab-${index}`}
-            tabIndex={0}
-            className="card col-span-12 mt-8 lg:col-span-8 lg:col-start-5 lg:mt-0"
-          >
-            <h3 className="t-h2 max-w-xl">{active.headline}</h3>
-            <p className="t-body mt-6 max-w-md">{active.blurb}</p>
-
-            <dl className="mt-10">
-              {active.items.map((item, i) => (
-                <div key={item.title} className="grid12 border-t border-rule py-7 last:border-b">
-                  <dt className="col-span-12 flex items-baseline gap-3 md:col-span-5">
-                    <span className="t-num">
-                      0{index + 1}.{i + 1}
-                    </span>
-                    <span className="t-h4 text-balance">{item.title}</span>
-                  </dt>
-                  <dd className="col-span-12 mt-3 md:col-span-7 md:mt-0">
-                    <p className="t-body">{item.body}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+                {/* ---- what it includes ---- */}
+                <dl className="col-span-12 lg:col-span-7 lg:col-start-6">
+                  {group.items.map((item, i) => (
+                    <div
+                      key={item.title}
+                      className="border-t border-rule py-5 first:border-t-0 first:pt-0 last:pb-0"
+                    >
+                      <dt className="flex items-baseline gap-3">
+                        <span className="t-num">
+                          0{gi + 1}.{i + 1}
+                        </span>
+                        <span className="t-h4 text-balance">{item.title}</span>
+                      </dt>
+                      <dd className="t-body mt-2.5 pl-9">{item.body}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

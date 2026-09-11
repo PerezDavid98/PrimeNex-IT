@@ -323,6 +323,77 @@
     "prefill": "Bonjour PrimeNex IT, j'aimerais échanger au sujet d'un projet."
   },
   "techStrip": {
-    "label": "Plateformes et technologies sur lesquelles nous travaillons"
+    "label": "Plateformes et technologies sur lesquelles nous travaillons",
+    "title": "Toutes les plateformes et technologies sur le banc",
+    "groups": [
+      {
+        "label": "Plateformes",
+        "items": [
+          "Dynamics 365",
+          "Business Central",
+          "Finance & Operations",
+          "Customer Engagement",
+          "Salesforce",
+          "Service Cloud",
+          "Oracle NetSuite",
+          "HubSpot",
+          "Alegra",
+          "WooCommerce",
+          "Power Apps",
+          "Power Automate"
+        ]
+      },
+      {
+        "label": "Langages et extensions",
+        "items": [
+          "C# / .NET",
+          "AL",
+          "X++",
+          "Apex",
+          "TypeScript",
+          "Python",
+          "PHP",
+          "SQL",
+          "Java"
+        ]
+      },
+      {
+        "label": "Développement et intégration Salesforce",
+        "items": [
+          "Lightning Web Components",
+          "Flow Builder",
+          "Omni-Channel",
+          "Einstein Bots",
+          "REST APIs",
+          "SOAP",
+          "Webhooks"
+        ]
+      },
+      {
+        "label": "Données et reporting",
+        "items": [
+          "SQL Server",
+          "Azure SQL",
+          "Oracle",
+          "MySQL",
+          "Power BI",
+          "ETL"
+        ]
+      },
+      {
+        "label": "Cloud et livraison",
+        "items": [
+          "Azure Functions",
+          "Logic Apps",
+          "App Service",
+          "Front Door",
+          "Azure DevOps",
+          "Git / GitHub",
+          "CI/CD",
+          "Docker",
+          "Jenkins"
+        ]
+      }
+    ]
   }
 }

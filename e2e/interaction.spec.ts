@@ -1,63 +1,35 @@
 import { test, expect } from "@playwright/test";
 
-test("service tabs are operable by keyboard, not just by mouse", async ({
-  page,
-}, testInfo) => {
-  // Arrow-key roving is a physical-keyboard behaviour. It is verified on the
-  // desktop engines and on iPad; asserting it against an emulated phone with
-  // no keyboard tests the emulator, not the site.
-  test.skip(
-    Boolean(testInfo.project.use.isMobile),
-    "no physical keyboard on a touch-only device",
-  );
-
+/**
+ * The service tabs are gone: all four practices are laid out in full, so there
+ * is no tablist to operate and no panel to keep from re-animating. What
+ * replaces those two tests is the assertion that every practice and every one
+ * of its items is actually present in the document.
+ */
+test("all four practices are on the page, not hidden behind a control", async ({ page }) => {
   await page.goto("/en");
-  await page.waitForLoadState("networkidle");
 
-  const tabs = page.locator('[role="tab"]');
-  await expect(tabs).toHaveCount(4);
+  await expect(page.locator('[role="tab"]')).toHaveCount(0);
 
-  // The markup arrives server-rendered, so the tabs exist before the keyboard
-  // handlers do. Prove hydration by exercising a click first, otherwise the
-  // first key press races the JavaScript under parallel load.
-  await tabs.nth(1).click();
-  await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
-  await tabs.first().click();
-  await expect(tabs.first()).toHaveAttribute("aria-selected", "true");
+  const practices = page.locator("#services article");
+  await expect(practices).toHaveCount(4);
 
-  await tabs.first().focus();
-  await expect(tabs.first()).toHaveAttribute("aria-selected", "true");
+  // Three items under each, twelve services stated outright.
+  await expect(page.locator("#services article dt")).toHaveCount(12);
 
-  // Roving tabindex: the group is one Tab stop and arrows move within it.
-  await page.keyboard.press("ArrowDown");
-  await expect(tabs.nth(1)).toBeFocused();
-  await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
-
-  await page.keyboard.press("End");
-  await expect(tabs.nth(3)).toBeFocused();
-
-  await page.keyboard.press("Home");
-  await expect(tabs.nth(0)).toBeFocused();
-
-  // Wrapping, so the set has no dead end.
-  await page.keyboard.press("ArrowUp");
-  await expect(tabs.nth(3)).toBeFocused();
-
-  const panel = page.locator('[role="tabpanel"]');
-  await expect(panel).toHaveAttribute("aria-labelledby", "tab-3");
+  for (const tab of ["Dynamics 365", "Salesforce", "ERP & supply chain", "Data & integrations"]) {
+    await expect(page.locator(`#services h3:has-text("${tab}")`)).toHaveCount(1);
+  }
 });
 
-test("switching a tab does not replay an entrance animation", async ({ page }) => {
+test("the technology board lists every group from the CV", async ({ page }) => {
   await page.goto("/en");
-  const panel = page.locator('[role="tabpanel"]');
 
-  await page.locator('[role="tab"]').nth(2).click();
-
-  // A repeated action must be instant: no animation may be running on the panel.
-  const animating = await panel.evaluate(
-    (el) => el.getAnimations({ subtree: true }).filter((a) => a.playState === "running").length,
-  );
-  expect(animating).toBe(0);
+  // Every technology the CV declares, grouped.
+  expect(await page.locator(".mark").count()).toBeGreaterThanOrEqual(40);
+  await expect(page.locator(".t-mono.text-ink-mid")).toHaveCount(5);
+  // Exact, because the section label also contains the word "Platforms".
+  await expect(page.getByText("Platforms", { exact: true })).toHaveCount(1);
 });
 
 test("the objectives disclosure reports its state", async ({ page }) => {

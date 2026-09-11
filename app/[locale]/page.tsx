@@ -49,9 +49,9 @@ export default async function Home({
           cta={dict.cta}
           a11y={dict.a11y}
         />
-        <TechStrip label={dict.techStrip.label} />
+        <TechStrip tech={dict.techStrip} />
         <Statement statement={dict.statement} />
-        <Services services={dict.services} a11y={dict.a11y} />
+        <Services services={dict.services} />
         <Capabilities capabilities={dict.capabilities} />
         <About about={dict.about} />
         <Contact

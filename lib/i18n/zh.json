@@ -323,6 +323,77 @@
     "prefill": "你好 PrimeNex IT，我想聊一个项目。"
   },
   "techStrip": {
-    "label": "我们所使用的平台与技术"
+    "label": "我们所使用的平台与技术",
+    "title": "我们手上的全部平台与技术",
+    "groups": [
+      {
+        "label": "平台",
+        "items": [
+          "Dynamics 365",
+          "Business Central",
+          "Finance & Operations",
+          "Customer Engagement",
+          "Salesforce",
+          "Service Cloud",
+          "Oracle NetSuite",
+          "HubSpot",
+          "Alegra",
+          "WooCommerce",
+          "Power Apps",
+          "Power Automate"
+        ]
+      },
+      {
+        "label": "语言与扩展",
+        "items": [
+          "C# / .NET",
+          "AL",
+          "X++",
+          "Apex",
+          "TypeScript",
+          "Python",
+          "PHP",
+          "SQL",
+          "Java"
+        ]
+      },
+      {
+        "label": "Salesforce 开发与集成",
+        "items": [
+          "Lightning Web Components",
+          "Flow Builder",
+          "Omni-Channel",
+          "Einstein Bots",
+          "REST APIs",
+          "SOAP",
+          "Webhooks"
+        ]
+      },
+      {
+        "label": "数据与报表",
+        "items": [
+          "SQL Server",
+          "Azure SQL",
+          "Oracle",
+          "MySQL",
+          "Power BI",
+          "ETL"
+        ]
+      },
+      {
+        "label": "云与交付",
+        "items": [
+          "Azure Functions",
+          "Logic Apps",
+          "App Service",
+          "Front Door",
+          "Azure DevOps",
+          "Git / GitHub",
+          "CI/CD",
+          "Docker",
+          "Jenkins"
+        ]
+      }
+    ]
   }
 }
