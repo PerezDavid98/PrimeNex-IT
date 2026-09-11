@@ -35,8 +35,7 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Construímos os sistemas que sustentam sua empresa.",
-    "lede": "Implementamos, damos suporte e integramos os sistemas dos quais sua operação depende — Microsoft Dynamics 365, Salesforce e NetSuite — e conhecemos os processos que rodam sobre eles, da requisição de compra até o lançamento no estoque.",
-    "accent": "sustentam sua empresa"
+    "lede": "Implementamos, damos suporte e integramos os sistemas dos quais sua operação depende — Microsoft Dynamics 365, Salesforce e NetSuite — e conhecemos os processos que rodam sobre eles, da requisição de compra até o lançamento no estoque."
   },
   "practiceIndex": [
     "Dynamics 365",
@@ -393,6 +392,42 @@
           "Docker",
           "Jenkins"
         ]
+      }
+    ]
+  },
+  "chain": {
+    "title": "A cadeia, ponta a ponta",
+    "head": {
+      "doc": "Doc",
+      "step": "Etapa",
+      "stage": "Situação"
+    },
+    "note": "É entre estas linhas que a maioria das implementações perde o fio. Nós assumimos as cinco.",
+    "steps": [
+      {
+        "doc": "PR",
+        "step": "Requisição de compra",
+        "stage": "Aberta"
+      },
+      {
+        "doc": "PO",
+        "step": "Pedido de compra",
+        "stage": "Aprovado"
+      },
+      {
+        "doc": "GR",
+        "step": "Recebimento de mercadoria",
+        "stage": "Recebido"
+      },
+      {
+        "doc": "INV",
+        "step": "Nota do fornecedor",
+        "stage": "Conciliada"
+      },
+      {
+        "doc": "JE",
+        "step": "Lançamento no estoque",
+        "stage": "Lançado"
       }
     ]
   }

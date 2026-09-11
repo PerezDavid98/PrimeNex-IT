@@ -1,103 +1,78 @@
-import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { site } from "@/lib/content";
-import { Reveal } from "./ui/reveal";
-import { HexMark } from "./ui/rule";
 
 /**
- * Splits the headline so one phrase can carry the brand colour. The accent is
- * a substring stored per locale, because the emphatic phrase is not in the
- * same place in German as in Spanish — and if it ever fails to match, the
- * headline renders whole rather than breaking.
+ * The hero opens with the most characteristic thing in this subject's world.
+ *
+ * Not a stock photograph and not a diagram: the procure-to-pay chain, set as
+ * the document it actually is. Five rows, banded, with the document code in
+ * the first column and the stage in the last. It is the thing this practice
+ * knows that a generalist agency does not, and stating it as a ledger says so
+ * without a word of self-description.
+ *
+ * This is also the page's one orchestrated moment — the .settle sequence runs
+ * on first load here and nowhere else.
  */
-function Headline({ text, accent }: { text: string; accent: string }) {
-  const at = accent ? text.indexOf(accent) : -1;
-  if (at === -1) return <>{text}</>;
-
-  return (
-    <>
-      {text.slice(0, at)}
-      <span className="accent">{accent}</span>
-      {text.slice(at + accent.length)}
-    </>
-  );
-}
-
 export function Hero({
   hero,
-  practiceIndex,
-  facts,
+  chain,
   cta,
-  a11y,
 }: {
   hero: Dictionary["hero"];
-  practiceIndex: Dictionary["practiceIndex"];
-  facts: Dictionary["facts"];
+  chain: Dictionary["chain"];
   cta: Dictionary["cta"];
-  a11y: Dictionary["a11y"];
 }) {
   return (
-    <section id="top" className="pt-24 pb-8 md:pt-32">
+    <section id="top" className="pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="shell">
-        <div className="grid12 items-center gap-y-10">
-          {/* ---------- the argument ---------- */}
-          <div className="col-span-12 lg:col-span-6">
-            <Reveal y={10}>
-              <p className="badge t-mono">
-                <HexMark className="h-2 w-2 shrink-0 bg-azure" />
-                {site.name} — {hero.kicker}
-              </p>
-            </Reveal>
-
-            <h1 className="t-display mt-7 md:mt-8">
-              <Headline text={hero.headline} accent={hero.accent} />
-            </h1>
-
-            <Reveal delay={0.1}>
-              <p className="t-lede mt-7 max-w-xl">{hero.lede}</p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="#contact" className="btn btn-solid">
-                  {cta.startProject}
-                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
-                    <path d="M0 5h12M9 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
-                  </svg>
-                </a>
-                <a href="#services" className="btn btn-outline">
-                  {cta.services}
-                </a>
-              </div>
-            </Reveal>
+        <div className="grid gap-x-12 gap-y-14 lg:grid-cols-[1fr_26rem] lg:items-start">
+          <div className="settle min-w-0">
+            <p className="t-ref">{site.location}</p>
+            <h1 className="t-display mt-4">{hero.headline}</h1>
+            <p className="t-lede mt-7">{hero.lede}</p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href="#contact" className="btn btn-solid">
+                {cta.startProject}
+              </a>
+              <a href="#services" className="btn btn-quiet">
+                {cta.services}
+              </a>
+            </div>
           </div>
 
-          {/* ---------- the photograph ---------- */}
-          <Reveal
-            delay={0.16}
-            y={16}
-            className="col-span-12 lg:col-span-6 lg:col-start-7 lg:pl-6"
-          >
-            <figure className="plate plate-zoom relative aspect-[4/3] w-full">
-              <Image
-                src="/img/analysis.jpg"
-                alt="Two colleagues reviewing reports and dashboards on a laptop"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </figure>
-          </Reveal>
-        </div>
-
-        {/* ---------- the facts ---------- */}
-        <dl className="grid12 mt-14 gap-y-8 border-t border-rule pt-7 md:mt-16">
-          {facts.map((fact) => (
-            <div key={fact.label} className="col-span-6 lg:col-span-3">
-              <dt className="t-mono">{fact.label}</dt>
-              <dd className="t-h4 mt-2 text-balance">{fact.value}</dd>
+          {/* ---- the ledger ---- */}
+          <div className="min-w-0 lg:pt-3">
+            {/* Focusable and named: on a 320px screen in German or French this
+                row genuinely scrolls, and a keyboard-only reader has to be able
+                to reach the columns that are off-screen. Without tabindex the
+                hidden columns are unreachable — WCAG 2.1.1, and axe catches it
+                only in the locales whose text is long enough to overflow. */}
+            <div className="scroll-x" tabIndex={0} role="region" aria-label={chain.title}>
+              <table className="ledger">
+                <caption className="t-h3 text-ink">{chain.title}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">{chain.head.doc}</th>
+                    <th scope="col">{chain.head.step}</th>
+                    <th scope="col" className="num">
+                      {chain.head.stage}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {chain.steps.map((row) => (
+                    <tr key={row.doc}>
+                      <td className="t-fig font-semibold text-oxblood">{row.doc}</td>
+                      <td>{row.step}</td>
+                      <td className="num text-ink-mid">{row.stage}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          ))}
-        </dl>
+            <p className="mt-5 text-[0.9375rem] leading-relaxed text-ink-soft">{chain.note}</p>
+          </div>
+        </div>
       </div>
     </section>
   );

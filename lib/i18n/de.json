@@ -35,8 +35,7 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Wir entwickeln die Systeme, die Ihr Unternehmen tragen.",
-    "lede": "Wir führen ein, betreuen und integrieren die Systeme, von denen Ihr Betrieb abhängt — Microsoft Dynamics 365, Salesforce und NetSuite — und wir kennen die Prozesse, die darauf laufen, von der Bestellanforderung bis zur Lagerbuchung.",
-    "accent": "Ihr Unternehmen tragen"
+    "lede": "Wir führen ein, betreuen und integrieren die Systeme, von denen Ihr Betrieb abhängt — Microsoft Dynamics 365, Salesforce und NetSuite — und wir kennen die Prozesse, die darauf laufen, von der Bestellanforderung bis zur Lagerbuchung."
   },
   "practiceIndex": [
     "Dynamics 365",
@@ -393,6 +392,42 @@
           "Docker",
           "Jenkins"
         ]
+      }
+    ]
+  },
+  "chain": {
+    "title": "Die Kette, durchgängig",
+    "head": {
+      "doc": "Bel.",
+      "step": "Schritt",
+      "stage": "Status"
+    },
+    "note": "Zwischen diesen Zeilen verlieren die meisten Einführungen den Faden. Wir verantworten alle fünf.",
+    "steps": [
+      {
+        "doc": "PR",
+        "step": "Bestellanforderung",
+        "stage": "Erfasst"
+      },
+      {
+        "doc": "PO",
+        "step": "Bestellung",
+        "stage": "Freigegeben"
+      },
+      {
+        "doc": "GR",
+        "step": "Wareneingang",
+        "stage": "Eingegangen"
+      },
+      {
+        "doc": "INV",
+        "step": "Lieferantenrechnung",
+        "stage": "Abgeglichen"
+      },
+      {
+        "doc": "JE",
+        "step": "Lagerbuchung",
+        "stage": "Gebucht"
       }
     ]
   }

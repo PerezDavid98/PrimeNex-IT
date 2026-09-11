@@ -1,33 +1,22 @@
-import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import { Reveal } from "./ui/reveal";
 
 /**
- * The rhythm break: a photographic band with navy laid over it, so the page
- * has one dark, full-weight moment between the light sections.
+ * One dark block, set as a note in the margin of an audit: the sentence that
+ * separates this practice from an agency that resells implementations.
+ *
+ * It carried a stock photograph of a server until now. That competed with the
+ * ledger for the page's one loud moment and said nothing a reader could not
+ * get from the words, so it is gone — the accessory removed before leaving the
+ * house.
  */
 export function Statement({ statement }: { statement: Dictionary["statement"] }) {
   return (
-    <section className="py-6">
+    <section className="py-8 md:py-12">
       <div className="shell">
-        <div className="plate plate-tint relative isolate min-h-[26rem] md:min-h-[32rem]">
-          <Image
-            src="/img/infrastructure.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-
-          <div className="relative z-10 grid12 gap-y-8 p-8 py-16 md:p-14 md:py-24">
-            <p className="t-mono col-span-12 text-paper/60 lg:col-span-3">{statement.label}</p>
-
-            <Reveal className="col-span-12 lg:col-span-8 lg:col-start-5" y={16}>
-              <p className="text-[clamp(1.25rem,2.3vw,1.9rem)] leading-[1.4] tracking-[-0.015em] text-paper">
-                {statement.body}
-              </p>
-            </Reveal>
-          </div>
+        <div className="entry-deep">
+          <p className="max-w-[46rem] text-[clamp(1.25rem,2.1vw,1.75rem)] leading-[1.45] text-paper">
+            {statement.body}
+          </p>
         </div>
       </div>
     </section>

@@ -65,12 +65,15 @@ export function LocaleSwitcher({
   return (
     <details ref={ref} className="lang">
       <summary className="lang__trigger" aria-label={`${label}: ${current.label}. ${changeLabel}`}>
-        <GlobeGlyph />
-        {/* Full endonym where there is room, the code where there is not.
+        {/* Named in its own language wherever there is room for it, and by its
+            code where there is not — "Português" is nine characters and pushes
+            the header off a 320px screen. The full endonym is always in the
+            open list and always in the accessible name.
+
             Never a flag: flags are countries, and no flag stands for a
             language — Spanish is not Spain, and 中文 is not one country. */}
-        <span className="lang__current-wide">{current.label}</span>
-        <span className="lang__current-narrow">{current.code.toUpperCase()}</span>
+        <span className="hidden min-[480px]:inline">{current.label}</span>
+        <span className="min-[480px]:hidden">{current.code.toUpperCase()}</span>
         <ChevronGlyph />
       </summary>
 
@@ -98,25 +101,6 @@ export function LocaleSwitcher({
         })}
       </ul>
     </details>
-  );
-}
-
-function GlobeGlyph() {
-  return (
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      aria-hidden
-      focusable="false"
-      className="shrink-0"
-    >
-      <circle cx="12" cy="12" r="9.25" />
-      <path d="M2.75 12h18.5M12 2.75c2.5 2.5 3.75 5.75 3.75 9.25S14.5 18.75 12 21.25c-2.5-2.5-3.75-5.75-3.75-9.25S9.5 5.25 12 2.75z" />
-    </svg>
   );
 }
 

@@ -26,24 +26,24 @@ export default async function Loading({
       <div className="shell">
         <div className="sk sk-line w-56 max-w-full" />
 
-        <div className="grid12 mt-8 md:mt-12">
-          <div className="col-span-12 space-y-3 lg:col-span-8">
+        <div className="mt-8 grid gap-x-12 gap-y-10 md:mt-12 lg:grid-cols-[1fr_26rem]">
+          <div className="space-y-3">
             <div className="sk sk-display w-full" />
             <div className="sk sk-display w-[85%]" />
             <div className="sk sk-display w-[60%]" />
           </div>
 
-          <div className="col-span-12 mt-12 lg:col-span-3 lg:col-start-10 lg:mt-2 lg:self-end">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="border-t border-rule py-3.5 last:border-b">
-                <div className="sk sk-line w-28" />
+          <div>
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className={`px-4 py-3.5 ${i % 2 === 0 ? "bg-band" : ""}`}>
+                <div className="sk sk-line w-40" style={{ background: "#dde7da" }} />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid12 mt-14 md:mt-20">
-          <div className="col-span-12 space-y-2.5 lg:col-span-6 lg:col-start-4">
+        <div className="mt-14 md:mt-20">
+          <div className="max-w-xl space-y-2.5">
             <div className="sk sk-line w-full" />
             <div className="sk sk-line w-full" />
             <div className="sk sk-line w-3/4" />

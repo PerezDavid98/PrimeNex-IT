@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import { localeCodes, isLocale, localeMeta, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { alternateLanguages, localeUrl } from "@/lib/i18n/seo";
@@ -8,17 +8,17 @@ import { buildSchema } from "@/lib/schema";
 import { site } from "@/lib/content";
 import "../globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+/**
+ * One family, with range. Financial and legal documents are set in serif; a
+ * consultancy in this field set in a grotesque reads like every other software
+ * company. Newsreader was drawn for screen reading, so it carries body copy at
+ * 17px without the fragility of a display serif.
+ */
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -100,7 +100,7 @@ export default async function LocaleLayout({
     <html
       lang={meta.htmlLang}
       dir={meta.dir}
-      className={`${archivo.variable} ${plexMono.variable} antialiased`}
+      className={`${newsreader.variable} antialiased`}
     >
       <body>
         <a

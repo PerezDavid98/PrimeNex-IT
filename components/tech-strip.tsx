@@ -1,5 +1,4 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import { Reveal } from "./ui/reveal";
 
 /**
  * The technology board — every platform and language the CV declares, grouped
@@ -32,44 +31,43 @@ export function TechStrip({ tech }: { tech: Dictionary["techStrip"] }) {
   return (
     <section className="py-16 md:py-24">
       <div className="shell">
-        <div className="grid12">
-          <div className="col-span-12 lg:col-span-4">
-            <p className="t-mono">{tech.label}</p>
-            <h2 className="t-h2 mt-5 text-balance lg:sticky lg:top-28">{tech.title}</h2>
-          </div>
-
-          <div className="col-span-12 mt-10 lg:col-span-7 lg:col-start-6 lg:mt-0">
-            {tech.groups.map((group, gi) => (
-              <Reveal key={group.label} delay={gi * 0.05} y={12}>
-                <div className="border-t border-rule py-7 first:border-t-0 first:pt-0">
-                  <p className="t-mono text-ink-mid">{group.label}</p>
-
-                  <ul className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-                    {group.items.map((item) => {
-                      const glyph = GLYPHS[item];
-                      return (
-                        <li key={item} className="mark">
-                          {glyph ? (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              aria-hidden
-                              focusable="false"
-                              className="mr-2 h-[1.125rem] w-[1.125rem]"
-                            >
-                              <path d={glyph} />
-                            </svg>
-                          ) : null}
-                          <span className="mark__word">{item}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        <div className="rule-head pt-7">
+          <h2 className="t-h2">{tech.title}</h2>
         </div>
+
+        <dl className="mt-10">
+          {tech.groups.map((group, gi) => (
+            <div
+              key={group.label}
+              className={`grid gap-x-10 gap-y-3 px-4 py-5 lg:grid-cols-[16rem_1fr] ${
+                gi % 2 === 0 ? "bg-band" : ""
+              }`}
+            >
+              <dt className="t-h4">{group.label}</dt>
+              <dd className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                {group.items.map((item) => {
+                  const glyph = GLYPHS[item];
+                  return (
+                    <span key={item} className="inline-flex items-center text-ink-soft">
+                      {glyph ? (
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden
+                          focusable="false"
+                          className="mr-1.5 h-4 w-4"
+                        >
+                          <path d={glyph} />
+                        </svg>
+                      ) : null}
+                      {item}
+                    </span>
+                  );
+                })}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -27,10 +27,23 @@ for (const locale of LOCALES) {
 
     const overflow = await page.evaluate(() => {
       const vw = window.innerWidth;
+      // A wide table inside its own horizontal-scroll container is the
+      // intended behaviour, not a defect: the row scrolls, the page does not.
+      // Only elements that are not contained by such a scroller count.
+      const scrolls = (el: Element) => {
+        for (let node: Element | null = el; node; node = node.parentElement) {
+          const overflowX = getComputedStyle(node).overflowX;
+          if (overflowX === "auto" || overflowX === "scroll") return true;
+        }
+        return false;
+      };
+
       return [...document.querySelectorAll("body *")]
         .filter((el) => {
           const r = el.getBoundingClientRect();
-          return r.width > 0 && (r.right > vw + 1 || r.left < -1);
+          if (r.width === 0) return false;
+          if (r.right <= vw + 1 && r.left >= -1) return false;
+          return !scrolls(el);
         })
         .slice(0, 5)
         .map((el) => `${el.tagName}.${String(el.className).slice(0, 40)}`);

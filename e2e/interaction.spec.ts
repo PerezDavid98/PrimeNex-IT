@@ -22,14 +22,52 @@ test("all four practices are on the page, not hidden behind a control", async ({
   }
 });
 
-test("the technology board lists every group from the CV", async ({ page }) => {
+test("the technology register lists every group from the CV", async ({ page }) => {
   await page.goto("/en");
 
-  // Every technology the CV declares, grouped.
-  expect(await page.locator(".mark").count()).toBeGreaterThanOrEqual(40);
-  await expect(page.locator(".t-mono.text-ink-mid")).toHaveCount(5);
-  // Exact, because the section label also contains the word "Platforms".
-  await expect(page.getByText("Platforms", { exact: true })).toHaveCount(1);
+  const register = page.locator("section:has-text('Every platform and technology') dl > div");
+  await expect(register).toHaveCount(5);
+
+  // All forty-three entries the CV declares are present somewhere in it.
+  const text = await register.allInnerTexts();
+  for (const item of ["Dynamics 365", "Salesforce", "Oracle NetSuite", "HubSpot", "Alegra",
+                      "WooCommerce", "X++", "Apex", "Power BI", "Docker", "Jenkins"]) {
+    expect(text.join(" ")).toContain(item);
+  }
+});
+
+test("the ledger states the whole procure-to-pay chain", async ({ page }) => {
+  await page.goto("/en");
+
+  const rows = page.locator(".ledger tbody tr");
+  await expect(rows).toHaveCount(5);
+
+  // A real table, so it is announced as one and navigable as one.
+  await expect(page.locator(".ledger thead th")).toHaveCount(3);
+  for (const doc of ["PR", "PO", "GR", "INV", "JE"]) {
+    await expect(page.locator(`.ledger tbody td:has-text("${doc}")`).first()).toBeVisible();
+  }
+});
+
+test("none of the generated-page tells are present", async ({ page }) => {
+  await page.goto("/en");
+  await page.evaluate(() => document.fonts.ready);
+
+  // All-caps labels, and an arrow glued to link or button text.
+  const upper = await page.evaluate(
+    () =>
+      [...document.querySelectorAll("body *")].filter(
+        (el) => getComputedStyle(el).textTransform === "uppercase",
+      ).length,
+  );
+  expect(upper).toBe(0);
+  expect(await page.locator("body").innerText()).not.toContain("→");
+
+  // One orchestrated entrance, in the hero, and nowhere else.
+  const animated = await page.evaluate(
+    () => document.querySelectorAll(".settle").length,
+  );
+  expect(animated).toBe(1);
 });
 
 test("the objectives disclosure reports its state", async ({ page }) => {

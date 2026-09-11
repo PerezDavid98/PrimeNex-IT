@@ -97,22 +97,22 @@ export function Contact({
   return (
     <section id="contact" className="scroll-mt-20 py-20 md:py-32">
       <div className="shell">
-        <SectionHeading index="04" label={contact.label} title={contact.title}>
+        <SectionHeading title={contact.title}>
           {contact.lede}
         </SectionHeading>
 
         <div className="grid12 mt-14 md:mt-20">
           <dl className="col-span-12 lg:col-span-3">
             {rows.map((row) => (
-              <div key={row.label} className="border-t border-rule py-4 last:border-b">
-                <dt className="t-mono">{row.label}</dt>
-                <dd className="t-h4 mt-1.5 break-words">
+              <div key={row.label} className="rule-entry py-4 last:border-b last:border-rule">
+                <dt className="field-label">{row.label}</dt>
+                <dd className="mt-1 break-words">
                   {row.href ? (
                     <a
                       href={row.href}
                       target={row.external ? "_blank" : undefined}
                       rel={row.external ? "noreferrer" : undefined}
-                      className="link inline-flex min-h-11 items-center"
+                      className="link inline-flex min-h-11 min-w-11 items-center"
                     >
                       {row.value}
                     </a>
@@ -124,10 +124,10 @@ export function Contact({
             ))}
           </dl>
 
-          <div className="card col-span-12 mt-8 lg:col-span-8 lg:col-start-5 lg:mt-0">
+          <div className="col-span-12 mt-10 lg:col-span-7 lg:col-start-6 lg:mt-0">
             {status === "sent" ? (
               <div className="border-t border-ink pt-8">
-                <p className="t-mono">{contact.sentLabel}</p>
+                <p className="field-label">{contact.sentLabel}</p>
                 <p className="t-h2 mt-5 max-w-xl">{contact.sentTitle}</p>
                 <p className="t-lede mt-6 max-w-lg">
                   {contact.sentBody}{" "}
@@ -230,20 +230,14 @@ export function Contact({
                     className="btn btn-solid disabled:cursor-wait disabled:opacity-60"
                   >
                     {status === "sending" ? contact.sending : contact.submit}
-                    {status === "sending" ? (
-                      <Spinner />
-                    ) : (
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
-                        <path d="M0 5h12M9 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
-                      </svg>
-                    )}
+                    
                   </button>
-                  <p className="t-mono max-w-[18rem] normal-case">{contact.requiredNote}</p>
+                  <p className="max-w-[20rem] text-[0.9375rem] text-ink-soft">{contact.requiredNote}</p>
                 </div>
 
                 <div aria-live="assertive" className="sm:col-span-2">
                   {formError ? (
-                    <p className="t-body border-l-2 border-cyan-deep pl-4 text-ink">
+                    <p className="border-l-2 border-oxblood pl-4 text-[0.9375rem] text-ink">
                       {formError} {contact.errors.fallback}{" "}
                       <a href={`mailto:${site.email}`} className="link-static">
                         {site.email}
@@ -279,29 +273,18 @@ function Field({
 }) {
   return (
     <div className={className} onInput={onInput}>
-      <label htmlFor={`f-${name}`} className="t-mono">
-        {label} <span className="text-cyan-deep">*</span>
+      <label htmlFor={`f-${name}`} className="field-label">
+        {label} <span className="text-oxblood">*</span>
       </label>
       {children}
       {/* Reserved by the grid gap rather than by a fixed height, so the
           appearance of a message does not shove the next field down. */}
       {error ? (
         <p id={`e-${name}`} className="mt-2 text-[0.8125rem] leading-snug text-ink">
-          <span aria-hidden className="mr-1.5 text-cyan-deep">
-            ✕
-          </span>
+          <span aria-hidden className="mr-1.5 text-oxblood">✕</span>
           {error}
         </p>
       ) : null}
     </div>
-  );
-}
-
-function Spinner() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden className="sending-spin">
-      <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="2" />
-      <path d="M8 1.5A6.5 6.5 0 0 1 14.5 8" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
   );
 }

@@ -35,8 +35,7 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Nous concevons ce qui fait tourner votre activité.",
-    "lede": "Nous mettons en œuvre, maintenons et intégrons les systèmes dont dépend votre exploitation — Microsoft Dynamics 365, Salesforce et NetSuite — et nous connaissons les processus qui tournent dessus, de la demande d’achat jusqu’à l’écriture de stock.",
-    "accent": "fait tourner votre activité"
+    "lede": "Nous mettons en œuvre, maintenons et intégrons les systèmes dont dépend votre exploitation — Microsoft Dynamics 365, Salesforce et NetSuite — et nous connaissons les processus qui tournent dessus, de la demande d’achat jusqu’à l’écriture de stock."
   },
   "practiceIndex": [
     "Dynamics 365",
@@ -393,6 +392,42 @@
           "Docker",
           "Jenkins"
         ]
+      }
+    ]
+  },
+  "chain": {
+    "title": "La chaîne, de bout en bout",
+    "head": {
+      "doc": "Pièce",
+      "step": "Étape",
+      "stage": "État"
+    },
+    "note": "C’est entre ces lignes que la plupart des mises en œuvre perdent le fil. Nous portons les cinq.",
+    "steps": [
+      {
+        "doc": "PR",
+        "step": "Demande d’achat",
+        "stage": "Émise"
+      },
+      {
+        "doc": "PO",
+        "step": "Commande",
+        "stage": "Approuvée"
+      },
+      {
+        "doc": "GR",
+        "step": "Réception de marchandises",
+        "stage": "Reçue"
+      },
+      {
+        "doc": "INV",
+        "step": "Facture fournisseur",
+        "stage": "Rapprochée"
+      },
+      {
+        "doc": "JE",
+        "step": "Écriture de stock",
+        "stage": "Comptabilisée"
       }
     ]
   }
