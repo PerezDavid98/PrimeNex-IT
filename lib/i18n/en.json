@@ -35,14 +35,32 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "We engineer the systems your business runs on.",
-    "lede": "PrimeNex IT delivers cutting-edge technological solutions tailored to the modern market's most demanding needs. Our team of dedicated and skilled professionals ensures every project is executed with precision, dedication, and an unwavering focus on excellence."
+    "lede": "PrimeNex IT delivers cutting-edge technological solutions tailored to the modern market's most demanding needs. Our team of dedicated and skilled professionals ensures every project is executed with precision, dedication, and an unwavering focus on excellence.",
+    "accent": "your business runs on"
   },
-  "practiceIndex": ["Embedded", "Web", "Data", "Infrastructure"],
+  "practiceIndex": [
+    "Embedded",
+    "Web",
+    "Data",
+    "Infrastructure"
+  ],
   "facts": [
-    { "label": "Based in", "value": "Cartago, Costa Rica" },
-    { "label": "Time zone", "value": "GMT-6, nearshore" },
-    { "label": "Scope", "value": "Hardware to interface" },
-    { "label": "Engagement", "value": "Design, build, support" }
+    {
+      "label": "Based in",
+      "value": "Cartago, Costa Rica"
+    },
+    {
+      "label": "Time zone",
+      "value": "GMT-6, nearshore"
+    },
+    {
+      "label": "Scope",
+      "value": "Hardware to interface"
+    },
+    {
+      "label": "Engagement",
+      "value": "Design, build, support"
+    }
   ],
   "statement": {
     "label": "Specialization",
@@ -147,32 +165,59 @@
       {
         "title": "Embedded systems",
         "caption": "Hardware and firmware, designed together",
-        "includes": ["PCB design", "Firmware", "Prototyping", "Component selection"]
+        "includes": [
+          "PCB design",
+          "Firmware",
+          "Prototyping",
+          "Component selection"
+        ]
       },
       {
         "title": "Web platforms",
         "caption": "Front to back, built to scale",
-        "includes": ["Front-end", "Back-end", "Hosting", "High availability"]
+        "includes": [
+          "Front-end",
+          "Back-end",
+          "Hosting",
+          "High availability"
+        ]
       },
       {
         "title": "Data and BI",
         "caption": "From raw records to decisions",
-        "includes": ["Data mining", "Dashboards", "Business intelligence"]
+        "includes": [
+          "Data mining",
+          "Dashboards",
+          "Business intelligence"
+        ]
       },
       {
         "title": "Infrastructure",
         "caption": "The systems your operation depends on",
-        "includes": ["Databases", "CRM", "ERP", "Redesign and migration"]
+        "includes": [
+          "Databases",
+          "CRM",
+          "ERP",
+          "Redesign and migration"
+        ]
       },
       {
         "title": "UX and UI",
         "caption": "Interfaces that enhance the experience",
-        "includes": ["Interface design", "User experience", "Usability"]
+        "includes": [
+          "Interface design",
+          "User experience",
+          "Usability"
+        ]
       },
       {
         "title": "IT support and training",
         "caption": "So your team can run it without us",
-        "includes": ["Digital transformation", "Automation", "Team enablement"]
+        "includes": [
+          "Digital transformation",
+          "Automation",
+          "Team enablement"
+        ]
       }
     ]
   },

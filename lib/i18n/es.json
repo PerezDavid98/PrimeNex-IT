@@ -35,14 +35,32 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Construimos los sistemas que sostienen su operación.",
-    "lede": "PrimeNex IT desarrolla soluciones tecnológicas de punta, hechas a la medida de las exigencias más duras del mercado actual. Detrás de cada proyecto hay un equipo de profesionales capaces y comprometidos, que trabaja con precisión, dedicación y un enfoque constante en la excelencia."
+    "lede": "PrimeNex IT desarrolla soluciones tecnológicas de punta, hechas a la medida de las exigencias más duras del mercado actual. Detrás de cada proyecto hay un equipo de profesionales capaces y comprometidos, que trabaja con precisión, dedicación y un enfoque constante en la excelencia.",
+    "accent": "sostienen su operación"
   },
-  "practiceIndex": ["Embebidos", "Web", "Datos", "Infraestructura"],
+  "practiceIndex": [
+    "Embebidos",
+    "Web",
+    "Datos",
+    "Infraestructura"
+  ],
   "facts": [
-    { "label": "Sede", "value": "Cartago, Costa Rica" },
-    { "label": "Zona horaria", "value": "GMT-6, nearshore" },
-    { "label": "Alcance", "value": "Del hardware a la interfaz" },
-    { "label": "Modalidad", "value": "Diseño, desarrollo, soporte" }
+    {
+      "label": "Sede",
+      "value": "Cartago, Costa Rica"
+    },
+    {
+      "label": "Zona horaria",
+      "value": "GMT-6, nearshore"
+    },
+    {
+      "label": "Alcance",
+      "value": "Del hardware a la interfaz"
+    },
+    {
+      "label": "Modalidad",
+      "value": "Diseño, desarrollo, soporte"
+    }
   ],
   "statement": {
     "label": "Especialización",
@@ -147,32 +165,59 @@
       {
         "title": "Sistemas embebidos",
         "caption": "Hardware y firmware, diseñados en conjunto",
-        "includes": ["Diseño de PCB", "Firmware", "Prototipado", "Componentes"]
+        "includes": [
+          "Diseño de PCB",
+          "Firmware",
+          "Prototipado",
+          "Componentes"
+        ]
       },
       {
         "title": "Plataformas web",
         "caption": "Del front al back, listas para escalar",
-        "includes": ["Front-end", "Back-end", "Hosting", "Alta disponibilidad"]
+        "includes": [
+          "Front-end",
+          "Back-end",
+          "Hosting",
+          "Alta disponibilidad"
+        ]
       },
       {
         "title": "Datos y BI",
         "caption": "Del registro en crudo a la decisión",
-        "includes": ["Minería de datos", "Dashboards", "Inteligencia de negocios"]
+        "includes": [
+          "Minería de datos",
+          "Dashboards",
+          "Inteligencia de negocios"
+        ]
       },
       {
         "title": "Infraestructura",
         "caption": "Los sistemas de los que depende su operación",
-        "includes": ["Bases de datos", "CRM", "ERP", "Rediseño y migración"]
+        "includes": [
+          "Bases de datos",
+          "CRM",
+          "ERP",
+          "Rediseño y migración"
+        ]
       },
       {
         "title": "UX y UI",
         "caption": "Interfaces que mejoran la experiencia",
-        "includes": ["Diseño de interfaz", "Experiencia de uso", "Usabilidad"]
+        "includes": [
+          "Diseño de interfaz",
+          "Experiencia de uso",
+          "Usabilidad"
+        ]
       },
       {
         "title": "Soporte TI y capacitación",
         "caption": "Para que su equipo lo opere sin nosotros",
-        "includes": ["Transformación digital", "Automatización", "Capacitación"]
+        "includes": [
+          "Transformación digital",
+          "Automatización",
+          "Capacitación"
+        ]
       }
     ]
   },

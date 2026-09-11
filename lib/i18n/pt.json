@@ -35,14 +35,32 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Construímos os sistemas que sustentam sua empresa.",
-    "lede": "A PrimeNex IT entrega soluções tecnológicas de ponta, sob medida para as exigências mais duras do mercado atual. Nossa equipe de profissionais qualificados e comprometidos conduz cada projeto com precisão, dedicação e foco constante em excelência."
+    "lede": "A PrimeNex IT entrega soluções tecnológicas de ponta, sob medida para as exigências mais duras do mercado atual. Nossa equipe de profissionais qualificados e comprometidos conduz cada projeto com precisão, dedicação e foco constante em excelência.",
+    "accent": "sustentam sua empresa"
   },
-  "practiceIndex": ["Embarcados", "Web", "Dados", "Infraestrutura"],
+  "practiceIndex": [
+    "Embarcados",
+    "Web",
+    "Dados",
+    "Infraestrutura"
+  ],
   "facts": [
-    { "label": "Sede", "value": "Cartago, Costa Rica" },
-    { "label": "Fuso horário", "value": "GMT-6, nearshore" },
-    { "label": "Escopo", "value": "Do hardware à interface" },
-    { "label": "Atuação", "value": "Design, construção, suporte" }
+    {
+      "label": "Sede",
+      "value": "Cartago, Costa Rica"
+    },
+    {
+      "label": "Fuso horário",
+      "value": "GMT-6, nearshore"
+    },
+    {
+      "label": "Escopo",
+      "value": "Do hardware à interface"
+    },
+    {
+      "label": "Atuação",
+      "value": "Design, construção, suporte"
+    }
   ],
   "statement": {
     "label": "Especialização",
@@ -147,32 +165,59 @@
       {
         "title": "Sistemas embarcados",
         "caption": "Hardware e firmware, projetados juntos",
-        "includes": ["Projeto de PCB", "Firmware", "Prototipagem", "Componentes"]
+        "includes": [
+          "Projeto de PCB",
+          "Firmware",
+          "Prototipagem",
+          "Componentes"
+        ]
       },
       {
         "title": "Plataformas web",
         "caption": "Do front ao back, feito para escalar",
-        "includes": ["Front-end", "Back-end", "Hospedagem", "Alta disponibilidade"]
+        "includes": [
+          "Front-end",
+          "Back-end",
+          "Hospedagem",
+          "Alta disponibilidade"
+        ]
       },
       {
         "title": "Dados e BI",
         "caption": "Do dado bruto à decisão",
-        "includes": ["Mineração de dados", "Dashboards", "Business intelligence"]
+        "includes": [
+          "Mineração de dados",
+          "Dashboards",
+          "Business intelligence"
+        ]
       },
       {
         "title": "Infraestrutura",
         "caption": "Os sistemas que mantêm sua operação de pé",
-        "includes": ["Bancos de dados", "CRM", "ERP", "Redesenho e migração"]
+        "includes": [
+          "Bancos de dados",
+          "CRM",
+          "ERP",
+          "Redesenho e migração"
+        ]
       },
       {
         "title": "UX e UI",
         "caption": "Interfaces que melhoram a experiência",
-        "includes": ["Design de interface", "Experiência de uso", "Usabilidade"]
+        "includes": [
+          "Design de interface",
+          "Experiência de uso",
+          "Usabilidade"
+        ]
       },
       {
         "title": "Suporte de TI e treinamento",
         "caption": "Para sua equipe operar sem depender de nós",
-        "includes": ["Transformação digital", "Automação", "Capacitação"]
+        "includes": [
+          "Transformação digital",
+          "Automação",
+          "Capacitação"
+        ]
       }
     ]
   },

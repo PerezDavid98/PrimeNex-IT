@@ -35,14 +35,32 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Nous concevons ce qui fait tourner votre activité.",
-    "lede": "PrimeNex IT conçoit des solutions technologiques de pointe, à la hauteur des exigences les plus dures du marché actuel. Derrière chaque projet, une équipe de professionnels compétents et engagés, qui travaille avec précision, rigueur et une exigence d'excellence qui ne faiblit pas."
+    "lede": "PrimeNex IT conçoit des solutions technologiques de pointe, à la hauteur des exigences les plus dures du marché actuel. Derrière chaque projet, une équipe de professionnels compétents et engagés, qui travaille avec précision, rigueur et une exigence d'excellence qui ne faiblit pas.",
+    "accent": "fait tourner votre activité"
   },
-  "practiceIndex": ["Embarqué", "Web", "Données", "Infrastructure"],
+  "practiceIndex": [
+    "Embarqué",
+    "Web",
+    "Données",
+    "Infrastructure"
+  ],
   "facts": [
-    { "label": "Siège", "value": "Cartago, Costa Rica" },
-    { "label": "Fuseau horaire", "value": "GMT-6, nearshore" },
-    { "label": "Périmètre", "value": "Du matériel à l'interface" },
-    { "label": "Intervention", "value": "Conception, réalisation, support" }
+    {
+      "label": "Siège",
+      "value": "Cartago, Costa Rica"
+    },
+    {
+      "label": "Fuseau horaire",
+      "value": "GMT-6, nearshore"
+    },
+    {
+      "label": "Périmètre",
+      "value": "Du matériel à l'interface"
+    },
+    {
+      "label": "Intervention",
+      "value": "Conception, réalisation, support"
+    }
   ],
   "statement": {
     "label": "Spécialisation",
@@ -147,32 +165,59 @@
       {
         "title": "Systèmes embarqués",
         "caption": "Matériel et firmware, conçus ensemble",
-        "includes": ["Conception PCB", "Firmware", "Prototypage", "Composants"]
+        "includes": [
+          "Conception PCB",
+          "Firmware",
+          "Prototypage",
+          "Composants"
+        ]
       },
       {
         "title": "Plateformes web",
         "caption": "De bout en bout, prêtes à monter en charge",
-        "includes": ["Front-end", "Back-end", "Hébergement", "Haute disponibilité"]
+        "includes": [
+          "Front-end",
+          "Back-end",
+          "Hébergement",
+          "Haute disponibilité"
+        ]
       },
       {
         "title": "Données et BI",
         "caption": "Des données brutes à la décision",
-        "includes": ["Exploration de données", "Tableaux de bord", "Business intelligence"]
+        "includes": [
+          "Exploration de données",
+          "Tableaux de bord",
+          "Business intelligence"
+        ]
       },
       {
         "title": "Infrastructure",
         "caption": "Les systèmes dont dépend votre activité",
-        "includes": ["Bases de données", "CRM", "ERP", "Refonte et migration"]
+        "includes": [
+          "Bases de données",
+          "CRM",
+          "ERP",
+          "Refonte et migration"
+        ]
       },
       {
         "title": "UX et UI",
         "caption": "Des interfaces qui améliorent l'expérience",
-        "includes": ["Design d'interface", "Expérience utilisateur", "Ergonomie"]
+        "includes": [
+          "Design d'interface",
+          "Expérience utilisateur",
+          "Ergonomie"
+        ]
       },
       {
         "title": "Support IT et formation",
         "caption": "Pour que votre équipe s'en charge sans nous",
-        "includes": ["Transformation numérique", "Automatisation", "Formation"]
+        "includes": [
+          "Transformation numérique",
+          "Automatisation",
+          "Formation"
+        ]
       }
     ]
   },

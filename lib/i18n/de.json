@@ -35,14 +35,32 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Wir entwickeln die Systeme, die Ihr Unternehmen tragen.",
-    "lede": "PrimeNex IT entwickelt Technologielösungen auf dem neuesten Stand, zugeschnitten auf die anspruchsvollsten Anforderungen des heutigen Marktes. Unser Team aus engagierten Fachleuten setzt jedes Projekt mit Präzision, Sorgfalt und einem konsequenten Qualitätsanspruch um."
+    "lede": "PrimeNex IT entwickelt Technologielösungen auf dem neuesten Stand, zugeschnitten auf die anspruchsvollsten Anforderungen des heutigen Marktes. Unser Team aus engagierten Fachleuten setzt jedes Projekt mit Präzision, Sorgfalt und einem konsequenten Qualitätsanspruch um.",
+    "accent": "Ihr Unternehmen tragen"
   },
-  "practiceIndex": ["Embedded", "Web", "Daten", "Infrastruktur"],
+  "practiceIndex": [
+    "Embedded",
+    "Web",
+    "Daten",
+    "Infrastruktur"
+  ],
   "facts": [
-    { "label": "Standort", "value": "Cartago, Costa Rica" },
-    { "label": "Zeitzone", "value": "GMT-6, Nearshore" },
-    { "label": "Umfang", "value": "Hardware bis Interface" },
-    { "label": "Vorgehen", "value": "Planen, bauen, betreuen" }
+    {
+      "label": "Standort",
+      "value": "Cartago, Costa Rica"
+    },
+    {
+      "label": "Zeitzone",
+      "value": "GMT-6, Nearshore"
+    },
+    {
+      "label": "Umfang",
+      "value": "Hardware bis Interface"
+    },
+    {
+      "label": "Vorgehen",
+      "value": "Planen, bauen, betreuen"
+    }
   ],
   "statement": {
     "label": "Spezialisierung",
@@ -147,32 +165,59 @@
       {
         "title": "Embedded Systems",
         "caption": "Hardware und Firmware aus einer Hand",
-        "includes": ["PCB-Design", "Firmware", "Prototyping", "Bauteilauswahl"]
+        "includes": [
+          "PCB-Design",
+          "Firmware",
+          "Prototyping",
+          "Bauteilauswahl"
+        ]
       },
       {
         "title": "Webplattformen",
         "caption": "Frontend bis Backend, skalierbar",
-        "includes": ["Frontend", "Backend", "Hosting", "Hochverfügbarkeit"]
+        "includes": [
+          "Frontend",
+          "Backend",
+          "Hosting",
+          "Hochverfügbarkeit"
+        ]
       },
       {
         "title": "Daten und BI",
         "caption": "Von Rohdaten zu Entscheidungen",
-        "includes": ["Data Mining", "Dashboards", "Business Intelligence"]
+        "includes": [
+          "Data Mining",
+          "Dashboards",
+          "Business Intelligence"
+        ]
       },
       {
         "title": "Infrastruktur",
         "caption": "Die Systeme, die Ihren Betrieb tragen",
-        "includes": ["Datenbanken", "CRM", "ERP", "Redesign und Migration"]
+        "includes": [
+          "Datenbanken",
+          "CRM",
+          "ERP",
+          "Redesign und Migration"
+        ]
       },
       {
         "title": "UX und UI",
         "caption": "Oberflächen, die die Nutzung verbessern",
-        "includes": ["Interface-Design", "Nutzererfahrung", "Usability"]
+        "includes": [
+          "Interface-Design",
+          "Nutzererfahrung",
+          "Usability"
+        ]
       },
       {
         "title": "IT-Support und Schulung",
         "caption": "Damit Ihr Team ohne uns auskommt",
-        "includes": ["Digitale Transformation", "Automatisierung", "Wissenstransfer"]
+        "includes": [
+          "Digitale Transformation",
+          "Automatisierung",
+          "Wissenstransfer"
+        ]
       }
     ]
   },

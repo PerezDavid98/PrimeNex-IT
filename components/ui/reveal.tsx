@@ -88,7 +88,7 @@ export function Reveal({
         transform: armed ? `translateY(${y}px)` : "none",
         transition:
           phase === "in"
-            ? `opacity 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}s`
+            ? `opacity 0.7s cubic-bezier(0.23,1,0.32,1) ${delay}s, transform 0.7s cubic-bezier(0.23,1,0.32,1) ${delay}s`
             : undefined,
       }}
     >
