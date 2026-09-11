@@ -11,13 +11,11 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  */
 export function Statement({ statement }: { statement: Dictionary["statement"] }) {
   return (
-    <section className="py-8 md:py-12">
+    <section className="night py-20 md:py-28">
       <div className="shell">
-        <div className="entry-deep">
-          <p className="max-w-[46rem] text-[clamp(1.25rem,2.1vw,1.75rem)] leading-[1.45] text-paper">
-            {statement.body}
-          </p>
-        </div>
+        <p className="max-w-[46rem] text-[clamp(1.375rem,2.3vw,2rem)] leading-[1.4] font-medium tracking-[-0.015em] text-paper">
+          {statement.body}
+        </p>
       </div>
     </section>
   );

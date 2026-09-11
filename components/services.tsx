@@ -1,5 +1,4 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import { SectionHeading } from "./ui/section-heading";
 
 /**
  * The service inventory, set as four statements of account.
@@ -11,14 +10,19 @@ import { SectionHeading } from "./ui/section-heading";
 export function Services({ services }: { services: Dictionary["services"] }) {
   return (
     <section id="services" className="scroll-mt-20 py-16 md:py-24">
-      <div className="shell">
-        <SectionHeading title={services.title}>{services.lede}</SectionHeading>
+      <div className="shell grid gap-x-14 lg:grid-cols-[20rem_1fr]">
+        {/* The heading holds its place while the four practices scroll past
+            it, so the page reads as layered rather than as one long fall. */}
+        <div className="lg:sticky lg:top-28 lg:self-start lg:pt-7">
+          <h2 className="t-h2">{services.title}</h2>
+          <p className="t-body mt-5">{services.lede}</p>
+        </div>
 
-        <div className="mt-14 space-y-16 md:mt-20">
+        <div className="mt-12 space-y-14 lg:mt-0">
           {services.groups.map((group) => (
             <article key={group.tab}>
-              <div className="rule-entry grid gap-x-12 gap-y-5 pt-6 lg:grid-cols-[18rem_1fr]">
-                <div>
+              <div className="rule-head pt-6">
+                <div className="max-w-[40rem]">
                   <h3 className="t-h3">{group.tab}</h3>
                   <p className="mt-3 text-[1.0625rem] leading-snug text-ink">
                     {group.headline}
@@ -26,11 +30,11 @@ export function Services({ services }: { services: Dictionary["services"] }) {
                   <p className="t-body mt-3 text-[0.9375rem]">{group.blurb}</p>
                 </div>
 
-                <dl className="lg:pt-1">
+                <dl className="mt-7">
                   {group.items.map((item, i) => (
                     <div
                       key={item.title}
-                      className={`grid gap-x-6 gap-y-2 px-4 py-4 sm:grid-cols-[13rem_1fr] ${
+                      className={`grid gap-x-6 gap-y-2 px-4 py-4 sm:grid-cols-[14rem_1fr] ${
                         i % 2 === 0 ? "bg-band" : ""
                       }`}
                     >

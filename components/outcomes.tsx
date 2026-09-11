@@ -12,24 +12,17 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  */
 export function Outcomes({ outcomes }: { outcomes: Dictionary["outcomes"] }) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="bg-band py-16 md:py-24">
       <div className="shell">
-        <div className="rule-head pt-7">
-          <h2 className="t-h2">{outcomes.title}</h2>
-        </div>
+        <h2 className="t-h2 max-w-[24ch]">{outcomes.title}</h2>
 
-        <dl className="mt-10">
-          {outcomes.items.map((item, i) => (
-            <div
-              key={item.title}
-              className={`grid gap-x-10 gap-y-2 px-4 py-6 lg:grid-cols-[22rem_1fr] ${
-                i % 2 === 0 ? "bg-band" : ""
-              }`}
-            >
+        {/* Two by two rather than four stacked: the same content, read across
+            as well as down. */}
+        <dl className="mt-12 grid gap-x-14 gap-y-10 sm:grid-cols-2">
+          {outcomes.items.map((item) => (
+            <div key={item.title} className="border-t border-ink-mid/30 pt-5">
               <dt className="t-h3">{item.title}</dt>
-              <dd className="min-w-0 text-[1rem] leading-relaxed text-ink-soft">
-                {item.body}
-              </dd>
+              <dd className="mt-3 text-[1rem] leading-relaxed text-ink-soft">{item.body}</dd>
             </div>
           ))}
         </dl>

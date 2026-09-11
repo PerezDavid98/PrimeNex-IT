@@ -150,7 +150,7 @@
   },
   "capabilities": {
     "label": "Compétences",
-    "title": "Ce qui est sur le banc",
+    "title": "Ce que nous apportons à un projet",
     "lede": "La profondeur plateforme et la couche technique en dessous. L’analyse et l’ingénierie vont ensemble ici, et c’est pour cela que la cause racine est trouvée plutôt qu’escaladée.",
     "items": [
       {
@@ -298,7 +298,7 @@
   },
   "techStrip": {
     "label": "Plateformes et technologies sur lesquelles nous travaillons",
-    "title": "Toutes les plateformes et technologies sur le banc",
+    "title": "Toutes les plateformes et technologies que nous utilisons",
     "groups": [
       {
         "label": "Plateformes",

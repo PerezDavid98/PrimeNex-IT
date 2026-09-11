@@ -18,12 +18,10 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 export function TechStrip({ tech }: { tech: Dictionary["techStrip"] }) {
   return (
     <section className="py-16 md:py-24">
-      <div className="shell">
-        <div className="rule-head pt-7">
-          <h2 className="t-h2">{tech.title}</h2>
-        </div>
+      <div className="shell grid gap-x-14 lg:grid-cols-[20rem_1fr]">
+        <h2 className="t-h2 lg:sticky lg:top-28 lg:self-start lg:pt-2">{tech.title}</h2>
 
-        <dl className="mt-10">
+        <dl className="mt-10 lg:mt-0">
           {tech.groups.map((group, gi) => (
             <div
               key={group.label}

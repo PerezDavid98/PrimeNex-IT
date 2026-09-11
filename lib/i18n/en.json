@@ -150,7 +150,7 @@
   },
   "capabilities": {
     "label": "Capabilities",
-    "title": "What sits on the bench",
+    "title": "What we bring to an engagement",
     "lede": "Platform depth and the technical layer underneath it. The analyst work and the engineering work sit together here, which is why root cause gets found instead of escalated.",
     "items": [
       {
@@ -298,7 +298,7 @@
   },
   "techStrip": {
     "label": "Platforms and technologies we work on",
-    "title": "Every platform and technology on the bench",
+    "title": "Every platform and technology we work with",
     "groups": [
       {
         "label": "Platforms",

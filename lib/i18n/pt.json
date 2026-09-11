@@ -150,7 +150,7 @@
   },
   "capabilities": {
     "label": "Capacidades",
-    "title": "O que está no banco",
+    "title": "O que trazemos para cada projeto",
     "lede": "Profundidade de plataforma e a camada técnica embaixo dela. Aqui o trabalho de análise e o de engenharia andam juntos, e é por isso que a causa raiz é encontrada em vez de escalada.",
     "items": [
       {
@@ -298,7 +298,7 @@
   },
   "techStrip": {
     "label": "Plataformas e tecnologias com as quais trabalhamos",
-    "title": "Todas as plataformas e tecnologias no banco",
+    "title": "Todas as plataformas e tecnologias que usamos",
     "groups": [
       {
         "label": "Plataformas",

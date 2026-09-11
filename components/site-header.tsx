@@ -105,7 +105,10 @@ export function SiteHeader({
         id="mobile-nav"
         data-open={open}
         aria-hidden={!open}
-        className="drawer fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-rule bg-paper md:top-[4.5rem] lg:hidden"
+        /* text-ink explicitly: the drawer lives inside the header, and the
+           header is white-on-transparent over the hero, so without this the
+           links inherit white and vanish on their own pale background. */
+        className="drawer fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-rule bg-paper text-ink md:top-[4.5rem] lg:hidden"
       >
         <nav aria-label={a11y.mobileNav} className="shell flex flex-col py-4">
           {items.map((item, i) => (
