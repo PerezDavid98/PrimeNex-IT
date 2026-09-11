@@ -1,118 +1,81 @@
-"use client";
-
-import { useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { site } from "@/lib/content";
 import { SectionHeading } from "./ui/section-heading";
+import { WhatsAppGlyph } from "./ui/channels";
 
-type Status = "idle" | "sending" | "sent" | "error";
-type FieldName = "name" | "email" | "organization" | "role" | "country" | "message";
-
-const FIELD_ORDER: FieldName[] = [
-  "name",
-  "email",
-  "organization",
-  "role",
-  "country",
-  "message",
-];
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
+/**
+ * Contact, without a form.
+ *
+ * There was a six-field form here with country selection and per-field
+ * validation. It is gone, at the client's instruction, and the instruction is
+ * right: a form on a site this size asks a stranger to fill in six boxes and
+ * then wait, while WhatsApp puts them in a conversation in one tap — on the
+ * channel this market actually uses. It also removes the delivery problem
+ * entirely. There is no longer anything to configure and nothing that can
+ * silently swallow a lead.
+ */
 export function Contact({
   contact,
-  countries,
-  site,
   whatsappHref,
+  whatsappLabel,
 }: {
   contact: Dictionary["contact"];
-  countries: { code: string; name: string }[];
-  site: { email: string; phone: string; phoneHref: string; location: string; linkedin: string };
   whatsappHref: string;
+  whatsappLabel: string;
 }) {
-  const [status, setStatus] = useState<Status>("idle");
-  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
-  const [formError, setFormError] = useState<string | null>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-
-  /** Validated here rather than by the browser, so the message sits with the
-   *  field, reads in the visitor's language, and does not vanish on scroll. */
-  function validate(data: Record<string, string>) {
-    const next: Partial<Record<FieldName, string>> = {};
-    if (!data.name?.trim()) next.name = contact.errors.name;
-    if (!EMAIL_RE.test(data.email?.trim() ?? "")) next.email = contact.errors.email;
-    if (!data.organization?.trim()) next.organization = contact.errors.organization;
-    if (!data.role?.trim()) next.role = contact.errors.role;
-    if (!data.country?.trim()) next.country = contact.errors.country;
-    if ((data.message?.trim().length ?? 0) < 10) next.message = contact.errors.message;
-    return next;
-  }
-
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
-
-    const found = validate(data);
-    setErrors(found);
-    setFormError(null);
-
-    if (Object.keys(found).length > 0) {
-      // Send the keyboard to the first problem instead of making them hunt.
-      const first = FIELD_ORDER.find((name) => found[name]);
-      if (first) form.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
-      return;
-    }
-
-    setStatus("sending");
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(payload?.error ?? contact.errors.generic);
-      }
-      form.reset();
-      setStatus("sent");
-    } catch (cause) {
-      setFormError(cause instanceof Error ? cause.message : contact.errors.generic);
-      setStatus("error");
-    }
-  }
-
-  /** Clear a field's error as soon as the visitor starts fixing it. */
-  function clearError(name: FieldName) {
-    setErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
-  }
-
   const rows = [
-    { label: contact.rows.whatsapp, value: site.phone, href: whatsappHref, external: true },
     { label: contact.rows.email, value: site.email, href: `mailto:${site.email}` },
-    { label: contact.rows.office, value: site.location },
+    { label: contact.rows.phone, value: site.phone, href: `tel:${site.phoneHref}` },
     { label: contact.rows.linkedin, value: "primenex-it", href: site.linkedin, external: true },
+    { label: contact.rows.office, value: site.location },
   ];
 
   return (
-    <section id="contact" className="scroll-mt-20 py-20 md:py-32">
+    <section id="contact" className="scroll-mt-20 py-16 md:py-24">
       <div className="shell">
-        <SectionHeading title={contact.title}>
-          {contact.lede}
-        </SectionHeading>
+        <SectionHeading title={contact.title}>{contact.lede}</SectionHeading>
 
-        <div className="grid12 mt-14 md:mt-20">
-          <dl className="col-span-12 lg:col-span-3">
-            {rows.map((row) => (
-              <div key={row.label} className="rule-entry py-4 last:border-b last:border-rule">
-                <dt className="field-label">{row.label}</dt>
-                <dd className="mt-1 break-words">
+        <div className="mt-12 grid gap-x-12 gap-y-12 md:mt-16 lg:grid-cols-[1fr_22rem]">
+          {/* The one action, at the size of an action. min-w-0 because a grid
+              item defaults to min-width:auto, and without it the longest
+              unbreakable string in this column sets the column's width and
+              pushes the page off a 320px screen. */}
+          <div className="min-w-0">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              /* WhatsApp's darker green. Their #25D366 gives white text 1.98:1
+                 and the lighter mid-green 3.03:1 — both fail at this size.
+                 This holds 5.42:1 and still reads as the brand. */
+              /* Full width on a phone, which is both the convention for a
+                 primary action and the only way "Schreiben Sie uns auf
+                 WhatsApp" fits a 320px screen. */
+              className="flex w-full items-center justify-center gap-3 rounded-[3px] bg-[#0d7a3f] px-6 py-4 text-center text-[1.0625rem] font-semibold text-balance text-white transition-[filter] duration-200 hover:brightness-90 sm:inline-flex sm:w-auto sm:py-3.5"
+            >
+              <WhatsAppGlyph className="h-5 w-5" />
+              {contact.whatsappCta}
+            </a>
+            <p className="t-body mt-5">{contact.whatsappNote}</p>
+          </div>
+
+          {/* Everything else, as an entry list. */}
+          <dl className="min-w-0">
+            {rows.map((row, i) => (
+              <div
+                key={row.label}
+                className={`grid grid-cols-[5rem_1fr] gap-x-3 px-4 py-3.5 ${
+                  i % 2 === 0 ? "bg-band" : ""
+                }`}
+              >
+                <dt className="text-[0.9375rem] font-semibold">{row.label}</dt>
+                <dd className="min-w-0 text-[0.9375rem] break-all sm:break-words">
                   {row.href ? (
                     <a
                       href={row.href}
                       target={row.external ? "_blank" : undefined}
                       rel={row.external ? "noreferrer" : undefined}
-                      className="link inline-flex min-h-11 min-w-11 items-center"
+                      className="link"
                     >
                       {row.value}
                     </a>
@@ -123,168 +86,8 @@ export function Contact({
               </div>
             ))}
           </dl>
-
-          <div className="col-span-12 mt-10 lg:col-span-7 lg:col-start-6 lg:mt-0">
-            {status === "sent" ? (
-              <div className="border-t border-ink pt-8">
-                <p className="field-label">{contact.sentLabel}</p>
-                <p className="t-h2 mt-5 max-w-xl">{contact.sentTitle}</p>
-                <p className="t-lede mt-6 max-w-lg">
-                  {contact.sentBody}{" "}
-                  <a href={`mailto:${site.email}`} className="link-static">
-                    {site.email}
-                  </a>
-                  .
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setStatus("idle")}
-                  className="btn btn-outline mt-10"
-                >
-                  {contact.sendAnother}
-                </button>
-              </div>
-            ) : (
-              <form
-                ref={formRef}
-                onSubmit={onSubmit}
-                noValidate
-                className="grid gap-x-[var(--column-gap)] gap-y-8 sm:grid-cols-2"
-              >
-                {(["name", "email", "organization", "role"] as const).map((name) => (
-                  <Field
-                    key={name}
-                    name={name}
-                    label={contact.fields[name]}
-                    error={errors[name]}
-                    onInput={() => clearError(name)}
-                  >
-                    <input
-                      id={`f-${name}`}
-                      name={name}
-                      type={name === "email" ? "email" : "text"}
-                      autoComplete={
-                        name === "email"
-                          ? "email"
-                          : name === "name"
-                            ? "name"
-                            : name === "organization"
-                              ? "organization"
-                              : "organization-title"
-                      }
-                      aria-invalid={errors[name] ? true : undefined}
-                      aria-describedby={errors[name] ? `e-${name}` : undefined}
-                      className="field mt-2"
-                    />
-                  </Field>
-                ))}
-
-                <Field
-                  name="country"
-                  label={contact.fields.country}
-                  error={errors.country}
-                  onInput={() => clearError("country")}
-                  className="sm:col-span-2"
-                >
-                  <select
-                    id="f-country"
-                    name="country"
-                    defaultValue=""
-                    aria-invalid={errors.country ? true : undefined}
-                    aria-describedby={errors.country ? "e-country" : undefined}
-                    className="field field-select mt-2"
-                  >
-                    <option value="" disabled>
-                      {contact.countryPlaceholder}
-                    </option>
-                    {countries.map((country) => (
-                      <option key={country.code} value={country.code}>
-                        {country.name}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
-
-                <Field
-                  name="message"
-                  label={contact.fields.message}
-                  error={errors.message}
-                  onInput={() => clearError("message")}
-                  className="sm:col-span-2"
-                >
-                  <textarea
-                    id="f-message"
-                    name="message"
-                    rows={4}
-                    placeholder={contact.messagePlaceholder}
-                    aria-invalid={errors.message ? true : undefined}
-                    aria-describedby={errors.message ? "e-message" : undefined}
-                    className="field mt-2 resize-y"
-                  />
-                </Field>
-
-                <div className="flex flex-wrap items-center gap-6 sm:col-span-2">
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="btn btn-solid disabled:cursor-wait disabled:opacity-60"
-                  >
-                    {status === "sending" ? contact.sending : contact.submit}
-                    
-                  </button>
-                  <p className="max-w-[20rem] text-[0.9375rem] text-ink-soft">{contact.requiredNote}</p>
-                </div>
-
-                <div aria-live="assertive" className="sm:col-span-2">
-                  {formError ? (
-                    <p className="border-l-2 border-oxblood pl-4 text-[0.9375rem] text-ink">
-                      {formError} {contact.errors.fallback}{" "}
-                      <a href={`mailto:${site.email}`} className="link-static">
-                        {site.email}
-                      </a>
-                      .
-                    </p>
-                  ) : null}
-                </div>
-              </form>
-            )}
-          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-/** Label above, control, then the error immediately below the control it belongs to. */
-function Field({
-  name,
-  label,
-  error,
-  children,
-  className = "",
-  onInput,
-}: {
-  name: string;
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-  className?: string;
-  onInput?: () => void;
-}) {
-  return (
-    <div className={className} onInput={onInput}>
-      <label htmlFor={`f-${name}`} className="field-label">
-        {label} <span className="text-oxblood">*</span>
-      </label>
-      {children}
-      {/* Reserved by the grid gap rather than by a fixed height, so the
-          appearance of a message does not shove the next field down. */}
-      {error ? (
-        <p id={`e-${name}`} className="mt-2 text-[0.8125rem] leading-snug text-ink">
-          <span aria-hidden className="mr-1.5 text-oxblood">✕</span>
-          {error}
-        </p>
-      ) : null}
-    </div>
   );
 }

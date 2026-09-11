@@ -271,7 +271,7 @@
   },
   "contact": {
     "label": "Kontakt aufnehmen",
-    "title": "Erzählen Sie uns, was Sie vorhaben",
+    "title": "Erzählen Sie uns, was Sie bauen",
     "lede": "Beschreiben Sie das Problem in Ihren eigenen Worten. Die Antwort kommt von einem Ingenieur.",
     "rows": {
       "whatsapp": "WhatsApp",
@@ -280,33 +280,8 @@
       "office": "Büro",
       "linkedin": "LinkedIn"
     },
-    "fields": {
-      "name": "Name",
-      "email": "E-Mail",
-      "organization": "Unternehmen",
-      "role": "Position",
-      "country": "Land",
-      "message": "Kurzbeschreibung"
-    },
-    "countryPlaceholder": "Land auswählen",
-    "messagePlaceholder": "Was möchten Sie aufbauen, reparieren oder migrieren?",
-    "requiredNote": "Pflichtfelder sind gekennzeichnet. Ihre Angaben nutzen wir ausschließlich für die Antwort.",
-    "submit": "Nachricht senden",
-    "sending": "Wird gesendet",
-    "errors": {
-      "name": "Bitte geben Sie Ihren Namen ein.",
-      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-      "organization": "Bitte geben Sie Ihr Unternehmen an.",
-      "role": "Bitte geben Sie Ihre Position an.",
-      "country": "Bitte wählen Sie ein Land.",
-      "message": "Bitte beschreiben Sie Ihr Projekt in mindestens einem Satz.",
-      "generic": "Auf unserer Seite ist etwas schiefgelaufen.",
-      "fallback": "Alternativ erreichen Sie uns direkt unter"
-    },
-    "sentLabel": "Eingegangen",
-    "sentTitle": "Vielen Dank für Ihre Nachricht.",
-    "sentBody": "Wir haben Ihre Nachricht erhalten und melden uns in Kürze. Wenn es dringend ist, schreiben Sie an",
-    "sendAnother": "Weitere Nachricht senden"
+    "whatsappCta": "Schreiben Sie uns auf WhatsApp",
+    "whatsappNote": "Ein Tippen, und Sie sprechen mit dem Ingenieur, der die Arbeit machen würde. Kein Formular, keine Warteschlange, keine Ticketnummer."
   },
   "footer": {
     "readyLabel": "Bereit, wenn Sie es sind",

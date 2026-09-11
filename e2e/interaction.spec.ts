@@ -84,42 +84,30 @@ test("the objectives disclosure reports its state", async ({ page }) => {
   await expect(page.locator(`#${id}`)).toHaveAttribute("data-open", "true");
 });
 
-test("the form reports each problem beside the field that caused it", async ({ page }) => {
+/**
+ * The contact form is gone, at the client's instruction: WhatsApp in one tap
+ * instead of six fields and a wait. So the assertions that replace those two
+ * are that no form survives anywhere, and that the one action actually goes
+ * where it claims.
+ */
+test("contact is one WhatsApp action, with no form left behind", async ({ page }) => {
   await page.goto("/en");
-  await page.locator('form button[type="submit"]').click();
 
-  // Six required fields, six messages, each wired to its own control.
-  for (const name of ["name", "email", "organization", "role", "country", "message"]) {
-    const field = page.locator(`[name="${name}"]`);
-    await expect(field).toHaveAttribute("aria-invalid", "true");
-    await expect(field).toHaveAttribute("aria-describedby", `e-${name}`);
-    await expect(page.locator(`#e-${name}`)).toBeVisible();
-  }
+  await expect(page.locator("form")).toHaveCount(0);
+  await expect(page.locator('select[name="country"]')).toHaveCount(0);
 
-  // Focus lands on the first problem rather than leaving the user to hunt.
-  await expect(page.locator('[name="name"]')).toBeFocused();
+  const cta = page.locator('#contact a[href^="https://wa.me/"]');
+  await expect(cta).toHaveCount(1);
+  await expect(cta).toContainText("WhatsApp");
 
-  // A malformed address is caught rather than posted.
-  await page.locator('[name="email"]').fill("not-an-email");
-  await page.locator('form button[type="submit"]').click();
-  await expect(page.locator("#e-email")).toBeVisible();
-
-  // And the message clears the moment the visitor starts fixing it.
-  await page.locator('[name="name"]').fill("Ada Lovelace");
-  await expect(page.locator("#e-name")).toHaveCount(0);
+  // Email, phone and LinkedIn remain reachable as direct links.
+  await expect(page.locator('#contact a[href^="mailto:"]')).toHaveCount(1);
+  await expect(page.locator('#contact a[href^="tel:"]')).toHaveCount(1);
 });
 
-test("the country list is localised and sorted for the active language", async ({ page }) => {
-  await page.goto("/es");
-  const options = page.locator('select[name="country"] option');
-  expect(await options.count()).toBeGreaterThan(200);
-
-  // Stored as an ISO code so the inbox gets one unambiguous value whatever
-  // language the visitor filled the form in.
-  await expect(page.locator('select[name="country"] option[value="CR"]')).toHaveText("Costa Rica");
-
-  await page.goto("/zh");
-  await expect(page.locator('select[name="country"] option[value="CR"]')).toHaveText("哥斯达黎加");
+test("the contact endpoint is gone with the form", async ({ request }) => {
+  const response = await request.post("/api/contact", { data: { name: "x" } });
+  expect(response.status()).toBe(404);
 });
 
 test("the mobile drawer traps nothing and hides from the tab order when shut", async ({
@@ -142,8 +130,11 @@ test("the mobile drawer traps nothing and hides from the tab order when shut", a
   expect(await drawer.locator("a").first().getAttribute("tabindex")).toBe("-1");
 });
 
-test("WhatsApp and LinkedIn point somewhere real", async ({ page }) => {
+test("the floating channel is WhatsApp alone, and points somewhere real", async ({ page }) => {
   await page.goto("/es");
+
+  // One button, not a stack: two covered the ledger's right-hand column.
+  await expect(page.locator(".channel")).toHaveCount(1);
 
   const wa = page.locator('.channel[data-channel="whatsapp"]');
   const href = await wa.getAttribute("href");
@@ -151,8 +142,8 @@ test("WhatsApp and LinkedIn point somewhere real", async ({ page }) => {
   // The prefilled message is translated with the rest of the page.
   expect(decodeURIComponent(href!)).toContain("PrimeNex IT");
 
-  await expect(page.locator('.channel[data-channel="linkedin"]')).toHaveAttribute(
-    "href",
-    "https://www.linkedin.com/company/primenex-it",
-  );
+  // LinkedIn stays reachable where it belongs, in the contact list and footer.
+  await expect(
+    page.locator('a[href="https://www.linkedin.com/company/primenex-it"]'),
+  ).not.toHaveCount(0);
 });

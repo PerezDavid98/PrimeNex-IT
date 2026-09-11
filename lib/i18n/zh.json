@@ -280,33 +280,8 @@
       "office": "办公地址",
       "linkedin": "LinkedIn"
     },
-    "fields": {
-      "name": "姓名",
-      "email": "邮箱",
-      "organization": "公司/机构",
-      "role": "职位",
-      "country": "国家/地区",
-      "message": "简要说明"
-    },
-    "countryPlaceholder": "请选择国家/地区",
-    "messagePlaceholder": "您想构建、修复或迁移的是什么？",
-    "requiredNote": "带标记的为必填项。您的信息仅用于回复您。",
-    "submit": "发送消息",
-    "sending": "发送中",
-    "errors": {
-      "name": "请填写您的姓名。",
-      "email": "请填写有效的邮箱地址。",
-      "organization": "请填写您的公司或机构。",
-      "role": "请填写您的职位。",
-      "country": "请选择国家/地区。",
-      "message": "请至少用一句话说明您的项目。",
-      "generic": "我们这边出了点问题。",
-      "fallback": "您也可以直接发邮件给我们："
-    },
-    "sentLabel": "已收到",
-    "sentTitle": "感谢您的来信。",
-    "sentBody": "我们已经收到您的消息，会尽快与您联系。如果比较紧急，请直接发邮件至",
-    "sendAnother": "再发一条消息"
+    "whatsappCta": "用 WhatsApp 联系我们",
+    "whatsappNote": "点一下，您就直接在和会做这件事的工程师对话。没有表单，没有排队，没有工单号。"
   },
   "footer": {
     "readyLabel": "随时可以开始",

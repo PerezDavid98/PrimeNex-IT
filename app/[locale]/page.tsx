@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { countryOptions } from "@/lib/i18n/countries";
 import { site, whatsappHref } from "@/lib/content";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
@@ -26,10 +25,6 @@ export default async function Home({
   const dict = getDictionary(locale);
   const waHref = whatsappHref(dict.whatsapp.prefill);
 
-  // Resolved on the server so the option list is in the HTML: the form works
-  // before hydration, and server and client can never disagree about it.
-  const countries = countryOptions(locale);
-
   return (
     <>
       <SiteHeader
@@ -50,9 +45,8 @@ export default async function Home({
         <About about={dict.about} />
         <Contact
           contact={dict.contact}
-          countries={countries}
-          site={site}
           whatsappHref={waHref}
+          whatsappLabel={dict.whatsapp.label}
         />
       </main>
 

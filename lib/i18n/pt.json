@@ -280,33 +280,8 @@
       "office": "Escritório",
       "linkedin": "LinkedIn"
     },
-    "fields": {
-      "name": "Nome",
-      "email": "E-mail",
-      "organization": "Empresa",
-      "role": "Cargo",
-      "country": "País",
-      "message": "Breve descrição"
-    },
-    "countryPlaceholder": "Selecione um país",
-    "messagePlaceholder": "O que você quer construir, corrigir ou migrar?",
-    "requiredNote": "Os campos obrigatórios estão marcados. Usamos seus dados apenas para responder.",
-    "submit": "Enviar mensagem",
-    "sending": "Enviando",
-    "errors": {
-      "name": "Informe seu nome.",
-      "email": "Informe um e-mail válido.",
-      "organization": "Informe sua empresa.",
-      "role": "Informe seu cargo.",
-      "country": "Escolha um país.",
-      "message": "Escreva pelo menos uma frase sobre seu projeto.",
-      "generic": "Algo deu errado do nosso lado.",
-      "fallback": "Você também pode escrever direto para"
-    },
-    "sentLabel": "Recebido",
-    "sentTitle": "Obrigado pelo contato.",
-    "sentBody": "Recebemos sua mensagem e respondemos em breve. Se for urgente, escreva para",
-    "sendAnother": "Enviar outra mensagem"
+    "whatsappCta": "Fale com a gente no WhatsApp",
+    "whatsappNote": "Um toque e você está falando com o engenheiro que faria o trabalho. Sem formulário, sem fila, sem número de ticket."
   },
   "footer": {
     "readyLabel": "Quando quiser, começamos",

@@ -23,24 +23,29 @@
    ============================================================ */
 
 @theme {
-  /* Accounting paper, and the pale green band printed across it. */
-  --color-paper: #fcfcfa;
-  --color-band: #e8efe6;
-  --color-band-deep: #dde7da;
+  /* --------------------------------------------------------------
+     Sampled from the logo, not invented beside it. The mark is a
+     steel-teal family — #4890a8, #60a8c0, #a8d8f0, #306060 — so
+     the page is that family too. A warm palette next to a cool
+     mark reads as two brands stapled together, which is exactly
+     what it looked like.
+     -------------------------------------------------------------- */
+  --color-paper: #fbfcfc;
+  --color-band: #e7eef1;
+  --color-band-deep: #dae5e9;
 
-  /* Ink, as printed. */
-  --color-ink: #141a1f;
-  --color-ink-soft: #4a555e;
-  --color-ink-mid: #5f6b73;
+  /* Ink carries the blue of the mark's own outlines. */
+  --color-ink: #15222a;
+  --color-ink-soft: #44555e;
+  --color-ink-mid: #5a6a73;
 
-  /* Oxblood: the colour account headings are printed in. Not
-     terracotta, not indigo, not acid — and it comes from the
-     subject rather than from a palette generator. */
-  --color-oxblood: #7a2e35;
-  --color-oxblood-deep: #5f2229;
+  /* The accent is the logo's steel cyan, taken down until it holds
+     4.5:1 on paper. Same hue as the hexagon, usable as text. */
+  --color-accent: #2b6e85;
+  --color-accent-deep: #1f5567;
 
-  --color-rule: #d5ddd3;
-  --color-rule-strong: #a9b5a6;
+  --color-rule: #d2dce0;
+  --color-rule-strong: #a4b3b9;
 
   /* One family, with range. Financial and legal documents are set
      in serif; a consultancy in this field set in a grotesque reads
@@ -79,7 +84,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-oxblood);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -182,7 +187,7 @@ body {
     text-align: left;
     font-weight: 600;
     font-size: 0.9375rem;
-    color: var(--color-oxblood);
+    color: var(--color-accent);
     padding: 0 1rem 0.5rem;
     border-bottom: 1.5px solid var(--color-rule-strong);
     white-space: nowrap;
@@ -263,12 +268,12 @@ body {
   }
 
   .btn-solid {
-    background: var(--color-oxblood);
-    border-color: var(--color-oxblood);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
     color: var(--color-paper);
   }
 
-  .btn-solid:hover { background: var(--color-oxblood-deep); border-color: var(--color-oxblood-deep); }
+  .btn-solid:hover { background: var(--color-accent-deep); border-color: var(--color-accent-deep); }
   .btn-solid:active { background: var(--color-ink); border-color: var(--color-ink); }
 
   .btn-quiet {
@@ -290,7 +295,7 @@ body {
   }
 
   .link:hover {
-    color: var(--color-oxblood);
+    color: var(--color-accent);
     text-decoration-color: currentColor;
   }
 
@@ -315,8 +320,8 @@ body {
 
   .field:focus {
     outline: none;
-    border-color: var(--color-oxblood);
-    box-shadow: 0 1px 0 0 var(--color-oxblood);
+    border-color: var(--color-accent);
+    box-shadow: 0 1px 0 0 var(--color-accent);
   }
 
   .field-select {
@@ -395,7 +400,7 @@ body {
 
   .lang__trigger::-webkit-details-marker { display: none; }
   .lang__trigger::marker { content: ""; }
-  .lang__trigger:hover { color: var(--color-oxblood); }
+  .lang__trigger:hover { color: var(--color-accent); }
 
   .lang__chevron { transition: transform 0.18s var(--ease-out); }
   .lang[open] .lang__chevron { transform: rotate(180deg); }
@@ -428,7 +433,7 @@ body {
   .lang__check {
     width: 0.75rem;
     flex-shrink: 0;
-    color: var(--color-oxblood);
+    color: var(--color-accent);
   }
 
   /* ----------------------------------------------------------
@@ -459,7 +464,7 @@ body {
   }
 
   .channel[data-channel="linkedin"] { background: #0a66c2; }
-  .channel[data-channel="whatsapp"] { background: #1faa55; }
+  .channel[data-channel="whatsapp"] { background: #0d7a3f; }
   .channel:hover { filter: brightness(0.9); }
 
   .channel__label {

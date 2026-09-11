@@ -62,7 +62,7 @@ export function Hero({
                 <tbody>
                   {chain.steps.map((row) => (
                     <tr key={row.doc}>
-                      <td className="t-fig font-semibold text-oxblood">{row.doc}</td>
+                      <td className="t-fig font-semibold text-accent">{row.doc}</td>
                       <td>{row.step}</td>
                       <td className="num text-ink-mid">{row.stage}</td>
                     </tr>

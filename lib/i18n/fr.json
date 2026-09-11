@@ -280,33 +280,8 @@
       "office": "Bureau",
       "linkedin": "LinkedIn"
     },
-    "fields": {
-      "name": "Nom",
-      "email": "E-mail",
-      "organization": "Organisation",
-      "role": "Fonction",
-      "country": "Pays",
-      "message": "Brève description"
-    },
-    "countryPlaceholder": "Sélectionnez un pays",
-    "messagePlaceholder": "Que cherchez-vous à construire, corriger ou migrer@@N@@?",
-    "requiredNote": "Les champs obligatoires sont signalés. Vos informations ne servent qu'à vous répondre.",
-    "submit": "Envoyer",
-    "sending": "Envoi en cours",
-    "errors": {
-      "name": "Merci d'indiquer votre nom.",
-      "email": "Merci d'indiquer une adresse e-mail valide.",
-      "organization": "Merci d'indiquer votre organisation.",
-      "role": "Merci d'indiquer votre fonction.",
-      "country": "Merci de choisir un pays.",
-      "message": "Merci d'écrire au moins une phrase sur votre projet.",
-      "generic": "Un problème est survenu de notre côté.",
-      "fallback": "Vous pouvez aussi nous écrire directement à"
-    },
-    "sentLabel": "Reçu",
-    "sentTitle": "Merci de nous avoir écrit.",
-    "sentBody": "Votre message nous est bien parvenu et nous revenons vers vous rapidement. Si c'est urgent, écrivez à",
-    "sendAnother": "Envoyer un autre message"
+    "whatsappCta": "Écrivez-nous sur WhatsApp",
+    "whatsappNote": "Un appui et vous parlez à l’ingénieur qui ferait le travail. Pas de formulaire, pas de file d’attente, pas de numéro de ticket."
   },
   "footer": {
     "readyLabel": "Quand vous voulez",

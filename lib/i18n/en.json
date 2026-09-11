@@ -280,33 +280,8 @@
       "office": "Office",
       "linkedin": "LinkedIn"
     },
-    "fields": {
-      "name": "Name",
-      "email": "Email",
-      "organization": "Organization",
-      "role": "Job title",
-      "country": "Country",
-      "message": "Brief description"
-    },
-    "countryPlaceholder": "Select a country",
-    "messagePlaceholder": "What are you trying to build, fix or migrate?",
-    "requiredNote": "Required fields are marked. We only use your details to answer you.",
-    "submit": "Send message",
-    "sending": "Sending",
-    "errors": {
-      "name": "Please enter your name.",
-      "email": "Please enter a valid email address.",
-      "organization": "Please enter your organization.",
-      "role": "Please enter your job title.",
-      "country": "Please choose a country.",
-      "message": "Please add at least a sentence about your project.",
-      "generic": "Something went wrong on our side.",
-      "fallback": "You can also write to us directly at"
-    },
-    "sentLabel": "Received",
-    "sentTitle": "Thank you for reaching out.",
-    "sentBody": "We appreciate your message and will be in touch with you shortly. If it is urgent, write to",
-    "sendAnother": "Send another message"
+    "whatsappCta": "Message us on WhatsApp",
+    "whatsappNote": "One tap and you are talking to the engineer who would do the work. No form, no queue, no ticket number."
   },
   "footer": {
     "readyLabel": "Ready when you are",

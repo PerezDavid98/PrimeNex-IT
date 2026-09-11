@@ -29,13 +29,12 @@ app/
   icon.tsx              favicon, generated
   opengraph-image.tsx   share card, generated
   robots.ts sitemap.ts manifest.ts
-  api/contact/route.ts  contact form endpoint
 components/
   site-header.tsx hero.tsx statement.tsx services.tsx
   capabilities.tsx about.tsx contact.tsx site-footer.tsx
   ui/                   reveal, rule, section-heading, wordmark
 lib/
-  content.ts            every string and list on the site
+  content.ts            locale-independent facts: contact channels and URLs
   schema.ts             structured data graph
 brand/                  logo source files
 legacy/                 the previous static site, kept for reference
@@ -58,17 +57,22 @@ House rules, enforced by convention in `globals.css`:
 - headlines never animate — content is readable the moment it renders
 - every ambient animation is disabled under `prefers-reduced-motion`
 
-## Contact form
+## Contact
 
-`app/api/contact/route.ts` validates the submission, then forwards it to
-`CONTACT_WEBHOOK_URL` if that variable is set:
+There is no contact form and no API route. Contact is one WhatsApp link, plus
+email, phone and LinkedIn as direct links.
 
-```bash
-CONTACT_WEBHOOK_URL="https://..."   # Resend, HubSpot, Zapier, Slack, anything that accepts JSON
-```
+That is a deliberate decision, not an omission: a form asks a stranger for six
+fields and then makes them wait, while WhatsApp puts them in a conversation in
+one tap — on the channel this market actually uses. It also means there is
+nothing to configure, no delivery to monitor, and nothing that can silently
+swallow a lead.
 
-**Without it, submissions are only logged server-side and no one is notified.**
-Set it before launch. The form keeps a visible `mailto:` fallback either way.
+The number, the prefilled message and the labels live in `lib/content.ts` and
+`lib/i18n/*.json`. Nothing needs an environment variable.
+
+The site is therefore entirely static: six prerendered pages, no server
+functions.
 
 ## SEO
 
