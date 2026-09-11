@@ -8,6 +8,21 @@ import { test, expect } from "@playwright/test";
 async function settled(page: import("@playwright/test").Page) {
   await page.waitForLoadState("networkidle");
   await page.evaluate(() => document.fonts.ready);
+
+  // Wait out the hero's entrance. Only finite animations are awaited: an
+  // infinite one never resolves its finished promise and would hang the run.
+  await page.evaluate(() =>
+    Promise.all(
+      document
+        .getAnimations()
+        .filter((a) => {
+          const timing = a.effect?.getComputedTiming();
+          return timing ? Number.isFinite(timing.endTime ?? Infinity) : false;
+        })
+        .map((a) => a.finished.catch(() => {})),
+    ),
+  );
+
   await page.evaluate(
     () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))),
   );
@@ -76,6 +91,27 @@ for (const locale of LOCALES) {
     expect(lines).toBeLessThanOrEqual(4);
   });
 }
+
+/**
+ * The hero's entrance animates opacity from zero with fill-mode both, which
+ * means anything that stops it from finishing leaves the most important line
+ * on the page invisible. Worth one assertion of its own.
+ */
+test("the headline is actually visible once the page has loaded", async ({ page }) => {
+  await page.goto("/en");
+  await settled(page);
+
+  const h1 = page.locator("h1");
+  await expect(h1).toBeVisible();
+
+  // Polled, not sampled: the sequence takes about 0.72s to land, and a single
+  // reading taken before that proves nothing either way.
+  await expect(h1).toHaveCSS("opacity", "1");
+
+  // And the lede and the buttons that follow it in the same sequence.
+  await expect(page.locator("#top p").first()).toHaveCSS("opacity", "1");
+  await expect(page.locator("#top a.btn").first()).toHaveCSS("opacity", "1");
+});
 
 test("every interactive control clears a 44px touch target", async ({ page }) => {
   await page.goto("/en");

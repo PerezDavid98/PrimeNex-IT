@@ -19,7 +19,7 @@ export function SiteFooter({
   whatsappLabel: string;
 }) {
   return (
-    <footer className="mt-8 border-t border-ink">
+    <footer className="night mt-12">
       <div className="shell">
         {/* The closing line is a sentence, not a display slab with an arrow. */}
         <div className="max-w-[40rem] py-14 md:py-20">
@@ -30,10 +30,10 @@ export function SiteFooter({
           </a>
         </div>
 
-        <div className="grid gap-x-10 gap-y-9 border-t border-rule py-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-10 gap-y-9 border-t border-white/15 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Wordmark size="md" />
-            <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-soft">
+            <Wordmark size="md" onNight />
+            <p className="mt-4 text-[0.9375rem] leading-relaxed text-paper/65">
               {site.location}
             </p>
           </div>
@@ -43,7 +43,7 @@ export function SiteFooter({
             <ul className="mt-3 space-y-1">
               {serviceTabs.map((tab) => (
                 <li key={tab}>
-                  <a href="#services" className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem]">
+                  <a href="#services" className="link-night inline-flex min-h-11 min-w-11 items-center text-[0.9375rem]">
                     {tab}
                   </a>
                 </li>
@@ -56,7 +56,7 @@ export function SiteFooter({
             <ul className="mt-3 space-y-1">
               {SECTION_IDS.map((id) => (
                 <li key={id}>
-                  <a href={`#${id}`} className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem]">
+                  <a href={`#${id}`} className="link-night inline-flex min-h-11 min-w-11 items-center text-[0.9375rem]">
                     {nav[id]}
                   </a>
                 </li>
@@ -66,14 +66,14 @@ export function SiteFooter({
 
           <div>
             <h2 className="t-h4">{footer.contactLabel}</h2>
-            <ul className="mt-3 space-y-1 text-[0.9375rem]">
+            <ul className="mt-3 space-y-1 text-[0.9375rem] text-paper/70">
               <li>
-                <a href={`tel:${site.phoneHref}`} className="link inline-flex min-h-11 min-w-11 items-center">
+                <a href={`tel:${site.phoneHref}`} className="link-night inline-flex min-h-11 min-w-11 items-center">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className="link inline-flex min-h-11 min-w-11 items-center break-all">
+                <a href={`mailto:${site.email}`} className="link-night inline-flex min-h-11 min-w-11 items-center break-all">
                   {site.email}
                 </a>
               </li>
@@ -82,7 +82,7 @@ export function SiteFooter({
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="link inline-flex min-h-11 min-w-11 items-center"
+                  className="link-night inline-flex min-h-11 min-w-11 items-center"
                 >
                   {whatsappLabel}
                 </a>
@@ -92,7 +92,7 @@ export function SiteFooter({
                   href={site.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="link inline-flex min-h-11 min-w-11 items-center"
+                  className="link-night inline-flex min-h-11 min-w-11 items-center"
                 >
                   LinkedIn
                 </a>
@@ -101,7 +101,7 @@ export function SiteFooter({
           </div>
         </div>
 
-        <p className="border-t border-rule py-6 text-[0.875rem] text-ink-mid">
+        <p className="border-t border-white/15 py-6 text-[0.875rem] text-paper/55">
           © {new Date().getFullYear()} {site.name}. {footer.rights} · {site.domain} ·{" "}
           <span className="t-fig">{locale}</span>
         </p>

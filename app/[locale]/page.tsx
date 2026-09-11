@@ -5,7 +5,7 @@ import { site, whatsappHref } from "@/lib/content";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
 import { Statement } from "@/components/statement";
-import { Symptoms } from "@/components/symptoms";
+import { Practices } from "@/components/practices";
 import { Outcomes } from "@/components/outcomes";
 import { TechStrip } from "@/components/tech-strip";
 import { Services } from "@/components/services";
@@ -39,8 +39,8 @@ export default async function Home({
       />
 
       <main id="main">
-        <Hero hero={dict.hero} cta={dict.cta} />
-        <Symptoms symptoms={dict.symptoms} />
+        <Hero hero={dict.hero} cta={dict.cta} symptoms={dict.symptoms} />
+        <Practices services={dict.services} />
         <TechStrip tech={dict.techStrip} />
         <Statement statement={dict.statement} />
         <Services services={dict.services} />

@@ -9,9 +9,11 @@ import { site } from "@/lib/content";
  */
 export function Wordmark({
   size = "sm",
+  onNight = false,
   className = "",
 }: {
   size?: "sm" | "md";
+  onNight?: boolean;
   className?: string;
 }) {
   const mark =
@@ -34,7 +36,9 @@ export function Wordmark({
       </span>
       <span
         aria-hidden
-        className={`font-semibold leading-none tracking-[0.055em] text-ink ${type}`}
+        className={`leading-none font-bold tracking-[0.045em] ${
+          onNight ? "text-paper" : "text-ink"
+        } ${type}`}
       >
         PRIMENEX
         <sup className="ml-[0.15em] align-super text-[0.5em] tracking-[0.08em]">IT</sup>

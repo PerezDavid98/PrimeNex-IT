@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Newsreader } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { localeCodes, isLocale, localeMeta, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { alternateLanguages, localeUrl } from "@/lib/i18n/seo";
@@ -9,16 +9,15 @@ import { site } from "@/lib/content";
 import "../globals.css";
 
 /**
- * One family, with range. Financial and legal documents are set in serif; a
- * consultancy in this field set in a grotesque reads like every other software
- * company. Newsreader was drawn for screen reading, so it carries body copy at
- * 17px without the fragility of a display serif.
+ * One family across the whole page, with weight doing the work a second
+ * typeface would otherwise be hired for. Manrope is geometric and a little
+ * idiosyncratic in its terminals — not the family anyone reaches for by
+ * default, and it holds up at display sizes and at 15px alike.
  */
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -100,7 +99,7 @@ export default async function LocaleLayout({
     <html
       lang={meta.htmlLang}
       dir={meta.dir}
-      className={`${newsreader.variable} antialiased`}
+      className={`${manrope.variable} antialiased`}
     >
       <body>
         <a

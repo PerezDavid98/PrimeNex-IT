@@ -1,52 +1,43 @@
-import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { site } from "@/lib/content";
+import { Symptoms } from "./symptoms";
 
 /**
- * Headline, the claim, the two actions, and a photograph of the work itself:
- * analysts reading reports and dashboards, which is what this practice
- * actually does all day.
+ * One committed dark band at the top of the page.
  *
- * This is also the page's one orchestrated moment — the .settle sequence runs
- * on first load here and nowhere else.
+ * The reference site opens on near-black with white type and a single vivid
+ * accent, and carries the first screen on typography rather than an image.
+ * Same structure here — with the symptom line doing the work their carousel
+ * does, which is the better trade: their rotation cycles claims about
+ * themselves, this one cycles problems the reader recognises.
  */
 export function Hero({
   hero,
   cta,
+  symptoms,
 }: {
   hero: Dictionary["hero"];
   cta: Dictionary["cta"];
+  symptoms: Dictionary["symptoms"];
 }) {
   return (
-    <section id="top" className="pt-24 pb-14 md:pt-32 md:pb-20">
-      <div className="shell">
-        <div className="grid gap-x-14 gap-y-12 lg:grid-cols-[1fr_28rem] lg:items-center">
-          <div className="settle min-w-0">
-            <p className="t-ref">{site.location}</p>
-            <h1 className="t-display mt-4">{hero.headline}</h1>
-            <p className="t-lede mt-7">{hero.lede}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#contact" className="btn btn-solid">
-                {cta.startProject}
-              </a>
-              <a href="#services" className="btn btn-quiet">
-                {cta.services}
-              </a>
-            </div>
-          </div>
+    <section id="top" className="night">
+      <div className="shell settle pt-28 pb-16 md:pt-36 md:pb-20">
+        <p className="t-ref">{site.location}</p>
+        <h1 className="t-display mt-5 max-w-[20ch]">{hero.headline}</h1>
+        <p className="t-lede mt-7 max-w-[52ch]">{hero.lede}</p>
 
-          <figure className="min-w-0">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3px] bg-band">
-              <Image
-                src="/img/analysis.jpg"
-                alt="Two colleagues reading reports and dashboards on a laptop"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 28rem"
-                className="object-cover"
-              />
-            </div>
-          </figure>
+        <div className="mt-9 flex flex-wrap gap-3">
+          <a href="#contact" className="btn btn-solid">
+            {cta.startProject}
+          </a>
+          <a href="#services" className="btn btn-onNight">
+            {cta.services}
+          </a>
+        </div>
+
+        <div className="mt-16 md:mt-20">
+          <Symptoms symptoms={symptoms} onNight />
         </div>
       </div>
     </section>

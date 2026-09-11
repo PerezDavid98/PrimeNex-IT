@@ -27,7 +27,13 @@ const INTERVAL = 5200;
  * All six lines are in the DOM at all times, so a screen reader gets the whole
  * list in order and the rotation stays what it is: a visual affordance.
  */
-export function Symptoms({ symptoms }: { symptoms: Dictionary["symptoms"] }) {
+export function Symptoms({
+  symptoms,
+  onNight = false,
+}: {
+  symptoms: Dictionary["symptoms"];
+  onNight?: boolean;
+}) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reduce, setReduce] = useState(false);
@@ -53,7 +59,7 @@ export function Symptoms({ symptoms }: { symptoms: Dictionary["symptoms"] }) {
   /* Reduced motion: no rotation, no controls, just the list. */
   if (reduce) {
     return (
-      <Frame label={symptoms.label}>
+      <Frame label={symptoms.label} onNight={onNight}>
         <ul className="space-y-3">
           {symptoms.items.map((item) => (
             <li key={item} className="t-h3 font-normal">
@@ -66,7 +72,7 @@ export function Symptoms({ symptoms }: { symptoms: Dictionary["symptoms"] }) {
   }
 
   return (
-    <Frame label={symptoms.label}>
+    <Frame label={symptoms.label} onNight={onNight}>
       <div
         ref={region}
         onMouseEnter={() => setPaused(true)}
@@ -105,8 +111,12 @@ export function Symptoms({ symptoms }: { symptoms: Dictionary["symptoms"] }) {
                 aria-hidden
                 className={`block h-1.5 w-1.5 rounded-full transition-colors duration-200 ${
                   i === index
-                    ? "bg-accent"
-                    : "bg-rule-strong group-hover:bg-ink-mid"
+                    ? onNight
+                      ? "bg-paper"
+                      : "bg-accent"
+                    : onNight
+                      ? "bg-white/30 group-hover:bg-white/60"
+                      : "bg-rule-strong group-hover:bg-ink-mid"
                 }`}
               />
             </button>
@@ -117,15 +127,32 @@ export function Symptoms({ symptoms }: { symptoms: Dictionary["symptoms"] }) {
   );
 }
 
-function Frame({ label, children }: { label: string; children: React.ReactNode }) {
+function Frame({
+  label,
+  onNight,
+  children,
+}: {
+  label: string;
+  onNight: boolean;
+  children: React.ReactNode;
+}) {
+  const inner = (
+    <div
+      className={`max-w-[46rem] border-t pt-7 ${
+        onNight ? "border-white/20" : "border-ink"
+      }`}
+    >
+      <p className={`t-h4 ${onNight ? "text-paper/70" : ""}`}>{label}</p>
+      <div className="mt-6">{children}</div>
+    </div>
+  );
+
+  /* On the dark band it is already inside the hero's shell. */
+  if (onNight) return inner;
+
   return (
     <section className="py-14 md:py-20">
-      <div className="shell">
-        <div className="rule-head max-w-[46rem] pt-7">
-          <p className="t-h4">{label}</p>
-          <div className="mt-6">{children}</div>
-        </div>
-      </div>
+      <div className="shell">{inner}</div>
     </section>
   );
 }

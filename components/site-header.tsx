@@ -43,18 +43,23 @@ export function SiteHeader({
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-paper transition-colors duration-300 ${
-        scrolled ? "border-b border-rule" : "border-b border-transparent"
-      }`}
+      /* Dark over the dark hero, paper once past it — otherwise a white bar
+         sits on top of a near-black band and reads as a mistake. */
+      data-solid={scrolled}
+      className="site-header fixed inset-x-0 top-0 z-50 transition-colors duration-300"
     >
       <div className="shell flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
         <a href={`/${locale}`} aria-label={a11y.home} className="flex min-h-11 shrink-0 items-center">
-          <Wordmark />
+          <Wordmark onNight={!scrolled} />
         </a>
 
         <nav aria-label={a11y.mainNav} className="hidden items-center gap-7 lg:flex">
           {items.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="link flex min-h-11 min-w-11 items-center justify-center">
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="header-link flex min-h-11 min-w-11 items-center justify-center"
+            >
               {item.label}
             </a>
           ))}
@@ -77,17 +82,17 @@ export function SiteHeader({
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? a11y.closeMenu : a11y.openMenu}
-            className="flex min-h-11 min-w-11 items-center justify-end gap-2 lg:hidden"
+            className="header-link flex min-h-11 min-w-11 items-center justify-end gap-2 lg:hidden"
           >
             <span className="hidden min-[380px]:inline">{open ? a11y.close : a11y.menu}</span>
             <span aria-hidden className="relative block h-2.5 w-4">
               <span
-                className={`absolute left-0 block h-px w-4 bg-ink transition-all duration-200 ${
+                className={`absolute left-0 block h-px w-4 bg-current transition-all duration-200 ${
                   open ? "top-1 rotate-45" : "top-0"
                 }`}
               />
               <span
-                className={`absolute left-0 block h-px w-4 bg-ink transition-all duration-200 ${
+                className={`absolute left-0 block h-px w-4 bg-current transition-all duration-200 ${
                   open ? "top-1 -rotate-45" : "top-2.5"
                 }`}
               />
