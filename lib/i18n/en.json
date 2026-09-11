@@ -177,10 +177,12 @@
         ]
       },
       {
-        "title": "ERP platforms",
-        "caption": "NetSuite, plus the Power Platform around it",
+        "title": "ERP & CRM platforms",
+        "caption": "NetSuite, HubSpot, Alegra and the Power Platform around them",
         "includes": [
           "Oracle NetSuite",
+          "HubSpot",
+          "Alegra",
           "Power Apps",
           "Power Automate"
         ]
@@ -218,8 +220,19 @@
           "Azure Functions",
           "Logic Apps",
           "Azure DevOps",
+          "Git / GitHub",
           "CI/CD",
           "Docker"
+        ]
+      },
+      {
+        "title": "Ecommerce & integration tooling",
+        "caption": "Storefronts wired into the ledger, not beside it",
+        "includes": [
+          "WooCommerce",
+          "REST APIs",
+          "Alegra",
+          "Webhooks"
         ]
       }
     ]
@@ -308,5 +321,8 @@
   "whatsapp": {
     "label": "WhatsApp",
     "prefill": "Hello PrimeNex IT, I would like to talk about a project."
+  },
+  "techStrip": {
+    "label": "Platforms and technologies we work on"
   }
 }

@@ -93,12 +93,14 @@ export function Hero({
         <nav aria-label={a11y.practiceAreas} className="mt-12 md:mt-16">
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {practiceIndex.map((label, i) => (
-              <Reveal as="li" key={label} delay={0.05 * i} y={10}>
-                <a href="#services" className="card card-hover flex h-full items-start gap-4 py-6">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[0.875rem] bg-wash font-mono text-[0.6875rem] text-ink-soft">
-                    0{i + 1}
-                  </span>
-                  <span className="t-h4 pt-1.5 text-balance">{label}</span>
+              <Reveal as="li" key={label} delay={0.05 * i} y={10} className="group">
+                <a href="#services" className="card card-hover flex h-full flex-col py-6">
+                  <span className="t-mono">0{i + 1}</span>
+                  <span className="t-h4 mt-3 text-balance">{label}</span>
+                  <span
+                    aria-hidden
+                    className="mt-5 block h-0.5 w-8 bg-azure transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:w-14"
+                  />
                 </a>
               </Reveal>
             ))}

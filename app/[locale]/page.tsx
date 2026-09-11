@@ -6,6 +6,7 @@ import { site, whatsappHref } from "@/lib/content";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
 import { Statement } from "@/components/statement";
+import { TechStrip } from "@/components/tech-strip";
 import { Services } from "@/components/services";
 import { Capabilities } from "@/components/capabilities";
 import { About } from "@/components/about";
@@ -48,6 +49,7 @@ export default async function Home({
           cta={dict.cta}
           a11y={dict.a11y}
         />
+        <TechStrip label={dict.techStrip.label} />
         <Statement statement={dict.statement} />
         <Services services={dict.services} a11y={dict.a11y} />
         <Capabilities capabilities={dict.capabilities} />

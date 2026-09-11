@@ -177,10 +177,12 @@
         ]
       },
       {
-        "title": "ERP 平台",
-        "caption": "NetSuite，以及围绕它的 Power Platform",
+        "title": "ERP 与 CRM 平台",
+        "caption": "NetSuite、HubSpot、Alegra，以及围绕它们的 Power Platform",
         "includes": [
           "Oracle NetSuite",
+          "HubSpot",
+          "Alegra",
           "Power Apps",
           "Power Automate"
         ]
@@ -218,8 +220,19 @@
           "Azure Functions",
           "Logic Apps",
           "Azure DevOps",
+          "Git / GitHub",
           "CI/CD",
           "Docker"
+        ]
+      },
+      {
+        "title": "电商与集成工具",
+        "caption": "把店面接进账务系统，而不是放在它旁边",
+        "includes": [
+          "WooCommerce",
+          "REST APIs",
+          "Alegra",
+          "Webhooks"
         ]
       }
     ]
@@ -308,5 +321,8 @@
   "whatsapp": {
     "label": "WhatsApp",
     "prefill": "你好 PrimeNex IT，我想聊一个项目。"
+  },
+  "techStrip": {
+    "label": "我们所使用的平台与技术"
   }
 }

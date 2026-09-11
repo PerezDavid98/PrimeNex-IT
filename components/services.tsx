@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { SectionHeading } from "./ui/section-heading";
-import { HexMark } from "./ui/rule";
 
 export function Services({
   services,
@@ -71,7 +70,7 @@ export function Services({
                   onClick={() => setIndex(i)}
                   onKeyDown={(event) => onKeyDown(event, i)}
                   data-selected={selected}
-                  className={`row row-mark group flex min-h-11 w-full items-baseline gap-3 border-t py-4 pl-3 text-left transition-colors last:border-b ${
+                  className={`row row-mark group flex min-h-11 w-full items-baseline gap-3 border-t py-4 text-left transition-colors last:border-b ${
                     selected ? "border-ink" : "border-rule"
                   }`}
                 >
@@ -85,8 +84,11 @@ export function Services({
                   >
                     {group.tab}
                   </span>
-                  {/* Shape, not just colour, marks the selection. */}
-                  {selected ? <HexMark className="h-2 w-2 shrink-0 bg-cyan" /> : null}
+                  {/* Shape, not just colour: the arrow only appears on the
+                      selected row, so selection never rests on hue alone. */}
+                  <span aria-hidden className={`t-num ${selected ? "" : "opacity-0"}`}>
+                    →
+                  </span>
                 </button>
               );
             })}

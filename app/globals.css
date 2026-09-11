@@ -294,6 +294,30 @@ body {
   .link:hover::after { transform: scaleX(1); }
 
   /* ============================================================
+     TECHNOLOGY MARKS — monochrome, so a CC0 glyph and a typeset
+     wordmark sit in the same row without one looking borrowed.
+     ============================================================ */
+
+  .mark {
+    display: flex;
+    align-items: center;
+    color: var(--color-ink-mid);
+    transition: color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+  }
+
+  .mark:hover {
+    color: var(--color-navy-800);
+    transform: translateY(-2px);
+  }
+
+  .mark__word {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+  }
+
+  /* ============================================================
      PLATE — photography, cropped hard and generously rounded.
      Sourced under the Pexels licence; see public/img/LICENSE.md.
      ============================================================ */
@@ -372,14 +396,14 @@ body {
 
   /* Eyebrow as a badge: a bordered pill sitting above the headline, which
      gives the line somewhere to start instead of floating in white. */
+  /* No pill, no border. The eyebrow is a line of type with a mark in
+     front of it — a bordered capsule around four words was fussy and it
+     competed with the headline underneath. */
   .badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4375rem 0.875rem 0.4375rem 0.75rem;
-    border-radius: var(--radius-pill);
-    box-shadow: inset 0 0 0 1px var(--color-rule);
-    background: var(--color-paper);
+    gap: 0.625rem;
+    color: var(--color-ink-mid);
   }
 
   /* The headline carries one emphasised phrase. Everything else stays ink, so
@@ -390,12 +414,7 @@ body {
      the pointer. Background plus a 3px nudge of the leading index — confined
      to transform and background, so nothing reflows. */
   .row { transition: background 0.18s var(--ease-out); }
-  .row:hover {
-    /* barely a tint — the signal is the rule going to ink and the index
-       stepping across, not a filled band that reads as a sunken panel */
-    background: color-mix(in oklab, var(--color-wash) 55%, transparent);
-    border-color: var(--color-ink);
-  }
+  .row:hover { border-color: var(--color-navy-700); }
 
   .row .t-num {
     transition: transform 0.22s var(--ease-out), color 0.18s var(--ease-out);
@@ -411,20 +430,22 @@ body {
      the indicator animating — not the panel replaying an entrance. */
   .row-mark { position: relative; }
 
+  /* The selection is a short azure rule under the label, not a box around
+     the row. A full-height bar plus a tinted band read as a sunken panel. */
   .row-mark::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--color-ink);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.24s var(--ease-out);
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background: var(--color-azure);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s var(--ease-out);
   }
 
-  .row-mark[data-selected="true"]::before { transform: scaleY(1); }
+  .row-mark[data-selected="true"]::before { transform: scaleX(1); }
 
   /* Cells move their content, not themselves: a 4px nudge and a rule going to
      ink, instead of a card floating off the grid. */
