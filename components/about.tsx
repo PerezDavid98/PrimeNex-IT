@@ -13,7 +13,7 @@ export function About({ about }: { about: Dictionary["about"] }) {
       <div className="shell">
         <SectionHeading index="03" label={about.label} title={about.title} />
 
-        <div className="grid12 mt-14 gap-y-12 md:mt-20">
+        <div className="grid12 mt-14 gap-4 gap-y-4 md:mt-20">
           {[
             { label: about.missionLabel, body: about.mission },
             { label: about.visionLabel, body: about.vision },
@@ -21,9 +21,7 @@ export function About({ about }: { about: Dictionary["about"] }) {
             <Reveal
               key={block.label}
               delay={i * 0.08}
-              className={`col-span-12 border-t border-ink pt-5 md:col-span-6 ${
-                i === 1 ? "md:col-start-7" : ""
-              }`}
+              className={`card col-span-12 md:col-span-6 ${i === 1 ? "md:col-start-7" : ""}`}
             >
               <p className="t-mono">{block.label}</p>
               <p className="mt-5 text-[1.0625rem] leading-relaxed text-ink md:text-[1.125rem]">
@@ -84,9 +82,9 @@ export function About({ about }: { about: Dictionary["about"] }) {
         </div>
 
         <Reveal delay={0.08}>
-          <blockquote className="mt-24 border-t border-ink pt-8 md:mt-32">
-            <p className="t-h2 max-w-4xl">{about.commitment}</p>
-            <footer className="t-mono mt-8">PrimeNex IT</footer>
+          <blockquote className="card-deep mt-24 p-8 md:mt-32 md:p-14">
+            <p className="t-h2 max-w-4xl text-paper">{about.commitment}</p>
+            <footer className="t-mono mt-8 text-paper/60">PrimeNex IT</footer>
           </blockquote>
         </Reveal>
       </div>

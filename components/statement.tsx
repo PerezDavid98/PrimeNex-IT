@@ -3,31 +3,31 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { Reveal } from "./ui/reveal";
 
 /**
- * Reverse block. The rhythm break the page needs, and the one place the
- * supplied logo — drawn light-on-dark — is used at full size as intended.
+ * The rhythm break: a photographic band with navy laid over it, so the page
+ * has one dark, full-weight moment between the light sections.
  */
 export function Statement({ statement }: { statement: Dictionary["statement"] }) {
   return (
-    <section className="bg-ink text-paper">
-      <div className="shell grid12 gap-y-12 py-20 md:py-28">
-        <p className="t-mono col-span-12 border-t border-white/25 pt-5 text-white/60 lg:col-span-3">
-          {statement.label}
-        </p>
-
-        <Reveal className="col-span-12 lg:col-span-8 lg:col-start-5" y={16}>
-          <p className="text-[clamp(1.25rem,2.4vw,2rem)] leading-[1.35] tracking-[-0.02em] text-paper">
-            {statement.body}
-          </p>
-        </Reveal>
-
-        <div className="col-span-12 flex justify-end lg:col-span-8 lg:col-start-5">
+    <section className="py-6">
+      <div className="shell">
+        <div className="plate plate-tint relative isolate min-h-[26rem] md:min-h-[32rem]">
           <Image
-            src="/logo.png"
+            src="/img/infrastructure.jpg"
             alt=""
-            width={943}
-            height={392}
-            className="h-10 w-auto opacity-90 md:h-12"
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
+
+          <div className="relative z-10 grid12 gap-y-8 p-8 py-16 md:p-14 md:py-24">
+            <p className="t-mono col-span-12 text-paper/60 lg:col-span-3">{statement.label}</p>
+
+            <Reveal className="col-span-12 lg:col-span-8 lg:col-start-5" y={16}>
+              <p className="text-[clamp(1.25rem,2.3vw,1.9rem)] leading-[1.4] tracking-[-0.015em] text-paper">
+                {statement.body}
+              </p>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

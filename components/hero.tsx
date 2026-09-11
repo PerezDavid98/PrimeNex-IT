@@ -1,8 +1,8 @@
+import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { site } from "@/lib/content";
 import { Reveal } from "./ui/reveal";
 import { HexMark } from "./ui/rule";
-import { HexStack } from "./ui/hex-stack";
 
 /**
  * Splits the headline so one phrase can carry the brand colour. The accent is
@@ -37,34 +37,26 @@ export function Hero({
   a11y: Dictionary["a11y"];
 }) {
   return (
-    <section id="top" className="relative overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20">
-      <div aria-hidden className="shell pointer-events-none absolute inset-0">
-        <div className="column-rules">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <span key={i} />
-          ))}
-        </div>
-      </div>
-
-      <div className="shell relative">
-        <div className="grid12 items-center gap-y-14">
+    <section id="top" className="pt-24 pb-8 md:pt-32">
+      <div className="shell">
+        <div className="grid12 items-center gap-y-10">
           {/* ---------- the argument ---------- */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="col-span-12 lg:col-span-6">
             <Reveal y={10}>
               <p className="badge t-mono">
-                <HexMark className="h-2 w-2 shrink-0 bg-cyan" />
+                <HexMark className="h-2 w-2 shrink-0 bg-azure" />
                 {site.name} — {hero.kicker}
               </p>
             </Reveal>
 
-            <h1 className="t-display mt-7 md:mt-9">
+            <h1 className="t-display mt-7 md:mt-8">
               <Headline text={hero.headline} accent={hero.accent} />
             </h1>
 
             <Reveal delay={0.1}>
-              <p className="t-lede mt-8 max-w-xl">{hero.lede}</p>
+              <p className="t-lede mt-7 max-w-xl">{hero.lede}</p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a href="#contact" className="btn btn-solid">
                   {cta.startProject}
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
@@ -78,22 +70,47 @@ export function Hero({
             </Reveal>
           </div>
 
-          {/* ---------- the object ---------- */}
+          {/* ---------- the photograph ---------- */}
           <Reveal
-            delay={0.18}
-            y={18}
-            className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-span-5 lg:col-start-8 lg:pl-4"
+            delay={0.16}
+            y={16}
+            className="col-span-12 lg:col-span-6 lg:col-start-7 lg:pl-6"
           >
-            <HexStack labels={practiceIndex} ariaLabel={a11y.practiceAreas} />
+            <figure className="plate plate-zoom relative aspect-[4/3] w-full">
+              <Image
+                src="/img/analysis.jpg"
+                alt="Two colleagues reviewing reports and dashboards on a laptop"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </figure>
           </Reveal>
         </div>
 
+        {/* ---------- the four practices, as a row ---------- */}
+        <nav aria-label={a11y.practiceAreas} className="mt-12 md:mt-16">
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {practiceIndex.map((label, i) => (
+              <Reveal as="li" key={label} delay={0.05 * i} y={10}>
+                <a href="#services" className="card card-hover flex h-full items-start gap-4 py-6">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[0.875rem] bg-wash font-mono text-[0.6875rem] text-ink-soft">
+                    0{i + 1}
+                  </span>
+                  <span className="t-h4 pt-1.5 text-balance">{label}</span>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+        </nav>
+
         {/* ---------- the facts ---------- */}
-        <dl className="grid12 mt-16 gap-y-8 border-t border-ink pt-6 md:mt-24">
+        <dl className="grid12 mt-14 gap-y-8 border-t border-rule pt-7 md:mt-20">
           {facts.map((fact) => (
             <div key={fact.label} className="col-span-6 lg:col-span-3">
               <dt className="t-mono">{fact.label}</dt>
-              <dd className="t-h4 mt-2">{fact.value}</dd>
+              <dd className="t-h4 mt-2 text-balance">{fact.value}</dd>
             </div>
           ))}
         </dl>

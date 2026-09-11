@@ -63,8 +63,8 @@ export function SiteHeader({
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-paper transition-[border-color] duration-500 ${
-        scrolled ? "border-b border-rule" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        scrolled ? "border-b border-rule bg-ground/95 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
       <div className="shell flex h-16 items-center justify-between gap-4 md:h-[4.75rem]">
@@ -141,7 +141,7 @@ export function SiteHeader({
         id="mobile-nav"
         data-open={open}
         aria-hidden={!open}
-        className="drawer fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-rule bg-paper md:top-[4.75rem] lg:hidden"
+        className="drawer fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-rule bg-ground md:top-[4.75rem] lg:hidden"
       >
         <nav aria-label={a11y.mobileNav} className="shell flex flex-col pt-2 pb-10">
           {items.map((item, i) => (

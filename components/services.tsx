@@ -99,12 +99,12 @@ export function Services({
             id={`panel-${index}`}
             aria-labelledby={`tab-${index}`}
             tabIndex={0}
-            className="col-span-12 mt-12 lg:col-span-8 lg:col-start-5 lg:mt-0"
+            className="card col-span-12 mt-8 lg:col-span-8 lg:col-start-5 lg:mt-0"
           >
             <h3 className="t-h2 max-w-xl">{active.headline}</h3>
             <p className="t-body mt-6 max-w-md">{active.blurb}</p>
 
-            <dl className="mt-12">
+            <dl className="mt-10">
               {active.items.map((item, i) => (
                 <div key={item.title} className="grid12 border-t border-rule py-7 last:border-b">
                   <dt className="col-span-12 flex items-baseline gap-3 md:col-span-5">

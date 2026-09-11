@@ -24,12 +24,12 @@ export function SiteFooter({
   ];
 
   return (
-    <footer className="border-t border-ink">
+    <footer className="mt-6 bg-navy-900 text-paper">
       <div className="shell">
         <a href="#contact" className="group block py-16 md:py-24">
-          <p className="t-mono">{footer.readyLabel}</p>
+          <p className="t-mono text-paper/55">{footer.readyLabel}</p>
           <p className="t-display mt-5 flex items-baseline gap-6">
-            <span className="transition-colors duration-500 group-hover:text-cyan-deep">
+            <span className="transition-colors duration-500 group-hover:text-cyan">
               {footer.readyLine}
             </span>
             <span
@@ -41,20 +41,20 @@ export function SiteFooter({
           </p>
         </a>
 
-        <div className="grid12 gap-y-10 border-t border-rule py-12">
+        <div className="grid12 gap-y-10 border-t border-white/12 py-12">
           <div className="col-span-12 lg:col-span-3">
             <Wordmark size="md" />
-            <p className="t-body mt-5 max-w-xs">{footer.blurb}</p>
+            <p className="mt-5 max-w-xs text-[0.9375rem] leading-relaxed text-paper/65">{footer.blurb}</p>
           </div>
 
           <nav aria-label={footer.servicesLabel} className="col-span-6 lg:col-span-2 lg:col-start-6">
-            <p className="t-mono">{footer.servicesLabel}</p>
+            <p className="t-mono text-paper/55">{footer.servicesLabel}</p>
             <ul className="mt-4 space-y-1">
               {serviceTabs.map((tab) => (
                 <li key={tab}>
                   <a
                     href="#services"
-                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-ink-soft"
+                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-paper/70 hover:text-paper"
                   >
                     {tab}
                   </a>
@@ -64,13 +64,13 @@ export function SiteFooter({
           </nav>
 
           <nav aria-label={footer.companyLabel} className="col-span-6 lg:col-span-2">
-            <p className="t-mono">{footer.companyLabel}</p>
+            <p className="t-mono text-paper/55">{footer.companyLabel}</p>
             <ul className="mt-4 space-y-1">
               {SECTION_IDS.map((id) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
-                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-ink-soft"
+                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-paper/70 hover:text-paper"
                   >
                     {nav[id]}
                   </a>
@@ -80,8 +80,8 @@ export function SiteFooter({
           </nav>
 
           <div className="col-span-12 lg:col-span-3">
-            <p className="t-mono">{footer.contactLabel}</p>
-            <ul className="mt-4 space-y-1 text-[0.9375rem] text-ink-soft">
+            <p className="t-mono text-paper/55">{footer.contactLabel}</p>
+            <ul className="mt-4 space-y-1 text-[0.9375rem] text-paper/70">
               <li className="py-1">{site.location}</li>
               <li>
                 <a href={`tel:${site.phoneHref}`} className="link inline-flex min-h-11 items-center">
@@ -104,7 +104,7 @@ export function SiteFooter({
                     href={channel.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="t-mono link inline-flex min-h-11 min-w-11 items-center normal-case"
+                    className="t-mono link inline-flex min-h-11 min-w-11 items-center normal-case text-paper/70 hover:text-paper"
                   >
                     {channel.label}
                   </a>
@@ -114,7 +114,7 @@ export function SiteFooter({
           </div>
         </div>
 
-        <div className="t-mono flex flex-col gap-2 border-t border-rule py-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="t-mono flex flex-col gap-2 border-t border-white/12 py-6 text-paper/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. {footer.rights}
           </p>

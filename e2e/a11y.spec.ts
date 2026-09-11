@@ -10,13 +10,15 @@ const LOCALES = ["en", "es", "de", "fr", "pt", "zh"];
  */
 for (const locale of LOCALES) {
   test(`${locale}: no WCAG 2 A/AA violations`, async ({ page }) => {
+    // axe scans the whole document, including everything below the fold that
+    // has not scrolled into view yet and is therefore still at opacity 0. It
+    // reports the blended colour and calls it a contrast failure, for text no
+    // user can see. Reduced motion makes every reveal resolve immediately, so
+    // the scan measures the state people actually read.
+    await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(`/${locale}`);
     await page.waitForLoadState("networkidle");
-    // Entrance reveals animate opacity, and axe samples the blended colour
-    // mid-fade. Let them settle so contrast is measured on the real thing.
-    await page.evaluate(() =>
-      Promise.all(document.getAnimations().map((a) => a.finished.catch(() => {}))),
-    );
+    await page.evaluate(() => document.fonts.ready);
 
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
@@ -30,6 +32,7 @@ for (const locale of LOCALES) {
 }
 
 test("the open language menu is clean too", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/en");
   await page.locator(".lang__trigger").click();
   await expect(page.locator(".lang__list")).toBeVisible();

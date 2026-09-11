@@ -124,7 +124,7 @@ export function Contact({
             ))}
           </dl>
 
-          <div className="col-span-12 mt-12 lg:col-span-8 lg:col-start-5 lg:mt-0">
+          <div className="card col-span-12 mt-8 lg:col-span-8 lg:col-start-5 lg:mt-0">
             {status === "sent" ? (
               <div className="border-t border-ink pt-8">
                 <p className="t-mono">{contact.sentLabel}</p>
