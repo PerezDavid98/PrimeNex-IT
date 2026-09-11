@@ -74,7 +74,7 @@ export function LocaleSwitcher({
         <ChevronGlyph />
       </summary>
 
-      <ul className="lang__list">
+      <ul className="lang__list lifted">
         {locales.map((locale) => {
           const isActive = locale.code === active;
           return (

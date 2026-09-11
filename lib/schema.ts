@@ -59,12 +59,7 @@ export function buildSchema(locale: Locale) {
               itemOffered: {
                 "@type": "Service",
                 name: item.title,
-                description:
-                  "body" in item && item.body
-                    ? item.body
-                    : "bullets" in item && item.bullets
-                      ? item.bullets.join(" ")
-                      : undefined,
+                description: item.body,
                 provider: { "@id": orgId },
               },
             })),

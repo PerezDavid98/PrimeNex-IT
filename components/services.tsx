@@ -114,21 +114,7 @@ export function Services({
                     <span className="t-h4 text-balance">{item.title}</span>
                   </dt>
                   <dd className="col-span-12 mt-3 md:col-span-7 md:mt-0">
-                    {"body" in item && item.body ? (
-                      <p className="t-body">{item.body}</p>
-                    ) : null}
-                    {"bullets" in item && item.bullets ? (
-                      <ul className="space-y-2.5">
-                        {item.bullets.map((bullet) => (
-                          <li key={bullet} className="t-body flex gap-3">
-                            <span aria-hidden className="text-ink-mid">
-                              —
-                            </span>
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
+                    <p className="t-body">{item.body}</p>
                   </dd>
                 </div>
               ))}

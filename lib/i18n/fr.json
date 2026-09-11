@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "PrimeNex IT — Partenaire technologique de la transformation numérique",
-    "description": "PrimeNex IT conçoit des solutions technologiques de pointe@@N@@: support informatique et transformation numérique, plateformes web, analyse de données et systèmes embarqués. Cartago, Costa Rica.",
-    "ogDescription": "Support informatique, plateformes web, analyse de données et systèmes embarqués, conçus de bout en bout depuis Cartago, Costa Rica.",
-    "tagline": "Partenaire technologique de la transformation numérique"
+    "title": "PrimeNex IT — Conseil Dynamics 365, Salesforce et ERP",
+    "description": "Conseil ERP et CRM depuis Cartago, Costa Rica. Microsoft Dynamics 365 (F&O, Business Central, Customer Engagement), Salesforce Service Cloud, Oracle NetSuite et les processus finance et chaîne d’approvisionnement qui tournent dessus.",
+    "ogDescription": "Mise en œuvre, support et intégration de Dynamics 365, Salesforce et NetSuite — avec une vraie profondeur sur les processus finance et chaîne d’approvisionnement. Nearshore depuis le Costa Rica.",
+    "tagline": "Conseil ERP et CRM pour la finance et la chaîne d’approvisionnement"
   },
   "a11y": {
     "skipToContent": "Aller au contenu",
@@ -35,188 +35,191 @@
   "hero": {
     "kicker": "Cartago, Costa Rica",
     "headline": "Nous concevons ce qui fait tourner votre activité.",
-    "lede": "PrimeNex IT conçoit des solutions technologiques de pointe, à la hauteur des exigences les plus dures du marché actuel. Derrière chaque projet, une équipe de professionnels compétents et engagés, qui travaille avec précision, rigueur et une exigence d'excellence qui ne faiblit pas.",
+    "lede": "Nous mettons en œuvre, maintenons et intégrons les systèmes dont dépend votre exploitation — Microsoft Dynamics 365, Salesforce et NetSuite — et nous connaissons les processus qui tournent dessus, de la demande d’achat jusqu’à l’écriture de stock.",
     "accent": "fait tourner votre activité"
   },
   "practiceIndex": [
-    "Embarqué",
-    "Web",
-    "Données",
-    "Infrastructure"
+    "Dynamics 365",
+    "Salesforce",
+    "ERP et approvisionnement",
+    "Données et intégration"
   ],
   "facts": [
     {
-      "label": "Siège",
+      "label": "Dynamics 365",
+      "value": "4 mises en œuvre"
+    },
+    {
+      "label": "ERP",
+      "value": "NetSuite, de bout en bout"
+    },
+    {
+      "label": "Salesforce",
+      "value": "Service Cloud, livré"
+    },
+    {
+      "label": "Basés à",
       "value": "Cartago, Costa Rica"
-    },
-    {
-      "label": "Fuseau horaire",
-      "value": "GMT-6, nearshore"
-    },
-    {
-      "label": "Périmètre",
-      "value": "Du matériel à l'interface"
-    },
-    {
-      "label": "Intervention",
-      "value": "Conception, réalisation, support"
     }
   ],
   "statement": {
-    "label": "Spécialisation",
-    "body": "Notre expertise couvre un large éventail de services technologiques — des systèmes embarqués qui associent matériel et logiciel en solutions efficaces et sur mesure, aux interfaces intuitives qui améliorent l'expérience utilisateur, jusqu'aux bases de données et aux systèmes CRM qui maintiennent votre infrastructure opérationnelle, performante et optimisée en permanence."
+    "label": "Ce que nous faisons réellement",
+    "body": "La plupart des problèmes d’ERP ne sont pas des problèmes de logiciel. C’est un paramétrage, un processus métier, un rôle de sécurité, une donnée de référence ou une interface — et les distinguer, c’est le travail. Nous prenons le siège de l’analyste : reproduire l’incident signalé, isoler la cause racine, rédiger la spécification fonctionnelle et technique, et accompagner les développeurs et l’éditeur jusqu’à la mise en production du correctif."
   },
   "services": {
     "label": "Services",
-    "title": "Ce que nous réalisons pour vous",
-    "lede": "Notre expertise couvre un large éventail de services technologiques — des systèmes embarqués qui associent matériel et logiciel, aux interfaces qui améliorent l'expérience utilisateur, jusqu'aux bases de données et aux systèmes CRM qui font tourner l'ensemble.",
+    "title": "Ce que nous construisons et exploitons pour vous",
+    "lede": "Quatre pratiques, construites autour des systèmes qui portent la finance, la chaîne d’approvisionnement et le service client — et autour des processus qui vivent dedans.",
     "groups": [
       {
-        "tab": "Support IT",
-        "headline": "Moderniser le socle technique dont vous dépendez",
-        "blurb": "Nous reprenons les systèmes qui font tourner votre activité aujourd'hui et les rendons plus rapides, moins coûteux et prêts pour la suite.",
+        "tab": "Dynamics 365",
+        "headline": "L’écosystème Microsoft, du déploiement à l’hypercare",
+        "blurb": "Quatre mises en œuvre livrées sur Finance & Operations, Business Central et Customer Engagement.",
         "items": [
           {
-            "title": "Transformation numérique",
-            "body": "Mise en œuvre de solutions technologiques avancées qui permettent aux entreprises de moderniser leurs processus, de gagner en efficacité opérationnelle et de s'adapter aux exigences du marché numérique."
+            "title": "Mise en œuvre et déploiement",
+            "body": "Recueil des exigences et analyse d’écart, cartographie des processus, architecture de sécurité couvrant rôles, tâches, privilèges et séparation des fonctions, scripts de test et coordination de la recette, puis gestion des livraisons et des environnements jusqu’à la mise en production."
           },
           {
-            "title": "Gestion CRM et ERP avec IA et chatbots",
-            "body": "Gestion complète des systèmes CRM et ERP@@N@@: nous optimisons leurs performances et leurs fonctionnalités par l'intégration de l'intelligence artificielle et de chatbots, pour enrichir la relation client et automatiser les processus."
+            "title": "Support fonctionnel et technique",
+            "body": "Prise en charge, tri et priorisation des incidents, avec une analyse de cause racine par couches qui sépare le paramétrage du processus métier, de la sécurité, des données, de l’intégration et de l’environnement — et escalade vers les partenaires Microsoft avec étapes de reproduction et preuves lorsque le correctif sort de notre périmètre."
           },
           {
-            "title": "Gestion, refonte et migration de bases de données",
-            "body": "Services spécialisés de refonte et de migration de bases de données@@N@@: vos données critiques sont gérées de façon sûre et performante, sur une structure optimisée pour un accès rapide et fiable."
+            "title": "Extensions et personnalisation",
+            "body": "Extensions en AL et X++, API REST et .NET là où le standard laisse un manque, et une évaluation standard contre personnalisation avant d’écrire une ligne — car toute personnalisation est un coût que l’on porte à chaque montée de version."
           }
         ]
       },
       {
-        "tab": "Web",
-        "headline": "Des plateformes taillées pour votre croissance",
-        "blurb": "Des produits robustes, sûrs et évolutifs — du front-end au back-end, sur des technologies actuelles et des bonnes pratiques éprouvées.",
+        "tab": "Salesforce",
+        "headline": "Service Cloud : déclaratif quand c’est possible, codé quand il le faut",
+        "blurb": "Mises en œuvre complètes de Service Cloud, du recueil des exigences à la formation et à la passation.",
         "items": [
           {
-            "title": "Développement web, back-end et front-end",
-            "body": "Développement de sites web robustes et évolutifs, front-end comme back-end, sur les technologies les plus récentes, pour des performances optimales et une expérience utilisateur soignée."
+            "title": "Mise en œuvre de Service Cloud",
+            "body": "Recueil des exigences avec les parties prenantes, cartographie du processus actuel et analyse d’écart, configuration du modèle de données et des processus métier, migration des données avec dédoublonnage et contrôle d’intégrité, et conception des rôles et profils utilisateurs."
           },
           {
-            "title": "Création de bases de données",
-            "body": "Création de bases de données performantes et sécurisées, conçues pour absorber de grands volumes d'information et garantir l'intégrité et la disponibilité des données."
+            "title": "Construction déclarative et programmatique",
+            "body": "Flow Builder et Lightning Web Components pour les interfaces réellement utilisées, et Apex pour la logique métier que les limites déclaratives n’atteignent pas. La frontière entre les deux est une décision, pas un accident."
           },
           {
-            "title": "Serveurs et hébergement",
-            "body": "Hébergement en haute disponibilité, avec un support technique spécialisé pour que votre site reste en ligne et réactif en toutes circonstances."
+            "title": "Omni-Channel et assistants conversationnels",
+            "body": "Routage Omni-Channel pour que chaque dossier atteigne le bon conseiller, et assistants conversationnels construits avec Einstein Bots pour traiter les demandes de premier niveau et résoudre les dossiers avant qu’un conseiller soit nécessaire."
           }
         ]
       },
       {
-        "tab": "Données",
-        "headline": "Transformer vos données en décisions concrètes",
-        "blurb": "Des données brutes au tableau de bord que votre direction ouvre chaque matin.",
+        "tab": "ERP et approvisionnement",
+        "headline": "Les processus sous le logiciel",
+        "blurb": "Oracle NetSuite porté de bout en bout sur le périmètre finance et chaîne d’approvisionnement, depuis le siège de l’analyste et non à côté.",
         "items": [
           {
-            "title": "Exploration de données",
-            "body": "Application de techniques avancées d'exploration de données pour mettre au jour des schémas et des tendances qui restaient invisibles, et en tirer des enseignements utiles à la décision."
+            "title": "Mise en œuvre d’ERP",
+            "body": "Déploiement complet de NetSuite en finance et chaîne d’approvisionnement : cartographies AS-IS et TO-BE, analyse d’écart, spécifications fonctionnelles rapprochées du standard, rôles et droits au moindre privilège avec séparation des fonctions, préparation de la bascule et hypercare après la mise en production."
           },
           {
-            "title": "Création de tableaux de bord",
-            "body": "Conception et développement de tableaux de bord interactifs qui donnent à voir l'essentiel de façon claire et concise, pour suivre et analyser vos indicateurs de performance d'un coup d'œil."
+            "title": "Conception des processus finance et approvisionnement",
+            "body": "Grand livre, comptes fournisseurs et clients, ajustements comptables, paramétrage des écritures et dimensions — et toute la chaîne d’achat : demande d’achat, commande, réception de marchandises, facture fournisseur et écriture de stock, avec les données de référence articles et fournisseurs."
           },
           {
-            "title": "Business intelligence",
-            "body": "Des solutions de business intelligence qui transforment les données en informations exploitables et aident les entreprises à décider en connaissance de cause."
+            "title": "Analyse des processus métier",
+            "body": "Ateliers d’exigences avec la finance, les achats, les stocks et l’exploitation, puis traduction en spécifications fonctionnelles et techniques à partir desquelles développeurs et prestataires externes peuvent réellement construire. Plus la coordination de la recette, la formation des utilisateurs et la documentation des processus."
           }
         ]
       },
       {
-        "tab": "Embarqué",
-        "headline": "Là où le silicium rencontre le logiciel",
-        "blurb": "Matériel et firmware conçus ensemble, pour un produit efficace, industrialisable et maîtrisé côté coûts.",
+        "tab": "Données et intégration",
+        "headline": "Faire que des systèmes séparés se comportent comme un seul",
+        "blurb": "Des interfaces entre plateformes qui n’ont jamais été conçues pour se parler, et le travail sur les données qui décide si quelqu’un fait confiance au résultat.",
         "items": [
           {
-            "title": "Externalisation",
-            "body": "Prestations d'externalisation en systèmes embarqués@@N@@: vous nous confiez le développement et la maintenance de vos systèmes critiques, avec la même exigence de qualité et d'efficacité à chaque étape."
+            "title": "Interfaces et API",
+            "body": "Interfaces REST et SOAP et API orientées événements, dont des intégrations omnicanales entre Dynamics 365 et des plateformes de centre de contact — couvrant l’authentification, le mappage des messages et la gestion des erreurs entre les couches CRM, téléphonie et intégration."
           },
           {
-            "title": "Conception et développement matériel",
-            "bullets": [
-              "Conception de PCB — des cartes sur mesure pour vos systèmes embarqués.",
-              "Prototypage matériel — fabrication et test de prototypes pour valider les choix avant la production en série.",
-              "Choix et intégration des composants — microcontrôleurs, capteurs, actionneurs et électronique associée."
-            ]
+            "title": "Migration et intégrité des données",
+            "body": "Migration avec nettoyage, dédoublonnage et contrôle d’intégrité, avec une piste d’audit complète. SQL Server et Azure SQL, Oracle et MySQL, avec des chaînes ETL construites pour être rejouées et non exécutées une seule fois à la main."
           },
           {
-            "title": "Optimisation des systèmes embarqués",
-            "bullets": [
-              "Optimisation des performances — réglage du système pour un rendement maximal.",
-              "Réduction de la consommation — des stratégies qui ramènent la demande en énergie au minimum.",
-              "Réduction des coûts — une analyse qui fait baisser le coût de fabrication et d'exploitation."
-            ]
+            "title": "Reporting et informatique décisionnelle",
+            "body": "Tableaux de bord Power BI et modèles de données SQL qui répondent aux questions que la finance et l’exploitation posent réellement, construits sur des données contrôlées — y compris de l’analytique prédictive qui repère les goulots d’étranglement sur les équipements avant la panne."
           }
         ]
       }
     ]
   },
   "capabilities": {
-    "label": "Expertises",
-    "title": "Six disciplines, une seule équipe",
-    "lede": "Chaque projet mobilise la même équipe. Matériel, logiciel, données et les personnes qui feront tourner l'ensemble sont pensés ensemble, au lieu d'être renvoyés d'un prestataire à l'autre.",
+    "label": "Compétences",
+    "title": "Ce qui est sur le banc",
+    "lede": "La profondeur plateforme et la couche technique en dessous. L’analyse et l’ingénierie vont ensemble ici, et c’est pour cela que la cause racine est trouvée plutôt qu’escaladée.",
     "items": [
       {
-        "title": "Systèmes embarqués",
-        "caption": "Matériel et firmware, conçus ensemble",
+        "title": "Dynamics 365",
+        "caption": "Finance & Operations, Business Central, Customer Engagement",
         "includes": [
-          "Conception PCB",
-          "Firmware",
-          "Prototypage",
-          "Composants"
+          "Analyse d’écart",
+          "Architecture de sécurité",
+          "AL",
+          "X++",
+          "Recette"
         ]
       },
       {
-        "title": "Plateformes web",
-        "caption": "De bout en bout, prêtes à monter en charge",
+        "title": "Salesforce",
+        "caption": "Service Cloud, construit et étendu",
         "includes": [
-          "Front-end",
-          "Back-end",
-          "Hébergement",
-          "Haute disponibilité"
+          "Apex",
+          "Lightning Web Components",
+          "Flow Builder",
+          "Omni-Channel",
+          "Einstein Bots"
         ]
       },
       {
-        "title": "Données et BI",
-        "caption": "Des données brutes à la décision",
+        "title": "Plateformes ERP",
+        "caption": "NetSuite, et la Power Platform autour",
         "includes": [
-          "Exploration de données",
-          "Tableaux de bord",
-          "Business intelligence"
+          "Oracle NetSuite",
+          "Power Apps",
+          "Power Automate"
         ]
       },
       {
-        "title": "Infrastructure",
-        "caption": "Les systèmes dont dépend votre activité",
+        "title": "Finance et approvisionnement",
+        "caption": "Les domaines de processus, pas seulement les écrans",
         "includes": [
-          "Bases de données",
-          "CRM",
-          "ERP",
-          "Refonte et migration"
+          "Grand livre",
+          "Fournisseurs et clients",
+          "Achat au paiement",
+          "Stocks",
+          "Données de référence"
         ]
       },
       {
-        "title": "UX et UI",
-        "caption": "Des interfaces qui améliorent l'expérience",
+        "title": "Données et reporting",
+        "caption": "Contrôler d’abord, visualiser ensuite",
         "includes": [
-          "Design d'interface",
-          "Expérience utilisateur",
-          "Ergonomie"
+          "SQL Server",
+          "Azure SQL",
+          "Oracle",
+          "MySQL",
+          "ETL",
+          "Power BI"
         ]
       },
       {
-        "title": "Support IT et formation",
-        "caption": "Pour que votre équipe s'en charge sans nous",
+        "title": "Couche technique",
+        "caption": "Là où l’intégration tourne vraiment",
         "includes": [
-          "Transformation numérique",
-          "Automatisation",
-          "Formation"
+          "C# / .NET",
+          "TypeScript",
+          "Python",
+          "Azure Functions",
+          "Logic Apps",
+          "Azure DevOps",
+          "CI/CD",
+          "Docker"
         ]
       }
     ]
@@ -296,7 +299,7 @@
   "footer": {
     "readyLabel": "Quand vous voulez",
     "readyLine": "Lancer un projet",
-    "blurb": "Support informatique, plateformes web, données et systèmes embarqués, conçus depuis Cartago, Costa Rica.",
+    "blurb": "Conseil ERP et CRM depuis Cartago, Costa Rica. Dynamics 365, Salesforce et NetSuite — mise en œuvre, support et intégration, avec de la profondeur sur les processus finance et chaîne d’approvisionnement.",
     "servicesLabel": "Services",
     "companyLabel": "Entreprise",
     "contactLabel": "Contact",

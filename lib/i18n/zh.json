@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "PrimeNex IT — 数字化转型的技术伙伴",
-    "description": "PrimeNex IT 提供前沿的技术解决方案：IT 支持与数字化转型、Web 平台、数据分析与嵌入式系统。哥斯达黎加 Cartago。",
-    "ogDescription": "IT 支持、Web 平台、数据分析与嵌入式系统，从哥斯达黎加 Cartago 端到端交付。",
-    "tagline": "数字化转型的技术伙伴"
+    "title": "PrimeNex IT — Dynamics 365、Salesforce 与 ERP 咨询",
+    "description": "来自哥斯达黎加卡塔戈的 ERP 与 CRM 咨询服务。Microsoft Dynamics 365（F&O、Business Central、Customer Engagement）、Salesforce Service Cloud、Oracle NetSuite，以及运行于其上的财务与供应链流程。",
+    "ogDescription": "Dynamics 365、Salesforce 与 NetSuite 的实施、支持与集成，具备真正的财务与供应链流程深度。近岸交付，源自哥斯达黎加。",
+    "tagline": "面向财务与供应链的 ERP 与 CRM 咨询"
   },
   "a11y": {
     "skipToContent": "跳到主要内容",
@@ -35,123 +35,115 @@
   "hero": {
     "kicker": "哥斯达黎加 Cartago",
     "headline": "我们构建支撑业务运转的系统。",
-    "lede": "PrimeNex IT 提供前沿的技术解决方案，针对当下市场最严苛的需求量身打造。我们的团队专注、资深，每一个项目都以精准的执行、投入的态度和不打折的品质标准交付。",
+    "lede": "我们实施、支持并集成您运营所依赖的业务系统——Microsoft Dynamics 365、Salesforce 与 NetSuite——并且熟悉运行其上的流程，从采购申请一直到库存过账。",
     "accent": "支撑业务运转"
   },
   "practiceIndex": [
-    "嵌入式",
-    "Web",
-    "数据",
-    "基础设施"
+    "Dynamics 365",
+    "Salesforce",
+    "ERP 与供应链",
+    "数据与集成"
   ],
   "facts": [
     {
+      "label": "Dynamics 365",
+      "value": "4 次实施"
+    },
+    {
+      "label": "ERP",
+      "value": "NetSuite，端到端"
+    },
+    {
+      "label": "Salesforce",
+      "value": "Service Cloud，已交付"
+    },
+    {
       "label": "所在地",
-      "value": "哥斯达黎加 Cartago"
-    },
-    {
-      "label": "时区",
-      "value": "GMT-6，近岸协作"
-    },
-    {
-      "label": "覆盖范围",
-      "value": "从硬件到界面"
-    },
-    {
-      "label": "合作方式",
-      "value": "设计、构建、支持"
+      "value": "哥斯达黎加卡塔戈"
     }
   ],
   "statement": {
-    "label": "专长",
-    "body": "我们的技术服务覆盖面很广——从把硬件与软件整合为高效定制方案的嵌入式系统，到提升使用体验的直观界面，再到让基础设施始终稳定、高效、状态最优的数据库与 CRM 系统。"
+    "label": "我们真正做的事",
+    "body": "多数 ERP 问题并非软件问题。它可能是一项配置、一个业务流程、一个安全角色、一条主数据，或是一个集成接口——而把它们区分开来，正是这项工作本身。我们坐在业务分析师的位置上：复现所报告的问题，定位根本原因，撰写功能与技术规格说明，并与开发人员和供应商一同跟进，直到修复上线。"
   },
   "services": {
     "label": "服务",
-    "title": "我们为您构建什么",
-    "lede": "我们的技术服务覆盖面很广——从整合硬件与软件的嵌入式系统，到提升使用体验的界面，再到让这一切持续运转的数据库与 CRM 系统。",
+    "title": "我们为您构建并运维的内容",
+    "lede": "四个专业方向，围绕支撑财务、供应链与客户服务的系统而建——也围绕运行在这些系统内部的流程。",
     "groups": [
       {
-        "tab": "IT 支持",
-        "headline": "把您赖以运转的技术栈现代化",
-        "blurb": "我们接手支撑您今天业务的那些系统，让它们更快、更省，也为下一步做好准备。",
+        "tab": "Dynamics 365",
+        "headline": "Microsoft 生态，从上线部署到稳定期支持",
+        "blurb": "已完成四次实施，涵盖 Finance & Operations、Business Central 与 Customer Engagement。",
         "items": [
           {
-            "title": "数字化转型",
-            "body": "落地先进的技术方案，帮助企业改造业务流程、提升运营效率，跟上数字市场的要求。"
+            "title": "实施与上线",
+            "body": "需求收集与差距分析、流程梳理、覆盖角色、职责、权限与职责分离的安全架构设计、测试脚本与用户验收测试协调，随后进行发布与环境管理，直至系统正式上线。"
           },
           {
-            "title": "CRM 与 ERP 管理，融合 AI 与聊天机器人",
-            "body": "全面管理 CRM 与 ERP 系统，通过接入人工智能与聊天机器人优化性能与功能，改善客户互动、推进流程自动化。"
+            "title": "功能与技术支持",
+            "body": "事件受理、分级与优先级排序，采用分层根因分析，将配置问题与业务流程、安全、数据、集成及环境问题区分开来；当修复超出我们的职责范围时，附上复现步骤与证据升级至 Microsoft 合作伙伴。"
           },
           {
-            "title": "数据库管理、重构与迁移",
-            "body": "提供数据库重新设计与迁移的专项服务，让关键数据得到安全高效的管理，结构经过优化，访问快速可靠。"
+            "title": "扩展与定制开发",
+            "body": "使用 AL 与 X++ 开发扩展，在标准功能存在缺口时通过 REST 与 .NET 接口补足；在写下第一行代码之前，先做标准功能与定制开发的权衡评估——因为每一处定制都是每次版本升级都要背负的成本。"
           }
         ]
       },
       {
-        "tab": "Web",
-        "headline": "撑得住增长的平台",
-        "blurb": "稳健、安全、可扩展的产品——前后端一体交付，用当下成熟的技术与实践。",
+        "tab": "Salesforce",
+        "headline": "Service Cloud：能配置的就配置，必须写代码的才写",
+        "blurb": "完整的 Service Cloud 实施，从需求梳理到培训与交接。",
         "items": [
           {
-            "title": "网站开发，前端与后端",
-            "body": "从前端到后端构建稳健、可扩展的网站，采用当下的技术栈，兼顾性能表现与使用体验。"
+            "title": "Service Cloud 实施",
+            "body": "与相关方进行需求梳理、现状流程梳理与差距分析、数据模型与业务流程配置、带去重与完整性校验的数据迁移，以及用户角色与权限配置设计。"
           },
           {
-            "title": "数据库搭建",
-            "body": "搭建高效、安全的数据库，能够承载大体量的数据，并保证数据的完整性与可用性。"
+            "title": "配置式与编程式构建",
+            "body": "用 Flow Builder 与 Lightning Web Components 搭建人们真正使用的界面，用 Apex 承载配置能力无法覆盖的业务逻辑。两者之间的界线是一个决策，而不是偶然。"
           },
           {
-            "title": "服务器与托管",
-            "body": "提供高可用的托管服务，配套专业技术支持，让您的网站始终在线、稳定运行。"
+            "title": "全渠道与对话式助手",
+            "body": "通过 Omni-Channel 路由让每个工单送达正确的坐席，并以 Einstein Bots 构建对话式助手，处理一线咨询，在需要人工坐席之前就完成分流。"
           }
         ]
       },
       {
-        "tab": "数据分析",
-        "headline": "把已经收集的数据变成决策",
-        "blurb": "从原始记录，到管理层每天早上第一件事就打开的那块看板。",
+        "tab": "ERP 与供应链",
+        "headline": "软件之下的流程",
+        "blurb": "以端到端方式负责 Oracle NetSuite 在财务与供应链范围内的落地，坐在分析师的位置上，而非旁观。",
         "items": [
           {
-            "title": "数据挖掘",
-            "body": "运用成熟的数据挖掘方法，找出隐藏在数据里的规律与趋势，为决策提供有价值的依据。"
+            "title": "ERP 实施",
+            "body": "财务与供应链范围内的 NetSuite 完整落地：AS-IS 与 TO-BE 流程图、差距分析、与标准功能逐项核对的功能规格说明、遵循最小权限并含职责分离的角色与权限设计、切换方案规划，以及上线后的稳定期支持。"
           },
           {
-            "title": "数据看板搭建",
-            "body": "设计并开发交互式看板，把关键数据清晰、简洁地呈现出来，便于监控和分析各项指标。"
+            "title": "财务与供应链流程设计",
+            "body": "总账、应付与应收、会计调整、过账设置与维度——以及完整的采购链条：采购申请、采购订单、收货、供应商发票直至库存过账，并涵盖物料与供应商主数据。"
           },
           {
-            "title": "商业智能（BI）",
-            "body": "以 BI 方案把数据转化为可执行的信息，帮助企业做出有依据的战略判断。"
+            "title": "业务流程分析",
+            "body": "与财务、采购、库存与运营各方召开需求工作会，并将结果转化为开发人员与外部供应商能够真正依据施工的功能与技术规格说明。此外还包括验收测试协调、用户培训与流程文档。"
           }
         ]
       },
       {
-        "tab": "嵌入式系统",
-        "headline": "芯片与软件交汇的地方",
-        "blurb": "硬件与固件一起设计，产品才会高效、好量产、成本可控。",
+        "tab": "数据与集成",
+        "headline": "让彼此分离的系统像一个系统那样运转",
+        "blurb": "在原本并非为互通而设计的平台之间搭建接口，以及决定结果是否可信的那部分数据工作。",
         "items": [
           {
-            "title": "外包开发",
-            "body": "提供嵌入式系统的外包服务，让企业可以把关键系统的开发与维护交给我们，并在每个环节都守住质量与效率。"
+            "title": "集成与接口",
+            "body": "REST 与 SOAP 集成以及事件驱动接口，包括 Dynamics 365 与联络中心平台之间的全渠道集成——覆盖身份认证、报文映射，以及 CRM、话务与集成各层之间的错误处理。"
           },
           {
-            "title": "硬件设计与开发",
-            "bullets": [
-              "PCB 设计——面向嵌入式系统的定制板卡。",
-              "硬件打样——制作并测试原型，在量产前验证设计。",
-              "选型与集成——微控制器、传感器、执行器及配套电路。"
-            ]
+            "title": "数据迁移与数据完整性",
+            "body": "含清洗、去重与完整性校验的迁移，并保留完整的审计轨迹。涉及 SQL Server 与 Azure SQL、Oracle 与 MySQL，ETL 管道按可重复执行来构建，而不是靠人工跑一次了事。"
           },
           {
-            "title": "嵌入式系统优化",
-            "bullets": [
-              "性能优化——把系统调到效率最高的状态。",
-              "功耗降低——用一系列策略把耗电压到最低。",
-              "成本优化——通过分析降低制造与运行成本。"
-            ]
+            "title": "报表与商业智能",
+            "body": "基于经过校验的数据构建 Power BI 报表与 SQL 数据模型，回答财务与运营真正会问的问题——其中包括在设备故障前识别产能瓶颈的预测性分析。"
           }
         ]
       }
@@ -159,64 +151,75 @@
   },
   "capabilities": {
     "label": "能力",
-    "title": "六个领域，一支团队",
-    "lede": "每个项目都由同一支团队承接。硬件、软件、数据，以及未来真正操作它的人，都在同一张图纸上一起考虑，而不是在几家供应商之间来回交接。",
+    "title": "我们手上的牌",
+    "lede": "平台深度，以及其下的技术层。在这里分析工作与工程工作由同一方承担，因此根本原因是被找到的，而不是被层层上报的。",
     "items": [
       {
-        "title": "嵌入式系统",
-        "caption": "硬件与固件，一起设计",
+        "title": "Dynamics 365",
+        "caption": "Finance & Operations、Business Central、Customer Engagement",
         "includes": [
-          "PCB 设计",
-          "固件",
-          "打样",
-          "元器件选型"
+          "差距分析",
+          "安全架构",
+          "AL",
+          "X++",
+          "UAT"
         ]
       },
       {
-        "title": "Web 平台",
-        "caption": "前后端一体，为扩展而建",
+        "title": "Salesforce",
+        "caption": "Service Cloud 的搭建与扩展",
         "includes": [
-          "前端",
-          "后端",
-          "托管",
-          "高可用"
+          "Apex",
+          "Lightning Web Components",
+          "Flow Builder",
+          "Omni-Channel",
+          "Einstein Bots"
         ]
       },
       {
-        "title": "数据与 BI",
-        "caption": "从原始记录到决策",
+        "title": "ERP 平台",
+        "caption": "NetSuite，以及围绕它的 Power Platform",
         "includes": [
-          "数据挖掘",
-          "数据看板",
-          "商业智能"
+          "Oracle NetSuite",
+          "Power Apps",
+          "Power Automate"
         ]
       },
       {
-        "title": "基础设施",
-        "caption": "支撑日常运营的那些系统",
+        "title": "财务与供应链",
+        "caption": "是流程域，而不只是界面",
         "includes": [
-          "数据库",
-          "CRM",
-          "ERP",
-          "重构与迁移"
+          "总账",
+          "应付与应收",
+          "采购到付款",
+          "库存",
+          "主数据"
         ]
       },
       {
-        "title": "UX 与 UI",
-        "caption": "让体验更好的界面",
+        "title": "数据与报表",
+        "caption": "先校验，再呈现",
         "includes": [
-          "界面设计",
-          "用户体验",
-          "易用性"
+          "SQL Server",
+          "Azure SQL",
+          "Oracle",
+          "MySQL",
+          "ETL",
+          "Power BI"
         ]
       },
       {
-        "title": "IT 支持与培训",
-        "caption": "让您的团队能自己运维",
+        "title": "技术层",
+        "caption": "集成真正运行的地方",
         "includes": [
-          "数字化转型",
-          "自动化",
-          "团队赋能"
+          "C# / .NET",
+          "TypeScript",
+          "Python",
+          "Azure Functions",
+          "Logic Apps",
+          "Azure DevOps",
+          "CI/CD",
+          "Docker"
         ]
       }
     ]
@@ -296,7 +299,7 @@
   "footer": {
     "readyLabel": "随时可以开始",
     "readyLine": "启动项目",
-    "blurb": "IT 支持、Web 平台、数据与嵌入式系统，从哥斯达黎加 Cartago 交付。",
+    "blurb": "来自哥斯达黎加卡塔戈的 ERP 与 CRM 咨询。Dynamics 365、Salesforce 与 NetSuite——实施、支持与集成，具备财务与供应链流程深度。",
     "servicesLabel": "服务",
     "companyLabel": "公司",
     "contactLabel": "联系",

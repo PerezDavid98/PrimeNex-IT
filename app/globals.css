@@ -273,6 +273,34 @@ body {
 
   .link:hover::after { transform: scaleX(1); }
 
+  /* ============================================================
+     ELEVATION WITHOUT SHADOW
+
+     No drop shadows anywhere. A blurred dark smear under a rectangle is the
+     single most overused device in generated design, and it says nothing
+     specific about this company.
+
+     The rule instead, taken from the logo: anything that lifts, lifts along
+     the isometric axis. A surface above the page is marked by a hairline echo
+     of its own outline, offset up and to the right on that axis — a
+     misregistered print impression, or a construction line in a technical
+     drawing. Crisp, not blurred, and the same movement the hexagon plates
+     make when you touch them.
+     ============================================================ */
+
+  .lifted { position: relative; }
+
+  .lifted::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 26%, transparent);
+    transform: translate(5px, -4px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
   /* Eyebrow as a badge: a bordered pill sitting above the headline, which
      gives the line somewhere to start instead of floating in white. */
   .badge {
@@ -293,7 +321,12 @@ body {
      the pointer. Background plus a 3px nudge of the leading index — confined
      to transform and background, so nothing reflows. */
   .row { transition: background 0.18s var(--ease-out); }
-  .row:hover { background: var(--color-wash); }
+  .row:hover {
+    /* barely a tint — the signal is the rule going to ink and the index
+       stepping across, not a filled band that reads as a sunken panel */
+    background: color-mix(in oklab, var(--color-wash) 55%, transparent);
+    border-color: var(--color-ink);
+  }
 
   .row .t-num {
     transition: transform 0.22s var(--ease-out), color 0.18s var(--ease-out);
@@ -383,9 +416,6 @@ body {
   }
 
   .channel {
-    box-shadow:
-      0 1px 2px -1px color-mix(in oklab, var(--color-ink) 22%, transparent),
-      0 10px 22px -10px color-mix(in oklab, var(--color-ink) 34%, transparent);
     position: relative;
     display: grid;
     place-items: center;
@@ -492,10 +522,7 @@ body {
     overscroll-behavior: contain;
     background: var(--color-paper);
     border-radius: var(--radius-surface);
-    box-shadow:
-      inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 14%, transparent),
-      0 1px 2px -1px color-mix(in oklab, var(--color-ink) 10%, transparent),
-      0 12px 28px -12px color-mix(in oklab, var(--color-ink) 22%, transparent);
+    box-shadow: inset 0 0 0 1px var(--color-ink);
   }
 
   /* Opens downward from the trigger that produced it: 180ms sits in the

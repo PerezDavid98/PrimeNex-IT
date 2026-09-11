@@ -55,7 +55,7 @@ export function ChannelDock({
           rel="noreferrer"
           aria-label={channel.aria}
           data-channel={channel.key}
-          className="channel"
+          className="channel lifted"
         >
           <span className="channel__label">{channel.label}</span>
           <span className="channel__icon">
