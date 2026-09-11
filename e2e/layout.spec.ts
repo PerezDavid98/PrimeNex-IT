@@ -58,10 +58,17 @@ for (const locale of LOCALES) {
           const r = el.getBoundingClientRect();
           if (r.width === 0) return false;
           if (r.right <= vw + 1 && r.left >= -1) return false;
+          // Content inside an <svg> is clipped by its own viewport — a
+          // preserveAspectRatio="slice" background crops on purpose and cannot
+          // scroll the page. The element to judge is the <svg> itself.
+          if (el.closest("svg")) return false;
           return !scrolls(el);
         })
         .slice(0, 5)
-        .map((el) => `${el.tagName}.${String(el.className).slice(0, 40)}`);
+        .map((el) => {
+          const name = el.getAttribute("class") ?? "";
+          return `${el.tagName}.${name.slice(0, 40)}`;
+        });
     });
 
     expect(overflow, `overflowing: ${overflow.join(" | ")}`).toEqual([]);

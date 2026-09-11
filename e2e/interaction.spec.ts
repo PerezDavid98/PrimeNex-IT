@@ -65,7 +65,10 @@ test("the symptom line rotates, and can be driven and paused by hand", async ({
   const controls = page.locator("section:has(button[aria-label]) button[aria-label]");
   expect(await controls.count()).toBeGreaterThanOrEqual(6);
 
-  // Driving it by hand moves the current line, so nobody waits for a lap.
+  // Hover first: that is what pauses it, and it is what a real pointer does on
+  // the way to a dot. Without it the timer can advance between the click and
+  // the assertion, which is the test flapping rather than the site failing.
+  await controls.first().hover();
   await controls.nth(3).click();
   await expect(controls.nth(3)).toHaveAttribute("aria-current", "true");
 

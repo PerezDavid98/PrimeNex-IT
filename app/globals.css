@@ -453,6 +453,44 @@ body {
   .drawer[data-open="true"] { opacity: 1; visibility: visible; }
 
   /* ----------------------------------------------------------
+     HERO PATTERN. Decorative, and kept quiet enough that the
+     headline over it never loses contrast.
+     ---------------------------------------------------------- */
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .hero-pattern__digits {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    fill: rgb(255 255 255 / 0.09);
+  }
+
+  .hero-pattern__facets {
+    fill: var(--color-accent);
+    opacity: 0.13;
+  }
+
+  .hero-pattern__edges {
+    fill: none;
+    stroke: rgb(255 255 255 / 0.09);
+    stroke-width: 1;
+  }
+
+  /* On a narrow screen the facets sit behind the text rather than beside it,
+     so they are dialled further back. */
+  @media (max-width: 767px) {
+    .hero-pattern__facets { opacity: 0.08; }
+    .hero-pattern__digits { fill: rgb(255 255 255 / 0.06); }
+  }
+
+  /* ----------------------------------------------------------
      HEADER. Transparent over the dark hero, paper once past it.
      ---------------------------------------------------------- */
 

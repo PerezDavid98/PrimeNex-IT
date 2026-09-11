@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { site } from "@/lib/content";
 import { Symptoms } from "./symptoms";
+import { HeroPattern } from "./ui/hero-pattern";
 
 /**
  * One committed dark band at the top of the page.
@@ -21,8 +22,10 @@ export function Hero({
   symptoms: Dictionary["symptoms"];
 }) {
   return (
-    <section id="top" className="night">
-      <div className="shell settle pt-28 pb-16 md:pt-36 md:pb-20">
+    <section id="top" className="night relative isolate overflow-hidden">
+      <HeroPattern />
+
+      <div className="shell settle relative pt-28 pb-16 md:pt-36 md:pb-20">
         <p className="t-ref">{site.location}</p>
         <h1 className="t-display mt-5 max-w-[20ch]">{hero.headline}</h1>
         <p className="t-lede mt-7 max-w-[52ch]">{hero.lede}</p>
