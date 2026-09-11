@@ -369,5 +369,37 @@
         ]
       }
     ]
+  },
+  "symptoms": {
+    "label": "¿Le suena alguno de estos?",
+    "items": [
+      "Sus órdenes de compra no cuadran con las facturas que llegan.",
+      "Un asiento falló y nadie puede decir qué capa se rompió.",
+      "Su CRM y su ERP no se ponen de acuerdo sobre el mismo cliente.",
+      "El mes cierra tarde porque primero hay que limpiar los datos a mano.",
+      "Cada mejora cuesta más en la siguiente actualización de lo que ahorró.",
+      "Soporte escala el ticket en vez de encontrar la causa."
+    ]
+  },
+  "outcomes": {
+    "title": "Qué cambia",
+    "items": [
+      {
+        "title": "Control en tiempo real, no una reconstrucción mensual",
+        "body": "Cifras correctas en el momento en que las mira, porque el dato se valida donde entra en vez de repararse antes del cierre."
+      },
+      {
+        "title": "Las herramientas que su equipo ya conoce",
+        "body": "Construido sobre las plataformas que usan a diario, así la adopción es capacitación y no migración."
+      },
+      {
+        "title": "Agregue lo que necesita, cuando lo necesita",
+        "body": "Los módulos e integraciones entran de uno en uno. Nada lo obliga a reemplazar un sistema que funciona."
+      },
+      {
+        "title": "Un responsable, del análisis a producción",
+        "body": "Quien escribe la especificación se queda hasta que la corrección sale. Sin traspasos ni escalamientos por deporte."
+      }
+    ]
   }
 }

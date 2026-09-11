@@ -369,5 +369,37 @@
         ]
       }
     ]
+  },
+  "symptoms": {
+    "label": "Does any of this sound familiar?",
+    "items": [
+      "Your purchase orders don't match the invoices that arrive.",
+      "A posting failed and nobody can say which layer broke.",
+      "Your CRM and your ERP disagree about the same customer.",
+      "The month closes late because the data gets cleaned by hand first.",
+      "Every enhancement costs more at the next upgrade than it ever saved.",
+      "Support escalates the ticket instead of finding the cause."
+    ]
+  },
+  "outcomes": {
+    "title": "What changes",
+    "items": [
+      {
+        "title": "Real-time control, not a monthly reconstruction",
+        "body": "Figures that are right when you look at them, because the data is validated where it enters rather than repaired before the close."
+      },
+      {
+        "title": "The tools your team already knows",
+        "body": "Built on the platforms they use daily, so adoption is training rather than migration."
+      },
+      {
+        "title": "Add what you need, when you need it",
+        "body": "Modules and integrations go in one at a time. Nothing forces you to replace a system that works."
+      },
+      {
+        "title": "One owner from analysis to production",
+        "body": "The person who writes the specification stays until the fix ships. No handoff, no escalation for its own sake."
+      }
+    ]
   }
 }

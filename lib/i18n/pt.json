@@ -369,5 +369,37 @@
         ]
       }
     ]
+  },
+  "symptoms": {
+    "label": "Alguma dessas soa familiar?",
+    "items": [
+      "Seus pedidos de compra não fecham com as notas que chegam.",
+      "Um lançamento falhou e ninguém sabe dizer qual camada quebrou.",
+      "Seu CRM e seu ERP discordam sobre o mesmo cliente.",
+      "O mês fecha atrasado porque primeiro os dados são limpos à mão.",
+      "Cada customização custa mais na próxima atualização do que já economizou.",
+      "O suporte escala o ticket em vez de achar a causa."
+    ]
+  },
+  "outcomes": {
+    "title": "O que muda",
+    "items": [
+      {
+        "title": "Controle em tempo real, não uma reconstrução mensal",
+        "body": "Números certos na hora em que você olha, porque o dado é validado onde entra em vez de consertado antes do fechamento."
+      },
+      {
+        "title": "As ferramentas que sua equipe já conhece",
+        "body": "Construído nas plataformas do dia a dia, então a adoção é treinamento e não migração."
+      },
+      {
+        "title": "Acrescente o que precisa, quando precisa",
+        "body": "Módulos e integrações entram um por um. Nada obriga você a trocar um sistema que funciona."
+      },
+      {
+        "title": "Um responsável, da análise à produção",
+        "body": "Quem escreve a especificação fica até a correção entrar no ar. Sem repasse e sem escalonamento por esporte."
+      }
+    ]
   }
 }

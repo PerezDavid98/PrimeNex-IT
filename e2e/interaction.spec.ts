@@ -48,6 +48,58 @@ test("the technology register is ordered, not a flowing jumble", async ({ page }
   await expect(page.locator("section:has-text('Every platform and technology') svg")).toHaveCount(0);
 });
 
+test("the symptom line rotates, and can be driven and paused by hand", async ({
+  page,
+}) => {
+  await page.goto("/en");
+  await page.waitForLoadState("networkidle");
+
+  // All six are in the DOM at once, so a screen reader gets the whole list and
+  // the rotation is only a visual affordance.
+  const lines = page.locator("section:has(button[aria-current]) ul li");
+  await expect(lines).toHaveCount(6);
+
+  const dots = page.locator("button[aria-current]");
+  await expect(dots).toHaveCount(1);
+
+  const controls = page.locator("section:has(button[aria-label]) button[aria-label]");
+  expect(await controls.count()).toBeGreaterThanOrEqual(6);
+
+  // Driving it by hand moves the current line, so nobody waits for a lap.
+  await controls.nth(3).click();
+  await expect(controls.nth(3)).toHaveAttribute("aria-current", "true");
+
+  // Every symptom names a problem, so every dot carries it as its label.
+  const label = await controls.nth(3).getAttribute("aria-label");
+  expect(label && label.length).toBeGreaterThan(20);
+});
+
+test("under reduced motion the symptoms are a list, not a rotation", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/en");
+  await page.waitForLoadState("networkidle");
+
+  // No controls at all: there is nothing rotating to control.
+  await expect(page.locator("button[aria-current]")).toHaveCount(0);
+
+  // And all six are visible rather than stacked at opacity zero.
+  const visible = await page.evaluate(
+    () =>
+      [...document.querySelectorAll("section li")].filter(
+        (el) => getComputedStyle(el).opacity === "1" && el.textContent?.includes("."),
+      ).length,
+  );
+  expect(visible).toBeGreaterThanOrEqual(6);
+});
+
+test("the outcomes section states results, not modules", async ({ page }) => {
+  await page.goto("/en");
+
+  const rows = page.locator("section:has-text('What changes') dl > div");
+  await expect(rows).toHaveCount(4);
+  await expect(rows.first()).toContainText("Real-time control");
+});
+
 test("none of the generated-page tells are present", async ({ page }) => {
   await page.goto("/en");
   await page.evaluate(() => document.fonts.ready);

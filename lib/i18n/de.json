@@ -369,5 +369,37 @@
         ]
       }
     ]
+  },
+  "symptoms": {
+    "label": "Kommt Ihnen davon etwas bekannt vor?",
+    "items": [
+      "Ihre Bestellungen stimmen nicht mit den eingehenden Rechnungen überein.",
+      "Eine Buchung ist fehlgeschlagen und niemand kann sagen, welche Schicht es war.",
+      "Ihr CRM und Ihr ERP sind beim selben Kunden unterschiedlicher Meinung.",
+      "Der Monatsabschluss verzögert sich, weil die Daten erst von Hand bereinigt werden.",
+      "Jede Anpassung kostet beim nächsten Update mehr, als sie je gespart hat.",
+      "Der Support eskaliert das Ticket, statt die Ursache zu finden."
+    ]
+  },
+  "outcomes": {
+    "title": "Was sich ändert",
+    "items": [
+      {
+        "title": "Kontrolle in Echtzeit statt monatlicher Rekonstruktion",
+        "body": "Zahlen, die stimmen, wenn Sie hinsehen, weil Daten dort geprüft werden, wo sie entstehen, und nicht vor dem Abschluss repariert."
+      },
+      {
+        "title": "Die Werkzeuge, die Ihr Team schon kennt",
+        "body": "Aufgebaut auf den Plattformen des Tagesgeschäfts, sodass Einführung Schulung bedeutet und nicht Migration."
+      },
+      {
+        "title": "Ergänzen Sie, was Sie brauchen, wenn Sie es brauchen",
+        "body": "Module und Schnittstellen kommen einzeln hinzu. Nichts zwingt Sie, ein funktionierendes System zu ersetzen."
+      },
+      {
+        "title": "Eine Verantwortung, von der Analyse bis in den Betrieb",
+        "body": "Wer die Spezifikation schreibt, bleibt, bis die Korrektur produktiv ist. Keine Übergabe, keine Eskalation um ihrer selbst willen."
+      }
+    ]
   }
 }

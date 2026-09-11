@@ -369,5 +369,37 @@
         ]
       }
     ]
+  },
+  "symptoms": {
+    "label": "Est-ce que cela vous parle ?",
+    "items": [
+      "Vos commandes ne correspondent pas aux factures qui arrivent.",
+      "Une écriture a échoué et personne ne sait quelle couche a cassé.",
+      "Votre CRM et votre ERP ne sont pas d’accord sur le même client.",
+      "La clôture prend du retard parce qu’il faut d’abord nettoyer les données à la main.",
+      "Chaque personnalisation coûte plus à la montée de version qu’elle n’a jamais fait gagner.",
+      "Le support escalade le ticket au lieu de trouver la cause."
+    ]
+  },
+  "outcomes": {
+    "title": "Ce qui change",
+    "items": [
+      {
+        "title": "Un contrôle en temps réel, pas une reconstitution mensuelle",
+        "body": "Des chiffres justes au moment où vous les regardez, parce que la donnée est contrôlée là où elle entre plutôt que réparée avant la clôture."
+      },
+      {
+        "title": "Les outils que votre équipe connaît déjà",
+        "body": "Construit sur les plateformes utilisées au quotidien : l’adoption devient de la formation, pas une migration."
+      },
+      {
+        "title": "Ajoutez ce qu’il vous faut, quand il vous le faut",
+        "body": "Les modules et les interfaces arrivent un par un. Rien ne vous oblige à remplacer un système qui marche."
+      },
+      {
+        "title": "Un seul responsable, de l’analyse à la production",
+        "body": "Celui qui rédige la spécification reste jusqu’à la mise en production du correctif. Pas de passation, pas d’escalade pour la forme."
+      }
+    ]
   }
 }
