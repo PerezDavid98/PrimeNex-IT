@@ -1,63 +1,78 @@
-import { nav, services, site, whatsapp, whatsappHref } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { Locale } from "@/lib/i18n/config";
+import { SECTION_IDS, site } from "@/lib/content";
 import { Wordmark } from "./ui/wordmark";
 
-const social = [
-  { label: whatsapp.label, href: whatsappHref },
-  { label: "LinkedIn", href: site.linkedin },
-  { label: "Instagram", href: site.instagram },
-  { label: "Facebook", href: site.facebook },
-];
+export function SiteFooter({
+  locale,
+  footer,
+  nav,
+  serviceTabs,
+  whatsappHref,
+  whatsappLabel,
+}: {
+  locale: Locale;
+  footer: Dictionary["footer"];
+  nav: Dictionary["nav"];
+  serviceTabs: string[];
+  whatsappHref: string;
+  whatsappLabel: string;
+}) {
+  const channels = [
+    { label: whatsappLabel, href: whatsappHref },
+    { label: "LinkedIn", href: site.linkedin },
+  ];
 
-export function SiteFooter() {
   return (
     <footer className="border-t border-ink">
       <div className="shell">
-        {/* closing line */}
         <a href="#contact" className="group block py-16 md:py-24">
-          <p className="t-mono">Ready when you are</p>
+          <p className="t-mono">{footer.readyLabel}</p>
           <p className="t-display mt-5 flex items-baseline gap-6">
             <span className="transition-colors duration-500 group-hover:text-cyan-deep">
-              Start a project
+              {footer.readyLine}
             </span>
             <span
               aria-hidden
-              className="text-[0.35em] transition-transform duration-500 group-hover:translate-x-3"
+              className="text-[0.35em] transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-3"
             >
               →
             </span>
           </p>
         </a>
 
-        {/* directory */}
         <div className="grid12 gap-y-10 border-t border-rule py-12">
           <div className="col-span-12 lg:col-span-3">
             <Wordmark size="md" />
-            <p className="t-body mt-5 max-w-xs">
-              {site.tagline}. IT support, web platforms, data and embedded systems,
-              engineered from {site.location}.
-            </p>
+            <p className="t-body mt-5 max-w-xs">{footer.blurb}</p>
           </div>
 
-          <nav aria-label="Services" className="col-span-6 lg:col-span-2 lg:col-start-6">
-            <p className="t-mono">Services</p>
-            <ul className="mt-4 space-y-2">
-              {services.map((group) => (
-                <li key={group.id}>
-                  <a href="#services" className="link text-[0.9375rem] text-ink-soft">
-                    {group.tab}
+          <nav aria-label={footer.servicesLabel} className="col-span-6 lg:col-span-2 lg:col-start-6">
+            <p className="t-mono">{footer.servicesLabel}</p>
+            <ul className="mt-4 space-y-1">
+              {serviceTabs.map((tab) => (
+                <li key={tab}>
+                  <a
+                    href="#services"
+                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-ink-soft"
+                  >
+                    {tab}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <nav aria-label="Company" className="col-span-6 lg:col-span-2">
-            <p className="t-mono">Company</p>
-            <ul className="mt-4 space-y-2">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="link text-[0.9375rem] text-ink-soft">
-                    {item.label}
+          <nav aria-label={footer.companyLabel} className="col-span-6 lg:col-span-2">
+            <p className="t-mono">{footer.companyLabel}</p>
+            <ul className="mt-4 space-y-1">
+              {SECTION_IDS.map((id) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    className="link inline-flex min-h-11 min-w-11 items-center text-[0.9375rem] text-ink-soft"
+                  >
+                    {nav[id]}
                   </a>
                 </li>
               ))}
@@ -65,30 +80,33 @@ export function SiteFooter() {
           </nav>
 
           <div className="col-span-12 lg:col-span-3">
-            <p className="t-mono">Contact</p>
-            <ul className="mt-4 space-y-2 text-[0.9375rem] text-ink-soft">
-              <li>{site.location}</li>
+            <p className="t-mono">{footer.contactLabel}</p>
+            <ul className="mt-4 space-y-1 text-[0.9375rem] text-ink-soft">
+              <li className="py-1">{site.location}</li>
               <li>
-                <a href={`tel:${site.phoneHref}`} className="link">
+                <a href={`tel:${site.phoneHref}`} className="link inline-flex min-h-11 items-center">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className="link">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="link inline-flex min-h-11 items-center break-all"
+                >
                   {site.email}
                 </a>
               </li>
             </ul>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
-              {social.map((item) => (
-                <li key={item.label}>
+            <ul className="mt-4 flex flex-wrap gap-x-5">
+              {channels.map((channel) => (
+                <li key={channel.label}>
                   <a
-                    href={item.href}
+                    href={channel.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="t-mono link normal-case"
+                    className="t-mono link inline-flex min-h-11 min-w-11 items-center normal-case"
                   >
-                    {item.label}
+                    {channel.label}
                   </a>
                 </li>
               ))}
@@ -98,9 +116,11 @@ export function SiteFooter() {
 
         <div className="t-mono flex flex-col gap-2 border-t border-rule py-6 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. {footer.rights}
           </p>
-          <p>{site.domain}</p>
+          <p lang="en">
+            {site.domain} · {locale.toUpperCase()}
+          </p>
         </div>
       </div>
     </footer>

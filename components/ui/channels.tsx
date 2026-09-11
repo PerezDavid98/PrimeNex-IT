@@ -1,4 +1,5 @@
-import { site, whatsapp, whatsappHref } from "@/lib/content";
+import { site } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /** WhatsApp glyph. Nominative use, linking to their service. */
 export function WhatsAppGlyph({ className = "" }: { className?: string }) {
@@ -18,29 +19,32 @@ export function LinkedInGlyph({ className = "" }: { className?: string }) {
   );
 }
 
-const channels = [
-  {
-    key: "linkedin",
-    label: "LinkedIn",
-    aria: "Visit PrimeNex IT on LinkedIn",
-    href: site.linkedin,
-    Glyph: LinkedInGlyph,
-  },
-  {
-    key: "whatsapp",
-    label: whatsapp.label,
-    aria: whatsapp.aria,
-    href: whatsappHref,
-    Glyph: WhatsAppGlyph,
-  },
-];
+export function ChannelDock({
+  whatsappHref,
+  whatsappLabel,
+  a11y,
+}: {
+  whatsappHref: string;
+  whatsappLabel: string;
+  a11y: Dictionary["a11y"];
+}) {
+  const channels = [
+    {
+      key: "linkedin",
+      label: "LinkedIn",
+      aria: a11y.linkedin,
+      href: site.linkedin,
+      Glyph: LinkedInGlyph,
+    },
+    {
+      key: "whatsapp",
+      label: whatsappLabel,
+      aria: a11y.whatsapp,
+      href: whatsappHref,
+      Glyph: WhatsAppGlyph,
+    },
+  ];
 
-/**
- * Direct channels, stacked flush into the corner of the page — square, flat,
- * no shadow, so they read as part of the layout rather than floating on top of
- * it. Each label slides out on hover and focus; the glyph carries it on touch.
- */
-export function ChannelDock() {
   return (
     <div className="channel-dock">
       {channels.map((channel) => (

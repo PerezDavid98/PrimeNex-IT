@@ -1,15 +1,44 @@
 import { ImageResponse } from "next/og";
-import { hero, site } from "@/lib/content";
+import { isLocale, localeCodes, type Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import { site } from "@/lib/content";
 
-export const alt = `${site.name} — ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+export function generateStaticParams() {
+  return localeCodes.map((locale) => ({ locale }));
+}
+
+export async function generateImageMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = isLocale(params.locale) ? params.locale : "en";
+  return [
+    {
+      id: locale,
+      size,
+      contentType,
+      alt: getDictionary(locale).meta.title,
+    },
+  ];
+}
+
 /**
- * Share card, generated rather than designed as a bitmap so it always matches
- * the copy. Same vocabulary as the site: ink ground, one cyan hairline.
+ * Share card, generated rather than drawn, so it always carries the headline in
+ * the language of the page that was shared.
  */
-export default async function OpengraphImage() {
+export default async function OpengraphImage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: raw } = await params;
+  const locale: Locale = isLocale(raw) ? raw : "en";
+  const dict = getDictionary(locale);
+
   return new ImageResponse(
     (
       <div
@@ -34,21 +63,19 @@ export default async function OpengraphImage() {
               clipPath: "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)",
             }}
           />
-          <div style={{ fontSize: 26, letterSpacing: 4, fontWeight: 600 }}>
-            PRIMENEX IT
-          </div>
+          <div style={{ fontSize: 26, letterSpacing: 4, fontWeight: 600 }}>PRIMENEX IT</div>
         </div>
 
         <div
           style={{
-            fontSize: 76,
-            lineHeight: 1.02,
-            letterSpacing: -2.6,
+            fontSize: dict.hero.headline.length > 55 ? 62 : 74,
+            lineHeight: 1.05,
+            letterSpacing: -2.2,
             fontWeight: 500,
-            maxWidth: 940,
+            maxWidth: 960,
           }}
         >
-          {hero.headline}
+          {dict.hero.headline}
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
@@ -62,8 +89,8 @@ export default async function OpengraphImage() {
               color: "#9aa4ad",
             }}
           >
-            <div>EMBEDDED · WEB · DATA · INFRASTRUCTURE</div>
-            <div>{site.location.toUpperCase()}</div>
+            <div>{dict.practiceIndex.join("  ·  ")}</div>
+            <div>{site.location}</div>
           </div>
         </div>
       </div>

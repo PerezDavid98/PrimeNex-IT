@@ -1,10 +1,17 @@
-import { about, capabilities, services, site } from "./content";
+import { site } from "./content";
+import { getDictionary } from "./i18n/dictionaries";
+import { localeMeta, type Locale } from "./i18n/config";
+import { localeUrl } from "./i18n/seo";
 
 /**
- * Structured data. One graph, so the organization, the site and the service
- * catalog reference each other instead of being three disconnected blobs.
+ * Structured data, per locale. One graph, so the organization, the site and the
+ * service catalog reference each other instead of being three disconnected
+ * blobs — and so the description Google reads is in the language of the page
+ * it read it on.
  */
-export function buildSchema() {
+export function buildSchema(locale: Locale) {
+  const dict = getDictionary(locale);
+  const url = localeUrl(locale);
   const orgId = `${site.url}/#organization`;
   const siteId = `${site.url}/#website`;
 
@@ -23,11 +30,11 @@ export function buildSchema() {
           width: 943,
           height: 392,
         },
-        image: `${site.url}/opengraph-image`,
+        image: `${url}/opengraph-image`,
         email: site.email,
         telephone: site.phone,
-        description: about.mission,
-        slogan: site.tagline,
+        description: dict.about.mission,
+        slogan: dict.meta.tagline,
         sameAs: [site.linkedin],
         address: {
           "@type": "PostalAddress",
@@ -40,11 +47,11 @@ export function buildSchema() {
           { "@type": "Place", name: "Latin America" },
           { "@type": "Country", name: "United States" },
         ],
-        knowsAbout: capabilities.flatMap((item) => item.includes),
+        knowsAbout: dict.capabilities.items.flatMap((item) => item.includes),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Technology services",
-          itemListElement: services.map((group) => ({
+          name: dict.services.label,
+          itemListElement: dict.services.groups.map((group) => ({
             "@type": "OfferCatalog",
             name: group.tab,
             itemListElement: group.items.map((item) => ({
@@ -52,7 +59,12 @@ export function buildSchema() {
               itemOffered: {
                 "@type": "Service",
                 name: item.title,
-                description: item.body ?? item.bullets?.join(" "),
+                description:
+                  "body" in item && item.body
+                    ? item.body
+                    : "bullets" in item && item.bullets
+                      ? item.bullets.join(" ")
+                      : undefined,
                 provider: { "@id": orgId },
               },
             })),
@@ -64,18 +76,18 @@ export function buildSchema() {
         "@id": siteId,
         url: site.url,
         name: site.name,
-        inLanguage: "en",
+        inLanguage: localeMeta(locale).htmlLang,
         publisher: { "@id": orgId },
       },
       {
         "@type": "WebPage",
-        "@id": `${site.url}/#webpage`,
-        url: site.url,
-        name: `${site.name} — ${site.tagline}`,
+        "@id": `${url}/#webpage`,
+        url,
+        name: dict.meta.title,
         isPartOf: { "@id": siteId },
         about: { "@id": orgId },
-        description:
-          "IT support and digital transformation, web platforms, data analysis and embedded systems, engineered end to end from Cartago, Costa Rica.",
+        inLanguage: localeMeta(locale).htmlLang,
+        description: dict.meta.description,
       },
     ],
   };

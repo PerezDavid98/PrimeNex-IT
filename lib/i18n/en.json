@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "title": "PrimeNex IT — Technology partner for digital transformation",
+    "description": "PrimeNex IT delivers cutting-edge technological solutions: IT support and digital transformation, web platforms, data analysis and embedded systems. Cartago, Costa Rica.",
+    "ogDescription": "IT support, web platforms, data analysis and embedded systems, engineered end to end from Cartago, Costa Rica.",
+    "tagline": "Technology partner for digital transformation"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "home": "PrimeNex IT — home",
+    "menu": "Menu",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "serviceAreas": "Service areas",
+    "practiceAreas": "Practice areas",
+    "language": "Language",
+    "changeLanguage": "Change language",
+    "whatsapp": "Chat with us on WhatsApp",
+    "linkedin": "Visit PrimeNex IT on LinkedIn",
+    "loading": "Loading"
+  },
+  "nav": {
+    "services": "Services",
+    "capabilities": "Capabilities",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "cta": {
+    "startProject": "Start a project",
+    "services": "Services"
+  },
+  "hero": {
+    "kicker": "Cartago, Costa Rica",
+    "headline": "We engineer the systems your business runs on.",
+    "lede": "PrimeNex IT delivers cutting-edge technological solutions tailored to the modern market's most demanding needs. Our team of dedicated and skilled professionals ensures every project is executed with precision, dedication, and an unwavering focus on excellence."
+  },
+  "practiceIndex": ["Embedded", "Web", "Data", "Infrastructure"],
+  "facts": [
+    { "label": "Based in", "value": "Cartago, Costa Rica" },
+    { "label": "Time zone", "value": "GMT-6, nearshore" },
+    { "label": "Scope", "value": "Hardware to interface" },
+    { "label": "Engagement", "value": "Design, build, support" }
+  ],
+  "statement": {
+    "label": "Specialization",
+    "body": "We specialize in a broad range of technological services — from embedded systems that combine hardware and software into efficient, customized solutions, to intuitive interfaces that enhance user experience, to the databases and CRM systems that keep your infrastructure operational, efficient and optimized at all times."
+  },
+  "services": {
+    "label": "Services",
+    "title": "What we build for you",
+    "lede": "We specialize in a broad range of technological services — from embedded systems that combine hardware and software, to interfaces that enhance user experience, to the databases and CRM systems that keep everything running.",
+    "groups": [
+      {
+        "tab": "IT Support",
+        "headline": "Modernize the stack you already depend on",
+        "blurb": "We take the systems running your business today and make them faster, cheaper and ready for what comes next.",
+        "items": [
+          {
+            "title": "Digital transformation",
+            "body": "Implementation of advanced technological solutions that enable companies to modernize their processes, improve operational efficiency, and adapt to the demands of the digital market."
+          },
+          {
+            "title": "CRM & ERP management with AI and chatbots",
+            "body": "Comprehensive management of CRM and ERP systems, optimizing their performance and functionality through the integration of artificial intelligence and chatbots, enhancing customer interaction and process automation."
+          },
+          {
+            "title": "Database management, redesign and migration",
+            "body": "Specialized services in database redesign and migration, ensuring that critical data is managed securely and efficiently, with an optimized structure for fast and reliable access."
+          }
+        ]
+      },
+      {
+        "tab": "Web",
+        "headline": "Platforms built to carry your growth",
+        "blurb": "Robust, secure and scalable products — front to back, shipped on current technology and best practices.",
+        "items": [
+          {
+            "title": "Website development, back-end and front-end",
+            "body": "Development of robust and scalable websites, both frontend and backend, using the latest technologies to ensure optimal performance and an excellent user experience."
+          },
+          {
+            "title": "Database creation",
+            "body": "Creation of efficient and secure databases, designed to handle large volumes of information and ensure data integrity and availability."
+          },
+          {
+            "title": "Servers and hosting",
+            "body": "High availability hosting services, with specialized technical support to ensure your website is always online and running smoothly."
+          }
+        ]
+      },
+      {
+        "tab": "Data Analysis",
+        "headline": "Turn the data you already collect into decisions",
+        "blurb": "From raw records to the dashboard your leadership team opens every morning.",
+        "items": [
+          {
+            "title": "Data mining",
+            "body": "Application of advanced data mining techniques to discover hidden patterns and trends, providing valuable insights for decision-making."
+          },
+          {
+            "title": "Dashboard creation",
+            "body": "Design and development of interactive dashboards that let you visualize key data clearly and concisely, making it easy to monitor and analyze performance indicators."
+          },
+          {
+            "title": "Business intelligence",
+            "body": "Business Intelligence solutions that transform data into actionable information, helping companies make informed and strategic decisions."
+          }
+        ]
+      },
+      {
+        "tab": "Embedded Systems",
+        "headline": "Where the silicon meets the software",
+        "blurb": "Hardware and firmware designed together, so the product is efficient, manufacturable and cost-aware.",
+        "items": [
+          {
+            "title": "Outsourcing",
+            "body": "Outsourcing services in embedded systems, allowing companies to externalize the development and maintenance of their critical systems, ensuring quality and efficiency at every stage of the process."
+          },
+          {
+            "title": "Hardware design and development",
+            "bullets": [
+              "PCB design — custom boards for embedded systems.",
+              "Hardware prototyping — building and testing prototypes to validate designs before mass production.",
+              "Component selection and integration — microcontrollers, sensors, actuators and supporting electronics."
+            ]
+          },
+          {
+            "title": "Embedded systems optimization",
+            "bullets": [
+              "Performance optimization — tuning systems to run at maximum efficiency.",
+              "Energy consumption reduction — strategies that minimize power draw.",
+              "Cost reduction — analysis that lowers manufacturing and operating cost."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "label": "Capabilities",
+    "title": "Six disciplines, one bench",
+    "lede": "Every engagement pulls from the same team. Hardware, software, data and the people who will operate it are designed together instead of handed between vendors.",
+    "items": [
+      {
+        "title": "Embedded systems",
+        "caption": "Hardware and firmware, designed together",
+        "includes": ["PCB design", "Firmware", "Prototyping", "Component selection"]
+      },
+      {
+        "title": "Web platforms",
+        "caption": "Front to back, built to scale",
+        "includes": ["Front-end", "Back-end", "Hosting", "High availability"]
+      },
+      {
+        "title": "Data and BI",
+        "caption": "From raw records to decisions",
+        "includes": ["Data mining", "Dashboards", "Business intelligence"]
+      },
+      {
+        "title": "Infrastructure",
+        "caption": "The systems your operation depends on",
+        "includes": ["Databases", "CRM", "ERP", "Redesign and migration"]
+      },
+      {
+        "title": "UX and UI",
+        "caption": "Interfaces that enhance the experience",
+        "includes": ["Interface design", "User experience", "Usability"]
+      },
+      {
+        "title": "IT support and training",
+        "caption": "So your team can run it without us",
+        "includes": ["Digital transformation", "Automation", "Team enablement"]
+      }
+    ]
+  },
+  "about": {
+    "label": "About us",
+    "title": "A partner, not a vendor",
+    "missionLabel": "Mission",
+    "mission": "At PrimeNex IT, we empower businesses with advanced technological solutions focused on digital transformation. We provide training and IT support, covering software, hardware, embedded systems, and database and CRM management. We are committed to being a reliable partner that helps overcome technological challenges and maintain competitiveness.",
+    "visionLabel": "Vision",
+    "vision": "To be the leading strategic partner in technology and IT training, driving digital transformation. We aspire to lead innovation and set new standards of quality and service, helping our clients reach their full potential in a digital world.",
+    "objectivesLabel": "Objectives",
+    "objectivesLede": "Five commitments we hold ourselves to, and that you are welcome to hold us to as well.",
+    "objectives": [
+      {
+        "title": "Lead digital transformation",
+        "body": "Become the primary strategic partner for our clients in their digital transformation processes, providing innovative and customized solutions that optimize their operations."
+      },
+      {
+        "title": "Excellence in development and support",
+        "body": "Maintain an exceptional standard of quality across software development, embedded systems, UX/UI, and database and CRM support, ensuring total customer satisfaction."
+      },
+      {
+        "title": "Continuous innovation",
+        "body": "Establish a continuous process of innovation in our technological solutions, keeping our services and products at the forefront of the market."
+      },
+      {
+        "title": "Market expansion",
+        "body": "Expand our presence in key markets by offering differentiated and competitive technological services, reaching new clients and industry sectors."
+      },
+      {
+        "title": "Sustainability and social responsibility",
+        "body": "Implement sustainable and socially responsible business practices, contributing to the community and the well-being of the environment where we operate."
+      }
+    ],
+    "commitment": "PrimeNex IT is committed to delivering high-quality results, building long-lasting relationships based on trust, transparency, and the tangible value we bring to every business we partner with."
+  },
+  "contact": {
+    "label": "Contact us",
+    "title": "Tell us what you are building",
+    "lede": "Describe the problem in your own words. You will hear back from an engineer.",
+    "rows": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Office",
+      "linkedin": "LinkedIn"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "organization": "Organization",
+      "role": "Job title",
+      "country": "Country",
+      "message": "Brief description"
+    },
+    "countryPlaceholder": "Select a country",
+    "messagePlaceholder": "What are you trying to build, fix or migrate?",
+    "requiredNote": "Required fields are marked. We only use your details to answer you.",
+    "submit": "Send message",
+    "sending": "Sending",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "organization": "Please enter your organization.",
+      "role": "Please enter your job title.",
+      "country": "Please choose a country.",
+      "message": "Please add at least a sentence about your project.",
+      "generic": "Something went wrong on our side.",
+      "fallback": "You can also write to us directly at"
+    },
+    "sentLabel": "Received",
+    "sentTitle": "Thank you for reaching out.",
+    "sentBody": "We appreciate your message and will be in touch with you shortly. If it is urgent, write to",
+    "sendAnother": "Send another message"
+  },
+  "footer": {
+    "readyLabel": "Ready when you are",
+    "readyLine": "Start a project",
+    "blurb": "IT support, web platforms, data and embedded systems, engineered from Cartago, Costa Rica.",
+    "servicesLabel": "Services",
+    "companyLabel": "Company",
+    "contactLabel": "Contact",
+    "rights": "All rights reserved."
+  },
+  "whatsapp": {
+    "label": "WhatsApp",
+    "prefill": "Hello PrimeNex IT, I would like to talk about a project."
+  }
+}

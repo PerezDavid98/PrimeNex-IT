@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "title": "PrimeNex IT — Partenaire technologique de la transformation numérique",
+    "description": "PrimeNex IT conçoit des solutions technologiques de pointe@@N@@: support informatique et transformation numérique, plateformes web, analyse de données et systèmes embarqués. Cartago, Costa Rica.",
+    "ogDescription": "Support informatique, plateformes web, analyse de données et systèmes embarqués, conçus de bout en bout depuis Cartago, Costa Rica.",
+    "tagline": "Partenaire technologique de la transformation numérique"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "home": "PrimeNex IT — accueil",
+    "menu": "Menu",
+    "close": "Fermer",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "mainNav": "Navigation principale",
+    "mobileNav": "Navigation mobile",
+    "serviceAreas": "Domaines de services",
+    "practiceAreas": "Domaines d'expertise",
+    "language": "Langue",
+    "changeLanguage": "Changer de langue",
+    "whatsapp": "Discuter avec nous sur WhatsApp",
+    "linkedin": "Voir PrimeNex IT sur LinkedIn",
+    "loading": "Chargement"
+  },
+  "nav": {
+    "services": "Services",
+    "capabilities": "Expertises",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "cta": {
+    "startProject": "Lancer un projet",
+    "services": "Services"
+  },
+  "hero": {
+    "kicker": "Cartago, Costa Rica",
+    "headline": "Nous concevons ce qui fait tourner votre activité.",
+    "lede": "PrimeNex IT conçoit des solutions technologiques de pointe, à la hauteur des exigences les plus dures du marché actuel. Derrière chaque projet, une équipe de professionnels compétents et engagés, qui travaille avec précision, rigueur et une exigence d'excellence qui ne faiblit pas."
+  },
+  "practiceIndex": ["Embarqué", "Web", "Données", "Infrastructure"],
+  "facts": [
+    { "label": "Siège", "value": "Cartago, Costa Rica" },
+    { "label": "Fuseau horaire", "value": "GMT-6, nearshore" },
+    { "label": "Périmètre", "value": "Du matériel à l'interface" },
+    { "label": "Intervention", "value": "Conception, réalisation, support" }
+  ],
+  "statement": {
+    "label": "Spécialisation",
+    "body": "Notre expertise couvre un large éventail de services technologiques — des systèmes embarqués qui associent matériel et logiciel en solutions efficaces et sur mesure, aux interfaces intuitives qui améliorent l'expérience utilisateur, jusqu'aux bases de données et aux systèmes CRM qui maintiennent votre infrastructure opérationnelle, performante et optimisée en permanence."
+  },
+  "services": {
+    "label": "Services",
+    "title": "Ce que nous réalisons pour vous",
+    "lede": "Notre expertise couvre un large éventail de services technologiques — des systèmes embarqués qui associent matériel et logiciel, aux interfaces qui améliorent l'expérience utilisateur, jusqu'aux bases de données et aux systèmes CRM qui font tourner l'ensemble.",
+    "groups": [
+      {
+        "tab": "Support IT",
+        "headline": "Moderniser le socle technique dont vous dépendez",
+        "blurb": "Nous reprenons les systèmes qui font tourner votre activité aujourd'hui et les rendons plus rapides, moins coûteux et prêts pour la suite.",
+        "items": [
+          {
+            "title": "Transformation numérique",
+            "body": "Mise en œuvre de solutions technologiques avancées qui permettent aux entreprises de moderniser leurs processus, de gagner en efficacité opérationnelle et de s'adapter aux exigences du marché numérique."
+          },
+          {
+            "title": "Gestion CRM et ERP avec IA et chatbots",
+            "body": "Gestion complète des systèmes CRM et ERP@@N@@: nous optimisons leurs performances et leurs fonctionnalités par l'intégration de l'intelligence artificielle et de chatbots, pour enrichir la relation client et automatiser les processus."
+          },
+          {
+            "title": "Gestion, refonte et migration de bases de données",
+            "body": "Services spécialisés de refonte et de migration de bases de données@@N@@: vos données critiques sont gérées de façon sûre et performante, sur une structure optimisée pour un accès rapide et fiable."
+          }
+        ]
+      },
+      {
+        "tab": "Web",
+        "headline": "Des plateformes taillées pour votre croissance",
+        "blurb": "Des produits robustes, sûrs et évolutifs — du front-end au back-end, sur des technologies actuelles et des bonnes pratiques éprouvées.",
+        "items": [
+          {
+            "title": "Développement web, back-end et front-end",
+            "body": "Développement de sites web robustes et évolutifs, front-end comme back-end, sur les technologies les plus récentes, pour des performances optimales et une expérience utilisateur soignée."
+          },
+          {
+            "title": "Création de bases de données",
+            "body": "Création de bases de données performantes et sécurisées, conçues pour absorber de grands volumes d'information et garantir l'intégrité et la disponibilité des données."
+          },
+          {
+            "title": "Serveurs et hébergement",
+            "body": "Hébergement en haute disponibilité, avec un support technique spécialisé pour que votre site reste en ligne et réactif en toutes circonstances."
+          }
+        ]
+      },
+      {
+        "tab": "Données",
+        "headline": "Transformer vos données en décisions concrètes",
+        "blurb": "Des données brutes au tableau de bord que votre direction ouvre chaque matin.",
+        "items": [
+          {
+            "title": "Exploration de données",
+            "body": "Application de techniques avancées d'exploration de données pour mettre au jour des schémas et des tendances qui restaient invisibles, et en tirer des enseignements utiles à la décision."
+          },
+          {
+            "title": "Création de tableaux de bord",
+            "body": "Conception et développement de tableaux de bord interactifs qui donnent à voir l'essentiel de façon claire et concise, pour suivre et analyser vos indicateurs de performance d'un coup d'œil."
+          },
+          {
+            "title": "Business intelligence",
+            "body": "Des solutions de business intelligence qui transforment les données en informations exploitables et aident les entreprises à décider en connaissance de cause."
+          }
+        ]
+      },
+      {
+        "tab": "Embarqué",
+        "headline": "Là où le silicium rencontre le logiciel",
+        "blurb": "Matériel et firmware conçus ensemble, pour un produit efficace, industrialisable et maîtrisé côté coûts.",
+        "items": [
+          {
+            "title": "Externalisation",
+            "body": "Prestations d'externalisation en systèmes embarqués@@N@@: vous nous confiez le développement et la maintenance de vos systèmes critiques, avec la même exigence de qualité et d'efficacité à chaque étape."
+          },
+          {
+            "title": "Conception et développement matériel",
+            "bullets": [
+              "Conception de PCB — des cartes sur mesure pour vos systèmes embarqués.",
+              "Prototypage matériel — fabrication et test de prototypes pour valider les choix avant la production en série.",
+              "Choix et intégration des composants — microcontrôleurs, capteurs, actionneurs et électronique associée."
+            ]
+          },
+          {
+            "title": "Optimisation des systèmes embarqués",
+            "bullets": [
+              "Optimisation des performances — réglage du système pour un rendement maximal.",
+              "Réduction de la consommation — des stratégies qui ramènent la demande en énergie au minimum.",
+              "Réduction des coûts — une analyse qui fait baisser le coût de fabrication et d'exploitation."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "label": "Expertises",
+    "title": "Six disciplines, une seule équipe",
+    "lede": "Chaque projet mobilise la même équipe. Matériel, logiciel, données et les personnes qui feront tourner l'ensemble sont pensés ensemble, au lieu d'être renvoyés d'un prestataire à l'autre.",
+    "items": [
+      {
+        "title": "Systèmes embarqués",
+        "caption": "Matériel et firmware, conçus ensemble",
+        "includes": ["Conception PCB", "Firmware", "Prototypage", "Composants"]
+      },
+      {
+        "title": "Plateformes web",
+        "caption": "De bout en bout, prêtes à monter en charge",
+        "includes": ["Front-end", "Back-end", "Hébergement", "Haute disponibilité"]
+      },
+      {
+        "title": "Données et BI",
+        "caption": "Des données brutes à la décision",
+        "includes": ["Exploration de données", "Tableaux de bord", "Business intelligence"]
+      },
+      {
+        "title": "Infrastructure",
+        "caption": "Les systèmes dont dépend votre activité",
+        "includes": ["Bases de données", "CRM", "ERP", "Refonte et migration"]
+      },
+      {
+        "title": "UX et UI",
+        "caption": "Des interfaces qui améliorent l'expérience",
+        "includes": ["Design d'interface", "Expérience utilisateur", "Ergonomie"]
+      },
+      {
+        "title": "Support IT et formation",
+        "caption": "Pour que votre équipe s'en charge sans nous",
+        "includes": ["Transformation numérique", "Automatisation", "Formation"]
+      }
+    ]
+  },
+  "about": {
+    "label": "Qui sommes-nous",
+    "title": "Un partenaire, pas un prestataire",
+    "missionLabel": "Mission",
+    "mission": "Chez PrimeNex IT, nous donnons aux entreprises les moyens d'agir grâce à des solutions technologiques avancées, centrées sur la transformation numérique. Nous assurons la formation et le support informatique, du logiciel au matériel, des systèmes embarqués à la gestion des bases de données et du CRM. Notre engagement@@N@@: être un partenaire fiable, qui aide à franchir les obstacles technologiques et à rester compétitif.",
+    "visionLabel": "Vision",
+    "vision": "Devenir le partenaire stratégique de référence en technologie et en formation informatique, moteur de la transformation numérique. Nous voulons ouvrir la voie en matière d'innovation et fixer de nouveaux standards de qualité et de service, pour que nos clients atteignent leur plein potentiel dans un monde numérique.",
+    "objectivesLabel": "Objectifs",
+    "objectivesLede": "Cinq engagements que nous nous imposons, et dont vous êtes en droit de nous demander des comptes.",
+    "objectives": [
+      {
+        "title": "Mener la transformation numérique",
+        "body": "Devenir le premier partenaire stratégique de nos clients dans leur transformation numérique, en apportant des solutions innovantes et sur mesure qui optimisent leurs opérations."
+      },
+      {
+        "title": "L'excellence en développement et en support",
+        "body": "Tenir un niveau de qualité exceptionnel sur le développement logiciel, les systèmes embarqués, l'UX/UI et le support des bases de données et du CRM, pour une satisfaction client sans réserve."
+      },
+      {
+        "title": "Innovation continue",
+        "body": "Installer une démarche d'innovation permanente dans nos solutions technologiques, afin que nos services et nos produits restent à la pointe du marché."
+      },
+      {
+        "title": "Développement de nos marchés",
+        "body": "Renforcer notre présence sur les marchés clés avec des services technologiques différenciés et compétitifs, pour atteindre de nouveaux clients et de nouveaux secteurs d'activité."
+      },
+      {
+        "title": "Durabilité et responsabilité sociale",
+        "body": "Adopter des pratiques d'entreprise durables et socialement responsables, en contribuant à la communauté et à la qualité de l'environnement où nous travaillons."
+      }
+    ],
+    "commitment": "PrimeNex IT s'engage à livrer des résultats de haut niveau et à construire des relations durables, fondées sur la confiance, la transparence et la valeur concrète que nous apportons à chaque entreprise avec laquelle nous travaillons."
+  },
+  "contact": {
+    "label": "Nous contacter",
+    "title": "Dites-nous ce que vous construisez",
+    "lede": "Décrivez votre problème avec vos mots. C'est un ingénieur qui vous répondra.",
+    "rows": {
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "office": "Bureau",
+      "linkedin": "LinkedIn"
+    },
+    "fields": {
+      "name": "Nom",
+      "email": "E-mail",
+      "organization": "Organisation",
+      "role": "Fonction",
+      "country": "Pays",
+      "message": "Brève description"
+    },
+    "countryPlaceholder": "Sélectionnez un pays",
+    "messagePlaceholder": "Que cherchez-vous à construire, corriger ou migrer@@N@@?",
+    "requiredNote": "Les champs obligatoires sont signalés. Vos informations ne servent qu'à vous répondre.",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours",
+    "errors": {
+      "name": "Merci d'indiquer votre nom.",
+      "email": "Merci d'indiquer une adresse e-mail valide.",
+      "organization": "Merci d'indiquer votre organisation.",
+      "role": "Merci d'indiquer votre fonction.",
+      "country": "Merci de choisir un pays.",
+      "message": "Merci d'écrire au moins une phrase sur votre projet.",
+      "generic": "Un problème est survenu de notre côté.",
+      "fallback": "Vous pouvez aussi nous écrire directement à"
+    },
+    "sentLabel": "Reçu",
+    "sentTitle": "Merci de nous avoir écrit.",
+    "sentBody": "Votre message nous est bien parvenu et nous revenons vers vous rapidement. Si c'est urgent, écrivez à",
+    "sendAnother": "Envoyer un autre message"
+  },
+  "footer": {
+    "readyLabel": "Quand vous voulez",
+    "readyLine": "Lancer un projet",
+    "blurb": "Support informatique, plateformes web, données et systèmes embarqués, conçus depuis Cartago, Costa Rica.",
+    "servicesLabel": "Services",
+    "companyLabel": "Entreprise",
+    "contactLabel": "Contact",
+    "rights": "Tous droits réservés."
+  },
+  "whatsapp": {
+    "label": "WhatsApp",
+    "prefill": "Bonjour PrimeNex IT, j'aimerais échanger au sujet d'un projet."
+  }
+}
