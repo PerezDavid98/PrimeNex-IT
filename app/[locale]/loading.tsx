@@ -33,13 +33,7 @@ export default async function Loading({
             <div className="sk sk-display w-[60%]" />
           </div>
 
-          <div>
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div key={i} className={`px-4 py-3.5 ${i % 2 === 0 ? "bg-band" : ""}`}>
-                <div className="sk sk-line w-40" style={{ background: "#dde7da" }} />
-              </div>
-            ))}
-          </div>
+          <div className="sk aspect-[4/3] w-full rounded-[3px]" />
         </div>
 
         <div className="mt-14 md:mt-20">

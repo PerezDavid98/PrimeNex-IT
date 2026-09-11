@@ -369,41 +369,5 @@
         ]
       }
     ]
-  },
-  "chain": {
-    "title": "La cadena, de punta a punta",
-    "head": {
-      "doc": "Doc",
-      "step": "Paso",
-      "stage": "Estado"
-    },
-    "note": "Donde la mayoría de las implementaciones pierde el hilo es entre estas filas. Nosotros asumimos las cinco.",
-    "steps": [
-      {
-        "doc": "PR",
-        "step": "Requisición de compra",
-        "stage": "Levantada"
-      },
-      {
-        "doc": "PO",
-        "step": "Orden de compra",
-        "stage": "Aprobada"
-      },
-      {
-        "doc": "GR",
-        "step": "Recepción de mercadería",
-        "stage": "Recibida"
-      },
-      {
-        "doc": "INV",
-        "step": "Factura de proveedor",
-        "stage": "Conciliada"
-      },
-      {
-        "doc": "JE",
-        "step": "Registro en inventario",
-        "stage": "Asentado"
-      }
-    ]
   }
 }

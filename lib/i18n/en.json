@@ -369,41 +369,5 @@
         ]
       }
     ]
-  },
-  "chain": {
-    "title": "The chain, end to end",
-    "head": {
-      "doc": "Doc",
-      "step": "Step",
-      "stage": "Stage"
-    },
-    "note": "Where most implementations lose the thread is between these rows. We own all five.",
-    "steps": [
-      {
-        "doc": "PR",
-        "step": "Purchase requisition",
-        "stage": "Raised"
-      },
-      {
-        "doc": "PO",
-        "step": "Purchase order",
-        "stage": "Approved"
-      },
-      {
-        "doc": "GR",
-        "step": "Goods receipt",
-        "stage": "Received"
-      },
-      {
-        "doc": "INV",
-        "step": "Vendor invoice",
-        "stage": "Matched"
-      },
-      {
-        "doc": "JE",
-        "step": "Inventory posting",
-        "stage": "Posted"
-      }
-    ]
   }
 }

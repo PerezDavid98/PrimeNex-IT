@@ -369,41 +369,5 @@
         ]
       }
     ]
-  },
-  "chain": {
-    "title": "La chaîne, de bout en bout",
-    "head": {
-      "doc": "Pièce",
-      "step": "Étape",
-      "stage": "État"
-    },
-    "note": "C’est entre ces lignes que la plupart des mises en œuvre perdent le fil. Nous portons les cinq.",
-    "steps": [
-      {
-        "doc": "PR",
-        "step": "Demande d’achat",
-        "stage": "Émise"
-      },
-      {
-        "doc": "PO",
-        "step": "Commande",
-        "stage": "Approuvée"
-      },
-      {
-        "doc": "GR",
-        "step": "Réception de marchandises",
-        "stage": "Reçue"
-      },
-      {
-        "doc": "INV",
-        "step": "Facture fournisseur",
-        "stage": "Rapprochée"
-      },
-      {
-        "doc": "JE",
-        "step": "Écriture de stock",
-        "stage": "Comptabilisée"
-      }
-    ]
   }
 }

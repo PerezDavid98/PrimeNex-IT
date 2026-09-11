@@ -37,7 +37,7 @@ export default async function Home({
       />
 
       <main id="main">
-        <Hero hero={dict.hero} chain={dict.chain} cta={dict.cta} />
+        <Hero hero={dict.hero} cta={dict.cta} />
         <TechStrip tech={dict.techStrip} />
         <Statement statement={dict.statement} />
         <Services services={dict.services} />

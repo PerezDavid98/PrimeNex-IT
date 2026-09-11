@@ -369,41 +369,5 @@
         ]
       }
     ]
-  },
-  "chain": {
-    "title": "A cadeia, ponta a ponta",
-    "head": {
-      "doc": "Doc",
-      "step": "Etapa",
-      "stage": "Situação"
-    },
-    "note": "É entre estas linhas que a maioria das implementações perde o fio. Nós assumimos as cinco.",
-    "steps": [
-      {
-        "doc": "PR",
-        "step": "Requisição de compra",
-        "stage": "Aberta"
-      },
-      {
-        "doc": "PO",
-        "step": "Pedido de compra",
-        "stage": "Aprovado"
-      },
-      {
-        "doc": "GR",
-        "step": "Recebimento de mercadoria",
-        "stage": "Recebido"
-      },
-      {
-        "doc": "INV",
-        "step": "Nota do fornecedor",
-        "stage": "Conciliada"
-      },
-      {
-        "doc": "JE",
-        "step": "Lançamento no estoque",
-        "stage": "Lançado"
-      }
-    ]
   }
 }

@@ -369,41 +369,5 @@
         ]
       }
     ]
-  },
-  "chain": {
-    "title": "Die Kette, durchgängig",
-    "head": {
-      "doc": "Bel.",
-      "step": "Schritt",
-      "stage": "Status"
-    },
-    "note": "Zwischen diesen Zeilen verlieren die meisten Einführungen den Faden. Wir verantworten alle fünf.",
-    "steps": [
-      {
-        "doc": "PR",
-        "step": "Bestellanforderung",
-        "stage": "Erfasst"
-      },
-      {
-        "doc": "PO",
-        "step": "Bestellung",
-        "stage": "Freigegeben"
-      },
-      {
-        "doc": "GR",
-        "step": "Wareneingang",
-        "stage": "Eingegangen"
-      },
-      {
-        "doc": "INV",
-        "step": "Lieferantenrechnung",
-        "stage": "Abgeglichen"
-      },
-      {
-        "doc": "JE",
-        "step": "Lagerbuchung",
-        "stage": "Gebucht"
-      }
-    ]
   }
 }

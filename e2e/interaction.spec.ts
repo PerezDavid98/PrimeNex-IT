@@ -36,17 +36,16 @@ test("the technology register lists every group from the CV", async ({ page }) =
   }
 });
 
-test("the ledger states the whole procure-to-pay chain", async ({ page }) => {
+test("the technology register is ordered, not a flowing jumble", async ({ page }) => {
   await page.goto("/en");
 
-  const rows = page.locator(".ledger tbody tr");
-  await expect(rows).toHaveCount(5);
+  // Fixed columns rather than wrapped flow: every entry is a list item in a
+  // grid, which is what makes a list of forty-three readable.
+  const items = page.locator("section:has-text('Every platform and technology') dd li");
+  expect(await items.count()).toBeGreaterThanOrEqual(40);
 
-  // A real table, so it is announced as one and navigable as one.
-  await expect(page.locator(".ledger thead th")).toHaveCount(3);
-  for (const doc of ["PR", "PO", "GR", "INV", "JE"]) {
-    await expect(page.locator(`.ledger tbody td:has-text("${doc}")`).first()).toBeVisible();
-  }
+  // Typeset throughout — no brand glyphs of mismatched optical weight.
+  await expect(page.locator("section:has-text('Every platform and technology') svg")).toHaveCount(0);
 });
 
 test("none of the generated-page tells are present", async ({ page }) => {
